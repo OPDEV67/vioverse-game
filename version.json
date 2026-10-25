@@ -1,6 +1,6 @@
 {
-  "version": "0.8.0",
-  "build": "2026-10-25-v08-auto-update",
-  "title": "Seamless Auto Updates",
-  "notes": "Checks the published version every 5 seconds when the tab is active, saves and reloads on a newer release; waits until you leave Expeditions. Manual update remains available."
+  "version": "0.9.0",
+  "build": "2026-10-25-v09-journal",
+  "title": "Living Journal & Save Backups",
+  "notes": "New Moonveil Journal with Legacy milestones, discoveries, remembered choices, and export/import save backups. Auto-update checks remain every 5 seconds."
 }
