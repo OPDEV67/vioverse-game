@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.6.0</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.6.1</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -749,10 +749,50 @@ header{background:linear-gradient(105deg,#0b1120f7,#19182cf4)!important;border-b
 @media(max-width:390px){.vv-dashboard{grid-template-columns:1fr;min-height:0}.vv-dashboard-character{display:none}.vv-dashboard-content{padding:22px 17px}.vv-dashboard-content h2{font-size:29px!important}.vv-dashboard-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.vv-dashboard-metrics>div:last-child{grid-column:auto}.vv-dashboard-metrics strong{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.vv-archive-card,.vv-dashboard *{animation:none!important;transition:none!important}}
 
+
+/* v1.6.1 — Settings and Moonveil Mailbox */
+.vv-hud-mail{position:relative;display:flex;align-items:center;gap:7px}.vv-mail-dot{display:block;position:absolute;right:4px;top:3px;width:8px;height:8px;border-radius:50%;background:#f0ca86;box-shadow:0 0 0 2px #182132,0 0 12px #e8c18f}.vv-mail-dot[hidden]{display:none!important}
+.vv-settings-layout{display:grid;grid-template-columns:minmax(180px,235px) minmax(0,1fr);gap:18px;align-items:start}
+.vv-settings-tabs{display:flex;flex-direction:column;gap:7px;padding:12px;border:1px solid #d6c3a250;border-radius:15px;background:#121b2beb}
+.vv-settings-tabs button,.vv-mail-tabs button{border:1px solid transparent;background:transparent;color:#d2c8da;border-radius:9px;text-align:left;padding:12px 14px;font-weight:600;cursor:pointer}
+.vv-settings-tabs button:hover,.vv-mail-tabs button:hover{background:#e2c4a319}
+.vv-settings-tabs button.is-active,.vv-mail-tabs button.is-active{background:linear-gradient(100deg,#e2c49d2b,#b7a0d921);color:#f4ddb1;border-color:#d8bd8a78}
+.vv-settings-panel{min-height:340px;padding:25px!important}
+.vv-settings-panel h3{font-size:20px!important;margin:0 0 20px}
+.vv-setting-row{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #c6b9d22c;padding:15px 0;cursor:pointer}
+.vv-setting-row strong{display:block;font-size:14px;color:#f2e9f6;font-weight:600}
+.vv-setting-row small{display:block;margin-top:6px;color:#bdb6cc;font-size:12px;line-height:1.5}
+.vv-setting-row input[type=checkbox]{width:21px;height:21px;accent-color:#c8acdf;flex-shrink:0}
+.vv-settings-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.vv-settings-note{font-size:12px;color:#b8adbf;line-height:1.6;margin-top:18px}
+.vv-mail-tabs{display:flex;gap:8px;margin:10px 0 20px;border-bottom:1px solid #b9a9bd36;padding-bottom:12px}
+.vv-mail-letter{background:linear-gradient(150deg,#1b2437,#101a2a);border:1px solid #e2c9a37b;border-radius:18px;padding:clamp(18px,4vw,34px);box-shadow:0 16px 45px #0006;max-width:850px;position:relative}
+.vv-mail-letter:before{content:'☾';position:absolute;right:25px;top:46px;font-size:60px;color:#e7cc9b20;pointer-events:none}
+.vv-mail-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d8c5a0;font-size:10px;letter-spacing:.13em}
+.vv-mail-letter h3{font-family:Cinzel,Georgia,serif;color:#f7e9d2;font-size:clamp(19px,3vw,27px);margin:20px 0}
+.vv-mail-prose{font-family:Georgia,serif;color:#dfd3e5;font-size:15px;line-height:1.85;max-width:620px}
+.vv-mail-rewards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:25px 0 10px}
+.vv-mail-rewards>div{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;background:#0a1424a9;border:1px solid #cbb6d452;border-radius:12px;padding:17px 8px}
+.vv-mail-rewards>div span{font-size:34px;color:#eac99a}
+.vv-mail-rewards strong{font-size:13px;color:#f5e9da}
+.vv-mail-rewards small{font-size:11px;color:#c3b8d1}
+.vv-mail-empty{padding:38px;text-align:center;max-width:850px}
+.vv-mail-empty>span{font-size:45px;color:#ddc596}
+.vv-mail-empty h3{font-size:20px!important;margin:10px}
+body.vv-reduce-motion *,body.vv-reduce-motion *:before,body.vv-reduce-motion *:after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+body.vv-large-text .vv-view{font-size:1.1em}body.vv-large-text .vv-muted,body.vv-large-text .vv-settings-panel,body.vv-large-text .vv-mail-prose{font-size:1.08em}
+body.vv-high-contrast .vv-panel,body.vv-high-contrast .vv-archive-card,body.vv-high-contrast .vv-mail-letter{border-color:#e9d6ac!important;background:#0c1321!important}
+body.vv-high-contrast .vv-muted{color:#f0e8f7!important}
+body.vv-compact-ui .vv-panel{padding:13px!important}body.vv-compact-ui .vv-bottom{gap:9px!important}body.vv-compact-ui .vv-view{padding-top:8px}
+body.vv-hide-particles .vv-dashboard-glow,body.vv-hide-particles .vv-status-pulse{display:none!important}
+body.vv-hide-hints .vv-tree-cost{display:none!important}
+body.vv-hide-unlock-goals .vv-roster-card .vv-lock-pill{display:none!important}
+@media(max-width:767px){.vv-settings-layout{grid-template-columns:1fr}.vv-settings-tabs{flex-direction:row;overflow-x:auto;padding:7px;white-space:nowrap}.vv-settings-tabs button{padding:10px 12px}.vv-settings-panel{padding:17px!important;min-height:260px}.vv-hud-mail-label,.vv-hud-settings-label{display:none}.vv-mail-rewards{gap:6px}.vv-mail-rewards>div{padding:11px 5px}.vv-mail-rewards strong{font-size:11px}.vv-mail-rewards small{font-size:10px}.vv-mail-letter{padding:17px}}
+
 </style></head><body><header><div class="vv-header-inner">
 <div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE<span class="vv-brand-star" aria-hidden="true">✦</span></div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.6.0</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource" title="Gathered Moonwood"><span class="vv-resource-icon" aria-hidden="true">♣</span><span class="vv-resource-stack"><small>Moonwood</small><b id="wood">0</b></span></div><div class="vv-resource" title="Moon Essence"><span class="vv-resource-icon" aria-hidden="true">☾</span><span class="vv-resource-stack"><small>Essence</small><b id="essence">0</b></span></div><div class="vv-resource vv-stardust-resource" title="Stardust"><span class="vv-resource-icon" aria-hidden="true">✧</span><span class="vv-resource-stack"><small>Stardust</small><b id="stardust">0</b></span></div><div class="vv-resource" title="Lunar Butterflies"><span class="vv-resource-icon" aria-hidden="true">🦋</span><span class="vv-resource-stack"><small>Butterflies</small><b id="butterfly">0</b></span></div><div class="vv-resource vv-level-resource" title="Player level"><span class="vv-resource-icon" aria-hidden="true">✦</span><span class="vv-resource-stack"><small>Wanderer</small><b id="vv-level-caption">Lv. 1</b></span><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon" aria-hidden="true">♡</span><span class="vv-resource-stack"><small>Moonlit Bonds</small><b id="vv-bond-badge">Bonds</b></span></button></div>
-<button type="button" id="vv-audio-button" title="Open audio settings" aria-label="Open audio settings">♫ Sound</button><div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
+<button type="button" id="vv-audio-button" title="Open audio settings" aria-label="Open audio settings">♫ Sound</button><div class="vv-quicknav"><button type="button" class="vv-hud-mail" data-page="Mailbox" aria-label="Open mailbox"><span aria-hidden="true">✉</span><span class="vv-hud-mail-label">Mail</span><span id="vv-mail-unread" class="vv-mail-dot" aria-label="Unread mail"></span></button><button type="button" data-page="Settings" title="Game settings" aria-label="Game settings"><span aria-hidden="true">⚙</span><span class="vv-hud-settings-label">Settings</span></button><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
 </div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><div id="vv-audio-dialog" class="vv-audio-dialog" hidden role="dialog" aria-modal="true" aria-label="Vioverse sound settings"><div class="vv-audio-card"><div class="vv-audio-top"><h2>♫ Moonwood Audio</h2><button type="button" id="vv-audio-close" aria-label="Close audio settings">✕</button></div><p>Whispers of Moonwood · music, forest ambience, and magical sound effects.</p><label class="vv-audio-check"><input id="vv-audio-enable" type="checkbox"> Enable game audio</label><label>🎵 Music <output id="vv-audio-music-label">30%</output><input id="vv-audio-music" type="range" min="0" max="100" value="30"></label><label>🌲 Forest ambience <output id="vv-audio-ambient-label">20%</output><input id="vv-audio-ambient" type="range" min="0" max="100" value="20"></label><label>✨ Sound effects <output id="vv-audio-sfx-label">65%</output><input id="vv-audio-sfx" type="range" min="0" max="100" value="65"></label><p class="vv-audio-note" id="vv-audio-status">Audio starts only after you enable it. Preferences are saved in this browser.</p><button type="button" id="vv-audio-preview">✦ Test magical chime</button></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
 
 'use strict';
@@ -769,7 +809,7 @@ function vvCompanionEffect(kind){const c=VV_COMPANIONS.find(x=>x.id===s.equipped
 function vvGrantEssence(base){const amount=base*(1+vvCompanionEffect('essence'))+(Number(s.essenceBonusRemainder)||0);const gain=Math.floor(amount+1e-9);s.essence+=gain;s.essenceBonusRemainder=amount-gain}
 
 function vvGrantSkillXp(baseCharacter,baseProfession){const boost=1+vvBondBonus();const charAmount=baseCharacter*boost+(Number(s.characterXpBonusRemainder)||0);const profAmount=baseProfession*boost+(Number(s.skillXpBonusRemainder)||0);const charGain=Math.floor(charAmount+1e-9),profGain=Math.floor(profAmount+1e-9);s.xp+=charGain;s.profXp+=profGain;s.characterXpBonusRemainder=charAmount-charGain;s.skillXpBonusRemainder=profAmount-profGain}
-const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,skillXpBonusRemainder:0,characterXpBonusRemainder:0,playerName:''});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
+const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,skillXpBonusRemainder:0,characterXpBonusRemainder:0,playerName:'',mailWelcomeClaimed:false,mailWelcomeRead:false});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
 if(typeof s.playerName!=='string')s.playerName='';s.playerName=s.playerName.trim().slice(0,20);
 s.stardust=Math.max(0,Math.floor(Number(s.stardust)||0));
 if(!s.ownedCompanions||typeof s.ownedCompanions!=='object'||Array.isArray(s.ownedCompanions))s.ownedCompanions={};
@@ -857,7 +897,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.6.0', BUILD_ID='2026-10-25-v160-moonlit-ui';
+const BUILD_VERSION='1.6.1', BUILD_ID='2026-10-25-v161-settings-mail';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -897,8 +937,8 @@ const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){cons
 
 'use strict';
 /* Vioverse v1.0 — art-direction pass. Gameplay and stored save schema are unchanged. */
-const vvIcons={Home:'⌂',Friends:'♡',Characters:'♙',Collection:'✦',Expeditions:'✧',Discoveries:'🦋',Gathering:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
-const vvPages=['Home','Friends','Characters','Collection','Expeditions','Discoveries','Gathering','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game'];
+const vvIcons={Settings:'⚙',Mailbox:'✉',Home:'⌂',Friends:'♡',Characters:'♙',Collection:'✦',Expeditions:'✧',Discoveries:'🦋',Gathering:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
+const vvPages=['Home','Friends','Characters','Collection','Expeditions','Discoveries','Gathering','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game','Mailbox','Settings'];
 function vvButton(text,action,disabled=false,extra=''){return `<button type="button" class="vv-button ${extra}" data-action="${action}" ${disabled?'disabled':''}>${text}</button>`}
 function vvLink(text,to,extra=''){return `<button type="button" class="vv-button ${extra}" data-page="${to}">${text}</button>`}
 function vvHead(kicker,title,subtitle,badge=''){return `<div class="vv-heading"><div><div class="vv-kicker">${kicker}</div><h2>${title}</h2><p>${subtitle}</p></div>${badge?`<span class="vv-area-pill">${badge}</span>`:''}</div>`}
@@ -969,7 +1009,7 @@ function vvHome(){
  ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Gathering →','Gathering','ghost')}`)}
  ${vvPanel('▤ Journey Objective',`<p class="vv-muted">${nextStep()}</p><div class="vv-actions">${vvLink('View Legacy →','Legacy')}</div>`)}
  ${vvPanel('♡ Moonlit Bonds',`<p class="vv-muted">${vvSocial.friendCount}/50 accepted friends · +${(vvBondBonus()*100).toFixed(1)}% to Wood, Essence, gathering speed, and skill experience.</p>${vvLink('Open Friends & Hearts →','Friends','ghost')}`)}
- ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✧ Discoveries','Discoveries')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✦ Collection','Collection','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
+ ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✉ Mailbox','Mailbox')}${vvLink('⚙ Settings','Settings','ghost')}${vvLink('✧ Discoveries','Discoveries','ghost')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✦ Collection','Collection','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
  </div>`);
 }
 function vvCharacters(){
@@ -1085,6 +1125,75 @@ function vvCollection(){
  `<div class="vv-ornament"><span>✧ SUMMONABLE SPIRITS ✧</span></div><p class="vv-muted">Summon spirits with Stardust and equip one at a time to activate its passive bonus.</p><div class="vv-archive-grid">${spirits}</div>`+
  `<div class="vv-actions">${vvLink('✧ Spirit Gacha','Gacha')}${vvLink('♙ Character Skills','Characters','ghost')}</div>`);
 }
+
+/* v1.6.1 — local preference settings and starter-safe welcome mailbox */
+const VV_SETTINGS_KEY='vioverse_settings_v1';
+const VV_SETTINGS_DEFAULTS={reduceMotion:false,largeText:false,highContrast:false,compactUI:false,confirmSummons:true,offlineSummary:true,showRequirements:true,showUnlockGoals:true,mailNotices:true,friendNotices:true,questNotices:true,particles:true};
+let vvPrefs={...VV_SETTINGS_DEFAULTS};
+try{const stored=JSON.parse(localStorage.getItem(VV_SETTINGS_KEY)||'{}');for(const k in VV_SETTINGS_DEFAULTS)if(typeof stored[k]==='boolean')vvPrefs[k]=stored[k]}catch{}
+let vvSettingsTab='Audio',vvMailTab='Inbox';
+function vvApplySettings(){
+ document.body.classList.toggle('vv-reduce-motion',vvPrefs.reduceMotion);
+ document.body.classList.toggle('vv-large-text',vvPrefs.largeText);
+ document.body.classList.toggle('vv-high-contrast',vvPrefs.highContrast);
+ document.body.classList.toggle('vv-compact-ui',vvPrefs.compactUI);
+ document.body.classList.toggle('vv-hide-particles',!vvPrefs.particles);
+ document.body.classList.toggle('vv-hide-hints',!vvPrefs.showRequirements);
+ document.body.classList.toggle('vv-hide-unlock-goals',!vvPrefs.showUnlockGoals);
+}
+function vvSaveSettings(){try{localStorage.setItem(VV_SETTINGS_KEY,JSON.stringify(vvPrefs))}catch{}vvApplySettings()}
+function vvSettingsSwitch(key,label,description=''){
+ return `<label class="vv-setting-row"><span><strong>${label}</strong>${description?'<small>'+description+'</small>':''}</span><input type="checkbox" data-vv-setting="${key}" ${vvPrefs[key]?'checked':''}></label>`;
+}
+function vvSettings(){
+ const tabs=['Audio','Graphics','Gameplay','Notifications','Accessibility','Account & Saves','About'];
+ const nav=`<div class="vv-settings-tabs" role="tablist" aria-label="Settings categories">${tabs.map(t=>`<button type="button" role="tab" aria-selected="${t===vvSettingsTab}" class="${t===vvSettingsTab?'is-active':''}" data-vv-settings-tab="${t}">${t}</button>`).join('')}</div>`;
+ let body='';
+ if(vvSettingsTab==='Audio')body=`<h3>♫ Audio & Music</h3><p class="vv-muted">Adjust background music, forest ambience and magical sound effects. The existing audio player saves each volume independently.</p><button class="vv-button" type="button" data-vv-open-audio>♫ Open Audio Mixer</button><p class="vv-settings-note">Audio starts only after you choose to enable it.</p>`;
+ else if(vvSettingsTab==='Graphics')body=`<h3>✦ Graphics & Appearance</h3>${vvSettingsSwitch('particles','Magical particle effects','Reduce decorative particles for a calmer display.')}${vvSettingsSwitch('compactUI','Compact interface','Reduce spacing in game panels.')}${vvSettingsSwitch('reduceMotion','Reduced animations','Limit transitions and moving effects.')}`;
+ else if(vvSettingsTab==='Gameplay')body=`<h3>⚔ Gameplay</h3>${vvSettingsSwitch('confirmSummons','Confirm spirit summons','Ask before spending Stardust on summons.')}${vvSettingsSwitch('offlineSummary','Offline progress summary','Show your gathered cycles when returning to the game.')}${vvSettingsSwitch('showRequirements','Show skill requirements','Display upgrade requirements and costs.')}${vvSettingsSwitch('showUnlockGoals','Show companion unlock goals','Display level requirements for locked companions.')}`;
+ else if(vvSettingsTab==='Notifications')body=`<h3>✉ In-game Notices</h3>${vvSettingsSwitch('mailNotices','Mailbox reminder','Show an unread-mail dot on the HUD.')}${vvSettingsSwitch('friendNotices','Friend notices','Show friend notifications when available.')}${vvSettingsSwitch('questNotices','Quest notices','Show quest-completion messages.')}<p class="vv-settings-note">These control in-game notices only; device push notifications are not enabled.</p>`;
+ else if(vvSettingsTab==='Accessibility')body=`<h3>♧ Accessibility</h3>${vvSettingsSwitch('largeText','Larger interface text','Increase text size throughout the game.')}${vvSettingsSwitch('highContrast','High contrast','Improve text and panel contrast.')}${vvSettingsSwitch('reduceMotion','Reduce motion','Minimize animation and movement.')}`;
+ else if(vvSettingsTab==='Account & Saves')body=`<h3>☾ Account & Save Data</h3><p class="vv-muted">Your game progress is saved in this browser. Moonlit Bonds account sign-in is separate from game progress synchronization.</p><div class="vv-settings-actions">${vvButton('↓ Export Save Backup','exportsave')}${vvLink('♡ Moonlit Bonds Account','Friends','ghost')}${vvLink('↻ Game Updates','Update Game','ghost')}</div><p class="vv-settings-note">For save import, open Game Updates. Save backups should be kept private. Cloud save synchronization is not implemented.</p>`;
+ else body=`<h3>✦ About Vioverse</h3><p class="vv-muted">Moonwood Legacy · v${BUILD_VERSION}</p><p class="vv-muted">A moonlit anime idle adventure starring Seraphine.</p><div class="vv-settings-actions">${vvLink('📜 Patch Notes','Patch Notes')}${vvLink('✉ Mailbox','Mailbox','ghost')}</div><p class="vv-settings-note">Settings are stored in this browser and can be changed any time.</p>`;
+ return vvSection(vvHead('Make Moonwood your own','Settings','Audio, visuals, gameplay, accessibility and account preferences.','⚙ PERSONALIZE')+`<div class="vv-settings-layout">${nav}<section class="vv-panel vv-settings-panel">${body}</section></div>`);
+}
+function vvSyncMailBadge(){
+ const dot=document.getElementById('vv-mail-unread');
+ if(dot){dot.hidden=!!s.mailWelcomeRead||!vvPrefs.mailNotices;dot.setAttribute('aria-label',s.mailWelcomeRead?'No unread mail':'1 unread mail')}
+}
+function vvMailbox(){
+ const tabs=['Inbox','Rewards','Archive'];
+ const has=!!s.mailWelcomeClaimed,read=!!s.mailWelcomeRead;
+ const show=(vvMailTab==='Inbox'&&!has)||(vvMailTab==='Rewards'&&!has)||(vvMailTab==='Archive'&&has);
+ const mail=`<article class="vv-mail-letter"><div class="vv-mail-meta"><span>✉ FROM THE MOONWOOD GUARDIANS</span><span class="vv-tag">${has?'✓ Claimed':read?'Read':'✦ New'}</span></div><h3>A Gift Beneath the Violet Moon</h3><p class="vv-mail-prose">Dear Wanderer,<br><br>The Moonwood has been waiting for you. May these small gifts bring warmth to your journey. The forest's greatest treasures are still yours to discover.<br><br>— Seraphine</p><div class="vv-mail-rewards"><div><span>✧</span><strong>3 Stardust</strong><small>Less than one summon</small></div><div><span>☾</span><strong>Moonborn</strong><small>Cosmetic title</small></div><div><span>✦</span><strong>Welcome Badge</strong><small>Cosmetic keepsake</small></div></div><div class="vv-settings-actions">${has?'<span class="vv-tag">✓ Welcome gift claimed</span>':vvButton('✦ Claim Welcome Gift','vv-claim-welcome')}</div></article>`;
+ return vvSection(vvHead('A letter beneath the moon','Moonveil Mailbox','Read letters and collect gentle gifts from Moonwood.','✉ '+(read?'No unread mail':'1 unread'))+
+ `<div class="vv-mail-tabs" role="tablist" aria-label="Mailbox categories">${tabs.map(t=>`<button type="button" role="tab" aria-selected="${vvMailTab===t}" class="${vvMailTab===t?'is-active':''}" data-vv-mail-tab="${t}">${t}${t==='Inbox'&&!read?' · 1':''}</button>`).join('')}</div>`+
+ (show?mail:`<div class="vv-panel vv-mail-empty"><span>☾</span><h3>${vvMailTab==='Archive'?'No archived letters yet':'All caught up'}</h3><p class="vv-muted">${vvMailTab==='Archive'?'Claimed welcome gifts will appear here.':'There are no more letters waiting in this section.'}</p></div>`)+
+ `<p class="vv-settings-note">The welcome gift is claimable once per local save. This is not yet server-verified, so it is not guaranteed once per account or across devices. No experience, skill points, levels or permanent stat bonuses are awarded.</p>`);
+}
+vvApplySettings();
+document.addEventListener('change',event=>{
+ const key=event.target?.dataset?.vvSetting;
+ if(!key||!(key in VV_SETTINGS_DEFAULTS))return;
+ vvPrefs[key]=!!event.target.checked;vvSaveSettings();
+ if(page==='Settings')render();
+},true);
+document.addEventListener('click',event=>{
+ const tab=event.target.closest('[data-vv-settings-tab]');
+ if(tab){event.preventDefault();vvSettingsTab=tab.dataset.vvSettingsTab;render();return}
+ const mailTab=event.target.closest('[data-vv-mail-tab]');
+ if(mailTab){event.preventDefault();vvMailTab=mailTab.dataset.vvMailTab;render();return}
+ const audio=event.target.closest('[data-vv-open-audio]');
+ if(audio){event.preventDefault();document.getElementById('vv-audio-button')?.click();return}
+ const claim=event.target.closest('[data-action="vv-claim-welcome"]');
+ if(claim){event.preventDefault();event.stopImmediatePropagation();if(!s.mailWelcomeClaimed){s.mailWelcomeClaimed=true;s.mailWelcomeRead=true;s.stardust+=3;note('✉ Moonveil welcome gift: 3 Stardust, Moonborn title and Welcome Badge.');save();toast('Welcome gift claimed: 3 Stardust and two cosmetics!');if(window.vvAudio)window.vvAudio.effect('quest')}vvMailTab='Archive';render();return}
+ const nav=event.target.closest('[data-page="Mailbox"]');
+ if(nav){s.mailWelcomeRead=true;save();vvSyncMailBadge()}
+ const summon=event.target.closest('[data-action="summon1"],[data-action="summon10"]');
+ if(summon&&vvPrefs.confirmSummons){const count=summon.dataset.action==='summon10'?10:1,cost=count===10?90:10;if(!confirm('Spend '+cost+' Stardust on '+count+' spirit summon'+(count===1?'':'s')+'?')){event.preventDefault();event.stopImmediatePropagation();return}}
+},true);
+
 function vvRollCompanion(){
  const p=s.gachaPity;let rarity;
  if(p.legendary>=49)rarity='Legendary';else if(p.epic>=19)rarity=Math.random()<10/12?'Epic':'Legendary';
@@ -1331,9 +1440,10 @@ function vvRender(){
  const nav=document.getElementById('nav'),main=document.getElementById('main');if(!nav||!main)return;
  const old=document.getElementById('vv-card-scroll');if(old)scrollPos=old.scrollLeft;
  nav.innerHTML=vvPages.map(n=>`<button type="button" data-page="${n}" class="${page===n?'active':''}" ${page===n?'aria-current="page"':''}><span class="vv-nav-icon" aria-hidden="true">${vvIcons[n]}</span><span class="vv-nav-label">${n}</span></button>`).join('');
- const screens={Home:vvHome,Friends:vvFriends,Characters:vvCharacters,Collection:vvCollection,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Gathering:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates};
+ const screens={Home:vvHome,Friends:vvFriends,Characters:vvCharacters,Collection:vvCollection,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Gathering:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates,Mailbox:vvMailbox,Settings:vvSettings};
  main.innerHTML=(screens[page]||vvHome)();
  if(page==='Home'){const sc=document.getElementById('vv-card-scroll');if(sc)sc.scrollLeft=scrollPos}
+ vvSyncMailBadge();
  document.getElementById('wood').textContent=fmt(s.wood);document.getElementById('essence').textContent=fmt(s.essence);document.getElementById('butterfly').textContent=fmt(s.butterfly);const dust=document.getElementById('stardust');if(dust)dust.textContent=fmt(s.stardust);document.getElementById('level').textContent=level(s.xp);
  const playerLabel=document.getElementById('vv-player-hud-name');if(playerLabel)playerLabel.textContent=vvPlayerDisplayName();vvSocialSyncBadge();
  const rank=document.getElementById('vv-level-caption');if(rank)rank.textContent='Lv. '+level(s.xp);
@@ -1733,7 +1843,7 @@ function vvSkillGlyph(kind){
 /* v1.4.1 mobile navigation; desktop navigation remains unchanged */
 (function(){
  const mobilePages=['Home','Gathering','Gacha','Characters'];
- const allPages=['Home','Gathering','Gacha','Characters','Collection','Friends','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game'];
+ const allPages=['Home','Gathering','Gacha','Characters','Collection','Friends','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game','Mailbox','Settings'];
  const icons={Home:'⌂',Gathering:'🪵',Gacha:'✧',Characters:'♙'};
  const bar=document.getElementById('vv-mobile-nav'),menu=document.getElementById('vv-mobile-more');
  if(!bar||!menu)return;
