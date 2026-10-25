@@ -116,3 +116,12 @@ main{padding:27px clamp(14px,2vw,30px) 40px!important;width:100%;max-width:1810p
 .vv-companion .vv-locked-symbol{opacity:.9}
 .vv-panel{overflow:hidden}
 .vv-view .vv-panel .vv-button{max-width:100%}
+
+/* Elegant filigree overlay anchored to each rarity frame, independent of card content. */
+.vv-companion .vv-frame-detail{position:absolute;inset:0;z-index:6;pointer-events:none;background:url('assets/filigree-frame.svg') center center/100% 100% no-repeat;filter:drop-shadow(0 0 7px #b47affb6)}
+.vv-companion.rare .vv-frame-detail{filter:hue-rotate(44deg) drop-shadow(0 0 7px #759ffd)}
+.vv-companion.mythic .vv-frame-detail{filter:hue-rotate(310deg) drop-shadow(0 0 8px #ed6bc6)}
+.vv-companion.legendary .vv-frame-detail{filter:sepia(.6) hue-rotate(322deg) saturate(1.5) drop-shadow(0 0 8px #e9b77a)}
+.vv-companion.epic .vv-frame-detail{filter:drop-shadow(0 0 7px #b37de5)}
+.vv-companion .vv-cardface{z-index:0}
+.vv-companion .vv-cardface:before{z-index:3}
