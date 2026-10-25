@@ -1,6 +1,6 @@
 # Vioverse
 
-**Current release: v1.4.3 — Player Identity & UI Polish**
+**Current release: v1.5.0 — Moonlit Bonds**
 
 Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
@@ -22,6 +22,16 @@ Progress is stored in browser local storage under `moonveil_legacy_v02`. This re
 ## Mobile layout
 
 On iPhone and Android, Vioverse automatically shows a compact HUD and a bottom navigation bar with Home, Gathering, Gacha, Characters, and More. The More menu contains the other game screens. The layout responds to screen width; there is no separate mobile build or switch. Desktop keeps the original sidebar.
+
+## Moonlit Bonds — Online Friends and Hearts
+
+Vioverse has a separate Supabase project for its online social system. Open **Friends** to create an account (email and password), sign in, claim a unique username, search players, send and accept friend requests, and exchange one heart per accepted friend per UTC day. You can have up to **50 accepted friends**. Each accepted friend grants **+0.5%** to Wood, Moon Essence, gathering speed and XP earned, up to **+25%**. The backend enforces friendships and hearts using authenticated RPC functions, uniqueness constraints, and table RLS. Hearts are social gifts, not currency yet.
+
+**Required Auth setup before email verification works on the public site:** In the Vioverse Supabase project dashboard, open Authentication → URL Configuration, set **Site URL** to `https://opdev67.github.io/vioverse-game/`, and add the same URL to the **Redirect URLs** allowlist. The code supplies `emailRedirectTo` on signup, but the allowlist is managed in the Supabase dashboard. Test registration and confirmation on the public URL after configuring this.
+
+The game still stores Wood, summons, and story progress locally using the original `moonveil_legacy_v02` save key. Logging into a Vioverse account does **not** sync those saves across devices yet. Online friend data is separate and server-backed.
+
+Backend SQL: [`supabase/moonlit_bonds.sql`](supabase/moonlit_bonds.sql).
 
 ## Player name and UI polish
 
