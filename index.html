@@ -921,6 +921,20 @@ body.vv-reduce-motion .vv-world-landmarks span{animation:none!important}
 @media(max-width:850px){.vv-v18-region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:580px){.vv-v18-mastery-summary{grid-template-columns:1fr}.vv-v18-mastery-summary>div{display:grid;grid-template-columns:1fr auto;align-items:center}.vv-v18-mastery-summary small{grid-column:1/-1}.vv-v18-branch{padding:13px}.vv-v18-node{grid-template-columns:37px minmax(0,1fr);gap:9px;padding:12px}.vv-v18-node-icon{width:35px;height:35px;font-size:19px}.vv-v18-node-top{align-items:flex-start;flex-direction:column;gap:5px}.vv-v18-region-grid{grid-template-columns:1fr}.vv-v18-region-art{min-height:95px}.vv-v18-region-body p{min-height:0}.vv-v18-beacon{grid-template-columns:42px minmax(0,1fr)}.vv-v18-beacon>button,.vv-v18-beacon>.vv-button{grid-column:2}.vv-v18-beacon>.vv-v18-complete{grid-column:2}.vv-v18-map-orb{right:0;top:0;font-size:90px}}
 
+
+.vv-v18-branch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.vv-v18-branch-grid .vv-v18-branch{margin:0;padding:15px}
+.vv-v18-branch-grid .vv-v18-branch-heading{align-items:flex-start}
+.vv-v18-branch-grid .vv-v18-branch-heading>span{font-size:26px}
+.vv-v18-branch-grid .vv-v18-node{grid-template-columns:36px minmax(0,1fr);gap:9px;padding:11px}
+.vv-v18-branch-grid .vv-v18-node-icon{width:34px;height:34px;font-size:18px}
+.vv-v18-branch-grid .vv-v18-node-top{align-items:flex-start;flex-direction:column;gap:5px}
+.vv-v18-branch-grid .vv-v18-node-top strong{font-size:13px}
+.vv-v18-branch-grid .vv-v18-node p{font-size:11px}
+.vv-v18-branch-grid .vv-v18-node .vv-button{white-space:normal;width:100%;font-size:10px;padding:9px 7px}
+.vv-world-astral-beacon{border-color:#efcf92b3;background:linear-gradient(105deg,#0b1427e8,#332d48b3 79%),url('assets/moonforest.svg') center/cover}
+@media(max-width:900px){.vv-v18-branch-grid{grid-template-columns:1fr}.vv-v18-branch-grid .vv-v18-branch{padding:17px}.vv-v18-branch-grid .vv-v18-node{grid-template-columns:44px minmax(0,1fr)}.vv-v18-branch-grid .vv-v18-node-icon{width:42px;height:42px}.vv-v18-branch-grid .vv-v18-node-top{align-items:center;flex-direction:row}}
+
 </style></head><body><header><div class="vv-header-inner">
 <div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE<span class="vv-brand-star" aria-hidden="true">✦</span></div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.7.0</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource" title="Gathered Moonwood"><span class="vv-resource-icon" aria-hidden="true">♣</span><span class="vv-resource-stack"><small>Moonwood</small><b id="wood">0</b></span></div><div class="vv-resource" title="Moon Essence"><span class="vv-resource-icon" aria-hidden="true">☾</span><span class="vv-resource-stack"><small>Essence</small><b id="essence">0</b></span></div><div class="vv-resource vv-stardust-resource" title="Stardust"><span class="vv-resource-icon" aria-hidden="true">✧</span><span class="vv-resource-stack"><small>Stardust</small><b id="stardust">0</b></span></div><div class="vv-resource" title="Lunar Butterflies"><span class="vv-resource-icon" aria-hidden="true">🦋</span><span class="vv-resource-stack"><small>Butterflies</small><b id="butterfly">0</b></span></div><div class="vv-resource vv-level-resource" title="Player level"><span class="vv-resource-icon" aria-hidden="true">✦</span><span class="vv-resource-stack"><small>Wanderer</small><b id="vv-level-caption">Lv. 1</b></span><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon" aria-hidden="true">♡</span><span class="vv-resource-stack"><small>Moonlit Bonds</small><b id="vv-bond-badge">Bonds</b></span></button></div>
@@ -1163,7 +1177,7 @@ function vvCharacters(){
  `<div class="vv-roster"><div class="vv-character-feature"><span class="vv-og-label">✦ ORIGINAL CHARACTER ART</span><img src="assets/seraphine.webp" alt="Seraphine, silver-haired Forest Whisperer"><div class="vv-feature-caption"><span class="vv-tag">✦ Epic · Woodcutting</span><h2>Seraphine</h2><p class="vv-muted">The Forest Whisperer · Guardian of the Moonwood</p></div></div>
  <div style="display:grid;gap:15px">
  ${vvPanel('✦ Companion Profile',`<p class="vv-muted">A quiet forest guide bound to the moonlit roots. Seraphine gathers resources automatically while your story unfolds.</p>${vvStat('Character level',level(s.xp))}${vvTrack(pct(s.xp))}${vvStat('Woodcutting', 'Lv. '+level(s.profXp))}${vvTrack(pct(s.profXp),null,true)}${vvStat('Gathering cycle',speed().toFixed(1)+' seconds')}${vvStat('Awakening',s.awakened?'✦ Awakening I':'Not yet awakened')}`,'ACTIVE')}
- ${vvPanel('✧ Branching Talents',`<div class="vv-skill-table"><div class="vv-skill-tile"><span>🌲</span><strong>Forest Fundamentals</strong><p>Gathering basics · learned</p></div><div class="vv-skill-tile"><span>⚡</span><strong>Swift Hands</strong><p>Improves gathering with mastery.</p></div><div class="vv-skill-tile"><span>🦋</span><strong>Moon Sight</strong><p>Future discovery talents.</p></div><div class="vv-skill-tile"><span>✦</span><strong>Forest Mastery</strong><p>Rank ${s.skillSpent}/5 · ${s.skill} points to spend</p></div></div><div class="vv-actions" style="margin-top:15px">${vvButton('Spend 1 skill point','skill',s.skill<1||s.skillSpent>=5)}${vvLink('Mastery Tree →','Mastery','ghost')}${vvLink('Awakening path →','Legacy','ghost')}</div>`)}
+ ${vvPanel('✧ Branching Talents',`<div class="vv-skill-table"><div class="vv-skill-tile"><span>🌲</span><strong>Forest Fundamentals</strong><p>Gathering basics · learned</p></div><div class="vv-skill-tile"><span>⚡</span><strong>Swift Hands</strong><p>Improves gathering with mastery.</p></div><div class="vv-skill-tile"><span>🦋</span><strong>Moon Sight</strong><p>Discoveries and rare finds are improved in Moonlit Mastery.</p></div><div class="vv-skill-tile"><span>✦</span><strong>Forest Mastery</strong><p>Rank ${s.skillSpent}/5 · ${s.skill} points to spend</p></div></div><div class="vv-actions" style="margin-top:15px">${vvButton('Spend 1 skill point','skill',s.skill<1||s.skillSpent>=5)}${vvLink('Mastery Tree →','Mastery','ghost')}${vvLink('Awakening path →','Legacy','ghost')}</div>`)}
  </div></div>
  <div class="vv-actions">${vvLink('✦ View full Collection →','Collection')}${vvLink('✧ Spirit Gacha →','Gacha','ghost')}</div>`+vvMegaBonds());
 }
@@ -1326,7 +1340,10 @@ function vvMegaAchievements(){
  ['⛏','Moonstone Finder',s.mega.materials.ore>0||s.mega.professions.mining>0,'Mine your first Moonstone.'],
  ['✦','Atelier Artisan',s.mega.crafted.length>=2,'Craft two unique items.'],
  ['♡','Forest Friend',Object.values(s.mega.bond).some(n=>n>=3),'Reach bond memory 3 with a companion.'],
- ['🌸','Grove Architect',VV_MEGA_SITES.every(x=>s.mega.sites[x.id]),'Restore all three living world sites.']
+ ['🌸','Grove Architect',VV_MEGA_SITES.every(x=>s.mega.sites[x.id]),'Restore all three living world sites.'],
+ ['🌌','Starwater Cartographer',s.mega.region.ridge&&s.mega.region.marsh&&s.mega.region.pool,'Chart all three sites beyond Silverleaf Bridge.'],
+ ['✦','Beacon Keeper',s.mega.region.beacon,'Restore the Astral Beacon.'],
+ ['🧠','Master of Moonwood',vvTalentTotal()>=9,'Learn every Moonlit Mastery talent.']
  ];
  return vvPanel('✦ Moonwood Achievements',`<p class="vv-muted">Cosmetic-only achievements. No forced daily streaks or progression rewards.</p><div class="vv-achievement-list">${list.map(([icon,name,done,desc])=>`<div class="vv-achievement ${done?'is-done':''}"><span>${icon}</span><div><strong>${name}</strong><small>${desc}</small></div><b>${done?'✓':'🔒'}</b></div>`).join('')}</div>`,list.filter(x=>x[2]).length+'/'+list.length);
 }
@@ -1378,7 +1395,7 @@ function vvV18Mastery(){
   }).join('')}</div></section>`;
  }).join('');
  return vvSection(vvHead('Build your own playstyle','Moonlit Mastery','Three connected talent paths with visible prerequisites, one-point upgrades and real gameplay effects. Choose a branch or mix paths.','✦ '+vvTalentTotal()+'/9 learned')+
-  `<div class="vv-v18-mastery-summary"><div><span>AVAILABLE SKILL POINTS</span><strong>${s.skill}</strong><small>Earned by Woodcutting levels</small></div><div><span>WOODCUTTING LEVEL</span><strong>Lv. ${level(s.profXp)}</strong><small>${Math.floor(pct(s.profXp))}% toward the next level</small></div><div><span>FOREST MASTERY</span><strong>${s.skillSpent}/5</strong><small>Legacy speed ranks also use skill points</small></div></div><div class="vv-v18-notice">Each talent costs 1 Skill Point. Later talents require the previous node in that branch and the listed Woodcutting level. Talent bonuses apply to real gathering, discovery, crafting and Working calculations. No paid resets.</div>${sections}`+
+  `<div class="vv-v18-mastery-summary"><div><span>AVAILABLE SKILL POINTS</span><strong>${s.skill}</strong><small>Earned by Woodcutting levels</small></div><div><span>WOODCUTTING LEVEL</span><strong>Lv. ${level(s.profXp)}</strong><small>${Math.floor(pct(s.profXp))}% toward the next level</small></div><div><span>FOREST MASTERY</span><strong>${s.skillSpent}/5</strong><small>Legacy speed ranks also use skill points</small></div></div><div class="vv-v18-notice">Each talent costs 1 Skill Point. Later talents require the previous node in that branch and the listed Woodcutting level. Talent bonuses apply to real gathering, discovery, crafting and Working calculations. No paid resets.</div><div class="vv-v18-branch-grid">${sections}</div>`+
   `${vvPanel('✧ Reconsider your path',`<p class="vv-muted">Refund only the nine new talents for 10 Moon Essence. Your older Forest Mastery speed ranks remain untouched.</p>${vvButton('Reset talent tree · 10 Essence','v18-respec',s.essence<10||vvTalentTotal()===0,'ghost')}`,'OPTIONAL RESPEC')}`+
   `${vvPanel('☾ Your next frontier',`<p class="vv-muted">The Starwater Expanse opens when Silverleaf Bridge is restored. Its materials unlock three new keepsakes in the Moonlit Atelier.</p>${vvLink('Open World Map →','World Map')}`)}`);
 }
@@ -1420,7 +1437,7 @@ function vvV18Explore(location,choice){
 }
 function vvV18Action(action){
  if(action.startsWith('v18-talent-')){
-  const id=action.slice(12),t=VV_V18_TALENTS.find(x=>x.id===id);if(!vvV18TalentCanBuy(t)){toast('That talent is locked. Check its level, prerequisite and Skill Point cost.');return true}
+  const id=action.slice(11),t=VV_V18_TALENTS.find(x=>x.id===id);if(!vvV18TalentCanBuy(t)){toast('That talent is locked. Check its level, prerequisite and Skill Point cost.');return true}
   s.v18.talents[id]=1;s.skill=Math.max(0,level(s.profXp)-1-s.skillSpent-vvTalentTotal());note('✦ Mastery learned: '+t.name+'.');toast('✦ '+t.name+' learned. Its gameplay effect is now active.');window.vvAudio?.effect('level');return true;
  }
  if(action.startsWith('v18-ridge-')){vvV18Explore('ridge',action.slice(10));return true}
