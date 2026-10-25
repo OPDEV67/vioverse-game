@@ -24,7 +24,7 @@ function vvTree(){
  <div class="vv-tree-connect">╲ ✧ ╱</div>
  <div class="vv-tree-node gold"><strong>✦ Forest Mastery</strong><small>Rank ${s.skillSpent} / 5</small><div style="margin-top:10px">${vvButton('Spend skill point','skill',s.skill<1||s.skillSpent>=5)}</div></div>
  <p class="vv-muted" style="text-align:center;margin:10px 0">Permanent upgrades · earns points from Woodcutting levels.</p>
- ${vvButton('↶ Return to portrait','flip',false,'ghost')}`;
+ ${vvButton('↶ Return to portrait','flip',false,'ghost')}</div>`;
 }
 function vvHeroCard(){
  return `<article class="vv-companion epic" id="vv-seraphine-card" aria-label="Seraphine companion card">
@@ -108,8 +108,8 @@ function vvLegacy(){
  `<div class="vv-scene"><div class="vv-scene-foreground"><div class="vv-kicker">${s.restored?'An awakened world':'An ancient promise'}</div><h2>${s.restored?'Moonwood Reborn':'The Ancient Moonwood'}</h2><p>What was forgotten beneath the roots can bloom again.</p></div></div>
  <div class="vv-columns" style="margin-top:18px">
  ${vvPanel('✧ The Restoration Path',milestones.map((x,i)=>`<div class="vv-progress-step ${x[2]?'done':''}"><div class="vv-progress-number">${x[2]?'✓':i+1}</div><div><h3>${x[0]}</h3><p class="vv-muted">${x[1]}</p></div></div>`).join(''))}
- <div style="display:grid;gap:16px">${vvPanel('✦ Seraphine · Awakening I',`<p class="vv-muted">Awaken the Forest Whisperer and enrich every gathering cycle.</p>${vvStat('Wood','${fmt(s.wood)} / 20')}${vvStat('Essence','${fmt(s.essence)} / 8')}${vvStat('Lunar Butterfly','${fmt(s.butterfly)} / 1')}<div class="vv-actions" style="margin-top:16px">${s.awakened?'<span class="vv-tag">✓ Awakened</span>':vvButton('Awaken Seraphine','awaken',!readyAwake)}</div>`)}
- ${vvPanel('☾ Restore the Moonwood',`<p class="vv-muted">The Grove transforms forever once the Moonwood is reborn.</p>${vvStat('Wood','${fmt(s.wood)} / 40')}${vvStat('Essence','${fmt(s.essence)} / 12')}<div class="vv-actions" style="margin-top:16px">${s.restored?'<span class="vv-tag">✓ Grove restored</span>':vvButton('Restore Ancient Tree','restore',!readyRestore)}</div>`)}
+ <div style="display:grid;gap:16px">${vvPanel('✦ Seraphine · Awakening I',`<p class="vv-muted">Awaken the Forest Whisperer and enrich every gathering cycle.</p>${vvStat('Wood',fmt(s.wood)+' / 20')}${vvStat('Essence',fmt(s.essence)+' / 8')}${vvStat('Lunar Butterfly',fmt(s.butterfly)+' / 1')}<div class="vv-actions" style="margin-top:16px">${s.awakened?'<span class="vv-tag">✓ Awakened</span>':vvButton('Awaken Seraphine','awaken',!readyAwake)}</div>`)}
+ ${vvPanel('☾ Restore the Moonwood',`<p class="vv-muted">The Grove transforms forever once the Moonwood is reborn.</p>${vvStat('Wood',fmt(s.wood)+' / 40')}${vvStat('Essence',fmt(s.essence)+' / 12')}<div class="vv-actions" style="margin-top:16px">${s.restored?'<span class="vv-tag">✓ Grove restored</span>':vvButton('Restore Ancient Tree','restore',!readyRestore)}</div>`)}
  ${vvPanel('✎ Next Step',`<p class="vv-muted">${nextStep()}</p>${vvLink('Return to Expeditions →','Expeditions','ghost')}`)}
  </div></div>`);
 }
