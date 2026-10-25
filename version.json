@@ -1,6 +1,6 @@
 {
-  "version": "0.6.0",
-  "build": "2026-10-25-v06-visual",
-  "title": "Enchanted Interface \u2014 Home & Discovery Overhaul",
-  "notes": "Ornate companion cards, glowing gothic-violet navigation, premium fantasy header, rarity-colored locked slots, redesigned discovery artwork and panels. Gathering, expeditions, Awakening, restoration, saves and online update checker retained."
+  "version": "0.8.0",
+  "build": "2026-10-25-v08-auto-update",
+  "title": "Seamless Auto Updates",
+  "notes": "Checks the published version every 5 seconds when the tab is active, saves and reloads on a newer release; waits until you leave Expeditions. Manual update remains available."
 }
