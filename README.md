@@ -1,15 +1,11 @@
 # Vioverse
 
-Fantasy idle gathering and exploration game.
+Vioverse v0.6 — Enchanted Interface.
 
-## Play
-Publish the repository root with GitHub Pages and visit https://opdev67.github.io/vioverse-game/
+Open `index.html` locally to play. Host the repository root on GitHub Pages for online updates. Keep `assets/` and `version.json` next to `index.html`.
 
-## Publishing updates
-1. Update `index.html` and any assets.
-2. Increase `version` in `version.json`, set a new unique `build`, and write user-facing `notes`.
-3. Commit and push all changed files to `main`.
-4. Wait for GitHub Pages deployment to succeed.
-5. Players can select **Update Game → Check for Updates → Update Game Now**.
+## Deployment
+Copy the extracted files into the GitHub Desktop clone of `vioverse-game`, commit, and push to `main`. GitHub Pages will deploy automatically when configured.
 
-Saves are stored in localStorage on the same browser and origin. Back up save data before major migrations.
+## Saves
+Uses the existing `moonveil_legacy_v02` browser localStorage key for continuity. Do not clear site data. Local file saves and GitHub Pages saves are separate origins.
