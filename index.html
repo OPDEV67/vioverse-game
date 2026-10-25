@@ -1125,8 +1125,8 @@ function vvSanitizeMega(raw){
  const work={};for(const id of allowed)work[id]=timestamp(x.lastWork?.[id]);
  const xp={};for(const id of allowed)xp[id]=count(x.professions?.[id]);
  const bond={},bondLast={};for(const name of names){bond[name]=count(x.bond?.[name],5);bondLast[name]=timestamp(x.bondLast?.[name])}
- const crafted=Array.isArray(x.crafted)?[...new Set(x.crafted.filter(id=>VV_MEGA_ITEMS.some(v=>v.id===id)))]:[];
- const equipped=crafted.includes(x.equipped)&&VV_MEGA_ITEMS.some(v=>v.id===x.equipped&&v.equip)?x.equipped:'';
+ const crafted=Array.isArray(x.crafted)?[...new Set(x.crafted.filter(id=>['lantern','talisman','hook','charm'].includes(id)))]:[];
+ const equipped=crafted.includes(x.equipped)&&['talisman','hook','charm'].includes(x.equipped)?x.equipped:'';
  const sites={};for(const id of ['lanternGrove','silverBridge','moonGarden'])sites[id]=x.sites?.[id]===true;
  return {materials:{ore:count(x.materials?.ore),fish:count(x.materials?.fish),herbs:count(x.materials?.herbs)},lastWork:work,professions:xp,crafted,equipped,sites,bond,bondLast,history:Array.isArray(x.history)?x.history.filter(v=>typeof v==='string').slice(0,12):[]};
 }
@@ -1218,7 +1218,7 @@ function vvMegaAchievements(){
  ['♡','Forest Friend',Object.values(s.mega.bond).some(n=>n>=3),'Reach bond memory 3 with a companion.'],
  ['🌸','Grove Architect',VV_MEGA_SITES.every(x=>s.mega.sites[x.id]),'Restore all three living world sites.']
  ];
- return vvPanel('✦ Moonwood Achievements',`<p class="vv-muted">Cosmetic-only achievements. No forced daily streaks or progression rewards.</p><div class="vv-achievement-list">${list.map(([icon,name,done,desc])=>`<div class="vv-achievement ${done?'is-done':''}"><span>${icon}</span><div><strong>${name}</strong><small>${desc}</small></div><b>${done?'✓':'🔒'}</b></div>`).join('')}</div>`,'${list.filter(x=>x[2]).length}/'+list.length);
+ return vvPanel('✦ Moonwood Achievements',`<p class="vv-muted">Cosmetic-only achievements. No forced daily streaks or progression rewards.</p><div class="vv-achievement-list">${list.map(([icon,name,done,desc])=>`<div class="vv-achievement ${done?'is-done':''}"><span>${icon}</span><div><strong>${name}</strong><small>${desc}</small></div><b>${done?'✓':'🔒'}</b></div>`).join('')}</div>`,list.filter(x=>x[2]).length+'/'+list.length);
 }
 document.addEventListener('click',event=>{
  const control=event.target.closest('[data-action^="mega-"]');if(!control)return;
