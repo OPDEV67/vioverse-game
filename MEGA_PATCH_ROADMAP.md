@@ -1,4 +1,38 @@
-# The Forest Remembers — Mega Patch v1.7.0
+# Moonlit Mastery & Starwater Expanse — v1.8.0
+
+This patch first fixes a startup regression introduced during skill-point normalization: startup and imported-save calculations now derive the profession level directly, without reading the `level` constant before its initialization. The original `moonveil_legacy_v02` save key is unchanged.
+
+## Implemented in v1.8.0
+
+- **Moonlit Mastery:** Nine permanent talents in three prerequisite-linked branches: Gatherer, Wayfinder and Artisan. Each talent costs one Skill Point, shows its level/prerequisite lock, and has a real gameplay effect. A 10 Moon Essence respec refunds these new talents without resetting older Forest Mastery speed ranks.
+- **Gatherer:** +5% Wood, +5% Essence, and Lunar Butterfly discoveries every 30 cycles.
+- **Wayfinder:** Discoveries every 16 cycles, +1 Essence on discoveries, and an optional +1 Star Shard on the first Starfall Ridge mine choice.
+- **Artisan:** +1 material every third manual profession job and one-unit discounts for recipe ingredients whose base cost is at least five. Starforged also improves selected keepsake bonuses and the fishing-hook cooldown.
+- **Starwater Expanse:** World Map unlocks after Silverleaf Bridge restoration. Three one-time exploration choices offer different material/story outcomes at Starfall Ridge, Whispering Marsh and Prism Pool.
+- **Astral Beacon finale:** Chart all three locations and spend 4 Star Shards, 4 Glowcaps and 1 Prism Crystal to restore the Beacon. Completion is persisted and shown in Home, Missions and Journal.
+- **Crafting expansion:** Adds Star Shards, Glowcaps and Prism Crystals plus the Astral Compass, Starfall Pick and Glowcap Lantern keepsakes. Existing one-item equipment rules remain.
+- **Persistence and checks:** Sanitizes new materials, equipment IDs, route choices and talent IDs; save import recalculates remaining Skill Points. The dependency-free regression script now checks startup ordering, talent prerequisites and accounting, discounts, map gating, rewards, sanitization and Beacon completion.
+
+## Remaining work — not represented as complete
+
+- Full-resolution original portraits and expression sheets for Elowen, Lira, Nyx and Ciel; existing smaller portrait assets remain.
+- Production MP3 soundtrack / high-fidelity Foley beyond the procedural Web Audio soundtrack.
+- Profession-specific mastery trees beyond the nine shared Moonlit Mastery talents; additional crafting recipes, equipment slots and deeper region chapters.
+- Secure server-side mailbox claims, full cloud-save sync with merge/conflict resolution, and account-deletion workflows.
+- Truly shared cooperative projects, online social events and push notifications (these require backend implementation and permissions).
+- Full hands-on cross-browser/mobile and accessibility playtesting, performance profiling, and anti-tampering guarantees for locally saved rewards.
+- Large-scale events and seasonal content with persistent server-side delivery.
+
+## Balance and preservation guarantees
+
+- The existing save key remains `moonveil_legacy_v02`; the patch does not intentionally reset existing player progress.
+- New Mastery points use the existing profession-level Skill Point pool. New talents and old Forest Mastery ranks are accounted for separately so spending a point cannot duplicate it.
+- The Astral Beacon is a one-time resource-gated story restoration. Each Starwater location can be explored only once per save.
+- The local-save model does not securely prevent user-controlled resets, edits or clock changes; rewards and cooldowns are not server-verified.
+
+---
+
+# The Forest Remembers — Mega Patch v1.7.0 (previous release)
 
 This release turns several previously decorative systems into a connected gameplay loop while preserving the `moonveil_legacy_v02` browser save.
 
@@ -17,7 +51,7 @@ This release turns several previously decorative systems into a connected gamepl
 
 - Original full-resolution portraits and expression sheets for Elowen, Lira, Nyx and Ciel; the game still uses its existing small portrait SVGs.
 - Production MP3 soundtrack / high-fidelity Foley instead of procedural Web Audio.
-- Deep branching talent paths for every profession, crafting recipe expansion, character animation, and more story chapters.
+- Profession-specific mastery trees beyond the shared nine-node Moonlit Mastery, crafting recipes beyond the three new keepsakes, character animation, and deeper story chapters.
 - Secure server-side mailbox claims, full cloud save sync with merge/conflict resolution and account deletion workflows.
 - Truly shared cooperative projects, online social events and push notifications (these require backend implementation and permissions).
 - Full cross-browser/mobile and accessibility playtesting, performance profiling, and anti-tampering guarantees for locally saved rewards.
