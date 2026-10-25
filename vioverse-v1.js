@@ -12,7 +12,7 @@ function vvSection(content){return `<div class="vv-view">${content}</div>`}
 function vvLocked(n,i){
  const rarity=['rare','epic','mythic','legendary'][i], desc=['A new companion awaits beneath the silver moon.','Different stories and rare traits will emerge.','More companions will join your forest journey.','Legends awaken beyond the farthest grove.'][i];
  const open=level(s.xp)>=n;
- return `<article class="vv-companion ${rarity}" aria-label="Companion slot ${i+2}"><div class="vv-cardface vv-locked"><div class="vv-locked-art" aria-hidden="true"></div><span class="vv-locked-symbol">♙</span><h3>Companion ${i+2}</h3><p>${open?'Level requirement reached':'Unlocks at Player Lv. '+n}</p><div class="vv-ornament" style="width:100%;margin:9px 0"><span>✧</span></div><p>${desc}</p><span class="vv-lock-pill">${open?'◇ Companion coming later':'🔒 Locked'}</span></div></article>`;
+ return `<article class="vv-companion ${rarity}" aria-label="Companion slot ${i+2}"><div class="vv-cardface vv-locked"><div class="vv-locked-art" aria-hidden="true"></div><span class="vv-locked-symbol">♙</span><h3>Companion ${i+2}</h3><p>${open?'Level requirement reached':'Unlocks at Player Lv. '+n}</p><div class="vv-ornament" style="width:100%;margin:9px 0"><span>✧</span></div><p>${desc}</p><span class="vv-lock-pill">${open?'◇ Companion coming later':'🔒 Locked'}</span></div><div class="vv-frame-detail" aria-hidden="true"></div></article>`;
 }
 function vvTree(){
  return `<div class="vv-cardface vv-treeface" data-vv-back ${flipped?'':'hidden'}>
@@ -39,7 +39,7 @@ function vvHeroCard(){
  ${vvTrack(s.progress/speed()*100,'gather-progress',true)}
  ${vvButton('✦ View skill tree','flip')}</div>
  </div>
- ${vvTree()}</article>`;
+ ${vvTree()}<div class="vv-frame-detail" aria-hidden="true"></div></article>`;
 }
 function vvHome(){
  const cards=`<div class="vv-card-stage" id="vv-card-scroll"><div class="vv-cards">${vvHeroCard()}${[5,10,15,30].map(vvLocked).join('')}</div></div>`;
@@ -59,7 +59,7 @@ function vvCharacters(){
  ${vvPanel('✦ Companion Profile',`<p class="vv-muted">A quiet forest guide bound to the moonlit roots. Seraphine gathers resources automatically while your story unfolds.</p>${vvStat('Character level',level(s.xp))}${vvTrack(pct(s.xp))}${vvStat('Woodcutting', 'Lv. '+level(s.profXp))}${vvTrack(pct(s.profXp),null,true)}${vvStat('Gathering cycle',speed().toFixed(1)+' seconds')}${vvStat('Awakening',s.awakened?'✦ Awakening I':'Not yet awakened')}`,'ACTIVE')}
  ${vvPanel('✧ Branching Talents',`<div class="vv-skill-table"><div class="vv-skill-tile"><span>🌲</span><strong>Forest Fundamentals</strong><p>Gathering basics · learned</p></div><div class="vv-skill-tile"><span>⚡</span><strong>Swift Hands</strong><p>Improves gathering with mastery.</p></div><div class="vv-skill-tile"><span>🦋</span><strong>Moon Sight</strong><p>Future discovery talents.</p></div><div class="vv-skill-tile"><span>✦</span><strong>Forest Mastery</strong><p>Rank ${s.skillSpent}/5 · ${s.skill} points to spend</p></div></div><div class="vv-actions" style="margin-top:15px">${vvButton('Spend 1 skill point','skill',s.skill<1||s.skillSpent>=5)}${vvLink('Awakening path →','Legacy','ghost')}</div>`)}
  </div></div>
- <div class="vv-ornament"><span>✦ COMPANION ROSTER ✦</span></div><div class="vv-grid">${[5,10,15].map((n,i)=>`<div class="vv-panel" style="text-align:center"><span style="font-size:27px;color:${['#9dc2ff','#dea6ff','#ff9bd7'][i]}">✦</span><h3>Companion Slot ${i+2}</h3><p class="vv-muted">Player Lv. ${n} milestone · character recruitment is planned.</p><span class="vv-tag">${level(s.xp)>=n?'Milestone reached':'Locked'}</span></div>`).join('')}</div>`);
+ <div class="vv-ornament"><span>✦ COMPANION ROSTER ✦</span></div><div class="vv-grid">${[5,10,15,30].map((n,i)=>`<div class="vv-panel" style="text-align:center"><span style="font-size:27px;color:${['#9dc2ff','#dea6ff','#ff9bd7'][i]}">✦</span><h3>Companion Slot ${i+2}</h3><p class="vv-muted">Player Lv. ${n} milestone · character recruitment is planned.</p><span class="vv-tag">${level(s.xp)>=n?'Milestone reached':'Locked'}</span></div>`).join('')}</div>`);
 }
 function vvExpeditions(){
  const ev=activeEvent();
