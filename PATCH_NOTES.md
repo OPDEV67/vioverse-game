@@ -1,5 +1,13 @@
 # Vioverse Patch Notes
 
+## v1.5.3 — Moonwood Audio
+- Added in-game audio settings with a Sound button, music / ambience / SFX volume sliders, mute control, and saved preferences.
+- Audio begins only after player opt-in and pauses when the tab is hidden.
+- Original Whispers of Moonwood theme, forest ambience, quest, level-up, discovery and friend-accepted sound effects are wired to gameplay.
+- Added reproducible GitHub Actions workflow to synthesize and publish the six original MP3s; a Web Audio fallback works before the assets are available.
+- Existing local saves remain compatible.
+
+
 ## v1.5.2 — Character & Spirit Collection
 - New Collection tab on desktop and mobile More menu: all five story characters and four summonable spirits in one archive.
 - Named story companions unlock automatically at Player Levels 5, 10, 15 and 30; collection cards show their stories and special abilities.
