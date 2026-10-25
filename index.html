@@ -1309,6 +1309,104 @@ document.addEventListener('click',event=>{
  save();render();
 },true);
 
+
+/* v1.8.0 — Moonlit Mastery and the Starwater Expanse */
+const VV_V18_TALENTS=[
+ {id:'rooted-hands',branch:'Gatherer',icon:'🌳',name:'Rooted Hands',level:2,requires:'',desc:'+5% Moonwood from every automatic gathering cycle.'},
+ {id:'essence-whisper',branch:'Gatherer',icon:'✧',name:'Essence Whisper',level:4,requires:'rooted-hands',desc:'+5% Moon Essence from every source.'},
+ {id:'lunar-wing',branch:'Gatherer',icon:'🦋',name:'Lunar Wing',level:6,requires:'essence-whisper',desc:'Find a Lunar Butterfly every 30 cycles instead of 38.'},
+ {id:'keen-eye',branch:'Wayfinder',icon:'👁',name:'Keen Eye',level:2,requires:'',desc:'Discoveries occur every 16 cycles instead of 18.'},
+ {id:'echo-lore',branch:'Wayfinder',icon:'📜',name:'Echo Lore',level:4,requires:'keen-eye',desc:'+1 Moon Essence whenever a magical discovery is recorded.'},
+ {id:'star-scout',branch:'Wayfinder',icon:'🌌',name:'Star Scout',level:6,requires:'echo-lore',desc:'Find one extra Star Shard when first exploring Starfall Ridge.'},
+ {id:'resourceful-hands',branch:'Artisan',icon:'🔨',name:'Resourceful Hands',level:2,requires:'',desc:'+1 material on every third manual profession action.'},
+ {id:'frugal-recipes',branch:'Artisan',icon:'🧵',name:'Frugal Recipes',level:4,requires:'resourceful-hands',desc:'Crafting recipes cost one fewer unit of each material whose listed cost is 5 or more.'},
+ {id:'starforged',branch:'Artisan',icon:'✦',name:'Starforged',level:6,requires:'frugal-recipes',desc:'Improve your equipped item bonus by another 1% and refine the Silver Fishing Hook.'}
+];
+function vvSanitizeV18(raw){
+ const x=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
+ const source=x.talents&&typeof x.talents==='object'&&!Array.isArray(x.talents)?x.talents:{};
+ const ids=['rooted-hands','essence-whisper','lunar-wing','keen-eye','echo-lore','star-scout','resourceful-hands','frugal-recipes','starforged'];
+ const talents={};for(const id of ids)talents[id]=source[id]===1||source[id]===true?1:0;
+ const region=x.region&&typeof x.region==='object'&&!Array.isArray(x.region)?x.region:{};
+ const choices=region.choices&&typeof region.choices==='object'&&!Array.isArray(region.choices)?region.choices:{};
+ return {talents,region:{ridge:region.ridge===true,marsh:region.marsh===true,pool:region.pool===true,beacon:region.beacon===true,choices:{ridge:['mine','map'].includes(choices.ridge)?choices.ridge:'',marsh:['harvest','help'].includes(choices.marsh)?choices.marsh:'',pool:['take','listen'].includes(choices.pool)?choices.pool:''}}};
+}
+function vvTalentRank(id){return Number(s.v18?.talents?.[id])||0}
+function vvTalentTotal(){return Object.values(s?.v18?.talents||{}).reduce((sum,n)=>sum+(Number(n)||0),0)}
+function vvV18TalentCanBuy(t){return !!t&&!vvTalentRank(t.id)&&s.skill>0&&level(s.profXp)>=t.level&&(!t.requires||!!vvTalentRank(t.requires))}
+function vvV18TalentReason(t){if(vvTalentRank(t.id))return '✦ Learned';if(level(s.profXp)<t.level)return 'Requires Woodcutting Lv. '+t.level;if(t.requires&&!vvTalentRank(t.requires))return 'Requires '+VV_V18_TALENTS.find(x=>x.id===t.requires)?.name;if(s.skill<1)return 'Need 1 Skill Point';return 'Ready · 1 Skill Point'}
+function vvV18Mastery(){
+ const branches=[{id:'Gatherer',icon:'🌳',subtitle:'Turn patient work into better yields and rarer finds.'},{id:'Wayfinder',icon:'🌌',subtitle:'Listen closely, find discoveries and read the star paths.'},{id:'Artisan',icon:'🔨',subtitle:'Make manual work more rewarding and crafting more efficient.'}];
+ const sections=branches.map(branch=>{
+  const nodes=VV_V18_TALENTS.filter(t=>t.branch===branch.id);
+  return `<section class="vv-v18-branch"><div class="vv-v18-branch-heading"><span>${branch.icon}</span><div><h3>${branch.id}</h3><p>${branch.subtitle}</p></div></div><div class="vv-v18-nodes">${nodes.map((t,i)=>{
+   const learned=!!vvTalentRank(t.id),ready=vvV18TalentCanBuy(t),reason=vvV18TalentReason(t);
+   return `<article class="vv-v18-node ${learned?'is-learned':ready?'is-ready':'is-locked'}"><div class="vv-v18-node-icon">${learned?'✓':t.icon}</div><div class="vv-v18-node-main"><div class="vv-v18-node-top"><strong>${t.name}</strong><span>${learned?'RANK 1/1':'NODE '+(i+1)}</span></div><p>${t.desc}</p><small>${reason}</small>${!learned?vvButton('Learn · 1 point','v18-talent-'+t.id,!ready):'<span class="vv-v18-learned">✦ PERMANENTLY LEARNED</span>'}</div></article>`;
+  }).join('')}</div></section>`;
+ }).join('');
+ return vvSection(vvHead('Build your own playstyle','Moonlit Mastery','Three connected talent paths with visible prerequisites, one-point upgrades and real gameplay effects. Choose a branch or mix paths.','✦ '+vvTalentTotal()+'/9 learned')+
+  `<div class="vv-v18-mastery-summary"><div><span>AVAILABLE SKILL POINTS</span><strong>${s.skill}</strong><small>Earned by Woodcutting levels</small></div><div><span>WOODCUTTING LEVEL</span><strong>Lv. ${level(s.profXp)}</strong><small>${Math.floor(pct(s.profXp))}% toward the next level</small></div><div><span>FOREST MASTERY</span><strong>${s.skillSpent}/5</strong><small>Legacy speed ranks also use skill points</small></div></div><div class="vv-v18-notice">Each talent costs 1 Skill Point. Later talents require the previous node in that branch and the listed Woodcutting level. Talent bonuses apply to real gathering, discovery, crafting and Working calculations. No paid resets.</div>${sections}`+
+  `${vvPanel('✧ Reconsider your path',`<p class="vv-muted">Refund only the nine new talents for 10 Moon Essence. Your older Forest Mastery speed ranks remain untouched.</p>${vvButton('Reset talent tree · 10 Essence','v18-respec',s.essence<10||vvTalentTotal()===0,'ghost')}`,'OPTIONAL RESPEC')}`+
+  `${vvPanel('☾ Your next frontier',`<p class="vv-muted">The Starwater Expanse opens when Silverleaf Bridge is restored. Its materials unlock three new keepsakes in the Moonlit Atelier.</p>${vvLink('Open World Map →','World Map')}`)}`);
+}
+function vvV18WorldMap(){
+ const unlocked=!!s.mega.sites.silverBridge,r=s.mega.region;
+ const places=[
+  {id:'ridge',icon:'☄',name:'Starfall Ridge',desc:'Meteorite fragments ring like tiny bells where the stars touched the earth.',reward:'4 Star Shards',actions:[['Mine fallen starstone','mine'],['Map the constellation','map']]},
+  {id:'marsh',icon:'🍄',name:'Whispering Marsh',desc:'Glowcaps bloom around a patient marsh spirit who remembers the old sky.',reward:'4–5 Glowcaps',actions:[['Harvest the mooncaps','harvest'],['Help the marsh spirit','help']]},
+  {id:'pool',icon:'💎',name:'Prism Pool',desc:'The water mirrors constellations that cannot be seen from the forest floor.',reward:'1–2 Prism Crystals',actions:[['Take a prism crystal','take'],['Listen to the starwater','listen']]}
+ ];
+ const cards=places.map(p=>{
+  const done=!!r[p.id],choice=r.choices[p.id];
+  const labels={mine:'STARSTONE',map:'CONSTELLATION',harvest:'MOONCAPS',help:'SPIRIT ALLY',take:'PRISM CRYSTAL',listen:'STARWATER ECHO'};
+  const actionLabels=done?`<span class="vv-v18-complete">✓ EXPLORED · ${labels[choice]||'CHARTED'}</span>`:p.actions.map(([label,key])=>vvButton(label,'v18-'+p.id+'-'+key,!unlocked,'ghost')).join('');
+  return `<article class="vv-v18-region-card ${done?'is-complete':''} ${unlocked?'':'is-locked'}"><div class="vv-v18-region-art"><span>${p.icon}</span><small>${done?'✦ CHARTED':unlocked?'UNKNOWN PATH':'🔒 SEALED'}</small></div><div class="vv-v18-region-body"><h3>${p.name}</h3><p>${p.desc}</p><div class="vv-v18-region-reward">✧ Possible find: ${p.reward}</div><div class="vv-v18-region-actions">${actionLabels}</div></div></article>`;
+ }).join('');
+ const canRestore=unlocked&&r.ridge&&r.marsh&&r.pool&&!r.beacon&&vvMegaCanAfford({shards:4,glowcap:4,crystal:1});
+ const beacon=r.beacon?'<div class="vv-v18-beacon is-awake"><span>✦</span><div><h3>The Astral Beacon Is Awake</h3><p>Its light marks your place among the stars. The Starwater chapter is complete, and the new keepsakes can be crafted in Inventory.</p></div><span class="vv-v18-complete">RESTORED</span></div>':`<div class="vv-v18-beacon"><span>🌌</span><div><h3>Restore the Astral Beacon</h3><p>Chart all three sites, then restore the beacon using 4 Star Shards, 4 Glowcaps and 1 Prism Crystal.</p><small>Cost: 4 Star Shards · 4 Glowcaps · 1 Prism Crystal</small></div>${vvButton('Restore Beacon','v18-beacon',!canRestore)}</div>`;
+ return vvSection(vvHead('Beyond the silver bridge','World Map','A new chapter of exploration, resource choices and a permanent star-lit landmark.','🌌 '+(r.beacon?'CHAPTER III COMPLETE':unlocked?'CHAPTER II · STARWATER':'CHAPTER II · LOCKED'))+
+  `<div class="vv-v18-map-hero ${r.beacon?'is-awake':''}"><div class="vv-v18-map-orb" aria-hidden="true">${r.beacon?'✦':'☾'}</div><div class="vv-kicker">THE STARWATER EXPANSE</div><h2>${r.beacon?'A Beacon Among the Stars':unlocked?'Where the River Meets the Sky':'A Path Yet to Be Built'}</h2><p>${unlocked?'Across Silverleaf Bridge, the river reflects a second sky. Chart three hidden places and restore the Astral Beacon.':"Restore Silverleaf Bridge in the Moonwood Legacy first. The Starwater Expanse then opens as a permanent second chapter."}</p><div class="vv-v18-map-stats"><span>☄ ${r.ridge?'1':'0'}/1 Ridge</span><span>🍄 ${r.marsh?'1':'0'}/1 Marsh</span><span>💎 ${r.pool?'1':'0'}/1 Pool</span><span>✦ ${r.beacon?'Beacon restored':'Beacon dormant'}</span></div></div><div class="vv-v18-region-grid">${cards}</div>${beacon}${vvPanel('✧ Starwater Keepsakes',`<p class="vv-muted">The three new recipes appear in Inventory. Explore the region to collect their unique materials, then choose which single keepsake to equip.</p>${vvLink('Open Moonlit Atelier →','Inventory')}`)}`);
+}
+function vvV18Explore(location,choice){
+ const r=s.mega.region;if(!s.mega.sites.silverBridge){toast('Restore Silverleaf Bridge in Legacy to unlock Starwater.');return}
+ if(!['ridge','marsh','pool'].includes(location)||r[location])return;
+ if(location==='ridge'){
+  if(!['mine','map'].includes(choice))return;
+  s.mega.materials.shards+=4;if(choice==='map')s.mega.materials.crystal+=1;if(choice==='mine'&&vvTalentRank('star-scout'))s.mega.materials.shards+=1;
+  r.ridge=true;r.choices.ridge=choice;vvMegaLog('☄ Starfall Ridge charted: +4 Star Shards'+(choice==='map'?' and +1 Prism Crystal':'')+(choice==='mine'&&vvTalentRank('star-scout')?' and +1 Star Shard from Star Scout':'')+'.');
+ }else if(location==='marsh'){
+  if(!['harvest','help'].includes(choice))return;
+  s.mega.materials.glowcap+=choice==='harvest'?5:4;if(choice==='help'){s.essence+=2;s.spiritTrust=(Number(s.spiritTrust)||0)+1}
+  r.marsh=true;r.choices.marsh=choice;vvMegaLog(choice==='help'?'🍄 You helped the marsh spirit: +4 Glowcaps and +2 Moon Essence.':'🍄 Whispering Marsh harvested: +5 Glowcaps.');
+ }else{
+  if(!['take','listen'].includes(choice))return;
+  s.mega.materials.crystal+=choice==='take'?2:1;if(choice==='listen'){s.essence+=3;s.moonPath=true}
+  r.pool=true;r.choices.pool=choice;vvMegaLog(choice==='listen'?'💎 You listened to the starwater: +1 Prism Crystal and +3 Moon Essence.':'💎 Prism Pool discovered: +2 Prism Crystals.');
+ }
+ toast('✦ '+({ridge:'Starfall Ridge',marsh:'Whispering Marsh',pool:'Prism Pool'}[location])+' recorded in your Journal.');window.vvAudio?.effect('discovery');
+}
+function vvV18Action(action){
+ if(action.startsWith('v18-talent-')){
+  const id=action.slice(12),t=VV_V18_TALENTS.find(x=>x.id===id);if(!vvV18TalentCanBuy(t)){toast('That talent is locked. Check its level, prerequisite and Skill Point cost.');return true}
+  s.v18.talents[id]=1;s.skill=Math.max(0,level(s.profXp)-1-s.skillSpent-vvTalentTotal());note('✦ Mastery learned: '+t.name+'.');toast('✦ '+t.name+' learned. Its gameplay effect is now active.');window.vvAudio?.effect('level');return true;
+ }
+ if(action.startsWith('v18-ridge-')){vvV18Explore('ridge',action.slice(10));return true}
+ if(action.startsWith('v18-marsh-')){vvV18Explore('marsh',action.slice(10));return true}
+ if(action.startsWith('v18-pool-')){vvV18Explore('pool',action.slice(9));return true}
+ if(action==='v18-beacon'){
+  const r=s.mega.region;if(!s.mega.sites.silverBridge||!r.ridge||!r.marsh||!r.pool||r.beacon)return true;
+  if(!vvMegaSpend({shards:4,glowcap:4,crystal:1})){toast('Collect the required Starwater materials first.');return true}
+  r.beacon=true;vvMegaLog('🌌 The Astral Beacon was restored. A second chapter now shines over Moonwood.');toast('🌌 Astral Beacon restored! The Starwater chapter is complete.');window.vvAudio?.effect('quest');return true;
+ }
+ if(action==='v18-respec'){
+  if(vvTalentTotal()===0||s.essence<10)return true;
+  if(!confirm('Reset all Moonlit Mastery talents for 10 Moon Essence? Forest Mastery ranks will stay.'))return true;
+  s.essence-=10;s.v18.talents=vvSanitizeV18({}).talents;s.skill=Math.max(0,level(s.profXp)-1-s.skillSpent);note('✧ Moonlit Mastery talents reset.');toast('Mastery reset. Skill Points refunded.');return true;
+ }
+ return false;
+}
+document.addEventListener('click',event=>{const control=event.target.closest('[data-action^="v18-"]');if(!control)return;event.preventDefault();event.stopImmediatePropagation();if(control.disabled)return;if(vvV18Action(control.dataset.action)){save();render()}},true);
+
 function vvGathering(){
  const active=level(s.profXp),player=level(s.xp);
  const primary=`<div class="vv-panel vv-main-work"><div class="vv-work-title"><span>🌳</span><div><span class="vv-kicker">AUTOMATIC PROFESSION</span><h3>Woodcutting · Lv. ${active}</h3><p class="vv-muted">Seraphine keeps gathering Moonwood, Woodcutting XP and rare discoveries while you're away (up to eight hours).</p></div></div>
