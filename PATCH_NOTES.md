@@ -1,5 +1,17 @@
 # Vioverse Patch Notes
 
+## v1.7.0 — The Forest Remembers (Mega Patch)
+- Introduced playable optional manual Mining (Lv. 5), Fishing (Lv. 10), and Herbalism (Lv. 15), all with their own resources, profession XP and cooldowns; existing Woodcutting keeps gathering automatically.
+- Added three new inventory resources and four craftable, one-time keepsakes, with one optional equipment slot and a capped +2% Wood artifact effect.
+- Added three Living Moonwood restoration sites after the original Ancient Tree story, with evolving Home scenes, moon phases, and remembered expedition decisions.
+- Added five story conversations per character with a 12-hour optional cooldown and no power rewards.
+- Added eight cosmetic achievements to Missions.
+- Fixed silent background theme fallback: synthesized in-browser music and forest audio no longer depend on absent MP3 files; a Play Moonwood Theme button is available.
+- Extended backup import to include crafted items, collection ownership, gacha history, and all new progress without changing the browser save key.
+- Added dependency-free automated regression checks and a GitHub Actions workflow.
+- **Not yet included:** full-resolution replacement portraits, true multiplayer/community projects, secure server-verified rewards or cloud saves, high-fidelity MP3 audio and full hands-on device QA. See `MEGA_PATCH_ROADMAP.md`.
+
+
 ## v1.6.2 — Moonlit Companion Gallery
 - Redesigned the four story companion cards on Home with ornate moonlit filigree frames, character portraits, circular avatars, rarity colors, lore, and unlock indicators.
 - Characters unlock automatically at existing level milestones (5, 10, 15, 30), and unlocked characters appear in full color; locked cards are dimmed.
