@@ -1,6 +1,6 @@
 {
-  "version": "1.6.2",
-  "build": "2026-10-25-v162-character-frames",
-  "title": "Vioverse — Moonlit Companion Gallery",
-  "notes": "Ornate filigree-framed character cards and circular avatars in Home and Collection. Level-unlocked story characters show in full color; unowned ones show in grayscale with unlock levels."
+  "version": "1.7.0",
+  "build": "2026-10-25-v170-forest-remembers",
+  "title": "Vioverse — The Forest Remembers Mega Patch",
+  "notes": "Playable Mining, Fishing and Herbalism; four crafting recipes, three living Moonwood restoration projects, five companion memories each, eight cosmetic achievements, a working in-browser Moonwood theme, and save-import compatibility improvements."
 }
