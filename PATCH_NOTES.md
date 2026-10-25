@@ -1,5 +1,18 @@
 # Vioverse Patch Notes
 
+## v1.8.0 — Moonlit Mastery & Starwater Expanse
+- **Startup error fixed first:** skill points are normalized without calling the not-yet-initialized level-calculation constant. Imported saves also re-sanitize the new talent state and recalculate available points.
+- Added the **Moonlit Mastery** screen with three connected talent branches (Gatherer, Wayfinder, Artisan), nine unlockable talents, level and prerequisite gates, visible point costs, permanent learned states, and a 10 Moon Essence respec that leaves legacy Forest Mastery ranks intact.
+- Connected talents to actual gameplay: Wood and Essence bonuses, faster discoveries and butterflies, extra manual profession materials, reduced recipe costs, and equipment synergies.
+- Added **World Map → Starwater Expanse**, unlocked after Silverleaf Bridge restoration, with Starfall Ridge, Whispering Marsh, and Prism Pool. Each location records a permanent choice and grants its corresponding materials or story resources.
+- Added the Astral Beacon finale, requiring all three locations and 4 Star Shards, 4 Glowcaps and 1 Prism Crystal; the restored landmark appears on the Home world scene.
+- Added Star Shards, Glowcaps and Prism Crystals to Inventory, plus three craftable keepsakes: Astral Compass, Starfall Pick and Glowcap Lantern.
+- Expanded Missions achievements and the Moonveil Journal with the new region and beacon milestones.
+- Preserved the existing `moonveil_legacy_v02` save key and added sanitized save/import compatibility for Mastery and Starwater progress.
+- Added dependency-free regression checks for startup ordering, mastery prerequisites/points, recipe discounts, region gating and rewards, save sanitization, and the Astral Beacon finale.
+- **Not claimed as complete:** full cross-device browser testing, production soundtrack assets, server-side cloud saves, or multiplayer features.
+
+
 ## v1.7.0 — The Forest Remembers (Mega Patch)
 - Introduced playable optional manual Mining (Lv. 5), Fishing (Lv. 10), and Herbalism (Lv. 15), all with their own resources, profession XP and cooldowns; existing Woodcutting keeps gathering automatically.
 - Added three new inventory resources and four craftable, one-time keepsakes, with one optional equipment slot and a capped +2% Wood artifact effect.
