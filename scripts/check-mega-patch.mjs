@@ -59,6 +59,7 @@ const fmt=x=>Math.floor(x).toLocaleString();
 const toast=x=>alerts.push(x),note=x=>journal.push(x),window={};
 const vvSection=x=>x,vvHead=(...x)=>x.join(' '),vvPanel=(a,b)=>a+b,vvButton=(...x)=>x.join(' '),vvLink=(...x)=>x.join(' '),vvTrack=()=>'',vvStat=()=>'',vvMegaCost=cost=>Object.entries(cost).map(([k,v])=>v+' '+k).join(' ');
 const vvMegaNum=id=>id==='wood'?s.wood:id==='essence'?s.essence:s.mega.materials[id]||0;
+const vvMegaEffectiveCost=cost=>vvTalentRank('frugal-recipes')?Object.fromEntries(Object.entries(cost).map(([id,n])=>[id,n>=5?n-1:n])):cost;
 const vvMegaCanAfford=cost=>Object.entries(cost).every(([id,n])=>vvMegaNum(id)>=n);
 const vvMegaSpend=cost=>{if(!vvMegaCanAfford(cost))return false;for(const [id,n] of Object.entries(cost)){if(id==='wood')s.wood-=n;else if(id==='essence')s.essence-=n;else s.mega.materials[id]-=n}return true};
 const vvMegaLog=msg=>{s.mega.history.unshift(msg);note(msg)};
