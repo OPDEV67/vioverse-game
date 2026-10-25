@@ -1,0 +1,25 @@
+name: Vioverse Mega Patch Checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'version.json'
+      - 'scripts/check-mega-patch.mjs'
+      - '.github/workflows/mega-patch-tests.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'version.json'
+      - 'scripts/check-mega-patch.mjs'
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate script syntax and game invariants
+        run: node scripts/check-mega-patch.mjs
