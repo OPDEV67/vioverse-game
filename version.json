@@ -1,6 +1,6 @@
 {
-  "version": "1.6.1",
-  "build": "2026-10-25-v161-settings-mail",
-  "title": "Vioverse — Moonveil Settings & Mailbox",
-  "notes": "Added dedicated Settings and Mailbox screens, unread mail indicator, saved accessibility/gameplay preferences, sound settings shortcut and modest 3-Stardust Moonborn welcome gift claimable once per local save."
+  "version": "1.6.2",
+  "build": "2026-10-25-v162-character-frames",
+  "title": "Vioverse — Moonlit Companion Gallery",
+  "notes": "Ornate filigree-framed character cards and circular avatars in Home and Collection. Level-unlocked story characters show in full color; unowned ones show in grayscale with unlock levels."
 }
