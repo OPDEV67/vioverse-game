@@ -1,5 +1,14 @@
 # Vioverse Patch Notes
 
+## v1.6.0 — Moonlit Atelier UI
+- Replaced the old flat purple presentation with a cohesive midnight-blue, silver and moon-gold dark-fantasy interface across the game.
+- New Moonwood home dashboard featuring the existing forest illustration, original Seraphine portrait, live player / Woodcutting progress and next character unlock.
+- Redesigned top resource HUD with readable labels, refined navigation, ornate panels, clearer progress bars and polished action buttons.
+- Improved companion cards, story character gallery and Collection artwork framing, preserving the original Seraphine image.
+- Retained existing assets and game saves; no replacement or re-creation of original character art. Other four portraits are small placeholder assets and may need future high-resolution originals.
+- Sound settings remain accessible on mobile. Collector rank starts at Starter.
+
+
 ## v1.5.3 — Moonwood Audio
 - Added in-game audio settings with a Sound button, music / ambience / SFX volume sliders, mute control, and saved preferences.
 - Audio begins only after player opt-in and pauses when the tab is hidden.
