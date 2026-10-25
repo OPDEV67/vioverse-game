@@ -1,5 +1,13 @@
 # Vioverse Patch Notes
 
+## v1.5.2 — Character & Spirit Collection
+- New Collection tab on desktop and mobile More menu: all five story characters and four summonable spirits in one archive.
+- Named story companions unlock automatically at Player Levels 5, 10, 15 and 30; collection cards show their stories and special abilities.
+- Active spirit bonuses and equip buttons are visible; future character specials are clearly marked as previews, not active gameplay bonuses.
+- Collector titles: Starter → Apprentice → Adept → Expert → Master → Legendary. Cosmetic progression based on number of collected entries.
+- Existing saves remain compatible.
+
+
 ## v1.5.1 — Continue with Google
 - Added a one-click Google account sign-in option to Moonlit Bonds alongside existing email/password login.
 - Uses Supabase OAuth with a return redirect to the current Vioverse game URL.
