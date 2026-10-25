@@ -1,6 +1,6 @@
 # Vioverse
 
-**Current release: v1.4.0 — Spirit Gacha & Stardust**
+**Current release: v1.4.1 — Automatic Mobile Experience**
 
 Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
@@ -18,6 +18,10 @@ You can also open `index.html` directly, but the local server is recommended for
 ## Saves
 
 Progress is stored in browser local storage under `moonveil_legacy_v02`. This release adds Stardust, summon pity, owned companions, equipped companion passives, and exchange history to the existing save without changing the key. Use the same browser profile and local address/port to keep using that save. Switching from `localhost:3000` to `localhost:3001` creates a separate browser storage origin. The Journal includes save export/import tools.
+
+## Mobile layout
+
+On iPhone and Android, Vioverse automatically shows a compact HUD and a bottom navigation bar with Home, Gathering, Gacha, Characters, and More. The More menu contains the other game screens. The layout responds to screen width; there is no separate mobile build or switch. Desktop keeps the original sidebar.
 
 ## Current release highlights
 
