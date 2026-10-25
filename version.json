@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "build": "2026-10-25-v100-royal-interface",
+  "build": "2026-10-25-v100-royal-interface-final",
   "title": "Vioverse v1.0 — Moonlit Royal Interface",
-  "notes": "Major visual redesign across Home, Characters, Expeditions, Discoveries, Gathering, Inventory, Missions, Legacy, Journal, Gacha, Shop and Update Game. New clean illustrated moonlit-forest background, ornate rarity cards, matching typography and responsive panels. Fixed character flip flashing by toggling card faces in place while preserving game progress and five-second update checks."
+  "notes": "Massive reference-inspired overhaul across all tabs: illustrated moonlit forest backdrop without ghost UI, luxury fantasy typography, ornate companion frames and unique rarity art, Characters/Gathering/Inventory/Missions/Gacha/Shop screens, expedition storytelling and discovery gallery. Fixed portrait-to-skill-tree flashing with an in-place face swap. Stable scrolling, browser save compatibility and automatic five-second update checks remain."
 }
