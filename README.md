@@ -1,3 +1,7 @@
+## v1.6.1 — Settings & Moonveil Mailbox
+
+Open **Settings** to customize visual effects, accessibility, compact layout, summon confirmations, offline summary and notifications, or open the existing audio mixer. Open **Mailbox** from the navigation or the top HUD to read Seraphine's welcome letter and claim **3 Stardust**, the cosmetic **Moonborn** title and a welcome badge. This amount is deliberately below the 10 Stardust required for one summon, and awards no XP, levels, skill points or stat bonuses. Welcome claim status is part of the browser save and is exported with backups. **Important:** local saves can be reset or manipulated, so the gift is not guaranteed once per account until server-side claims are implemented. The title is displayed in the player profile.
+
 ## v1.6.0 — Moonlit Atelier UI
 
 The interface now uses the repository's original **Seraphine** portrait (`assets/seraphine.webp`), **Moonwood** scenery (`assets/moonforest.svg` and `assets/world.webp`), and decorative elements to create a coherent midnight-blue / moon-gold fantasy HUD. Home has a new dashboard with live level progress and upcoming character unlocks. Navigation, resources, collection cards, gacha, panels and mobile layouts have been restyled. Elowen, Lira, Nyx and Ciel currently use low-resolution placeholder SVG portraits; replacing them with original high-resolution character art will further improve visual fidelity. Existing local saves remain compatible.
