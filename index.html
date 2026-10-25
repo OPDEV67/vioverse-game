@@ -785,7 +785,7 @@ body.vv-high-contrast .vv-panel,body.vv-high-contrast .vv-archive-card,body.vv-h
 body.vv-high-contrast .vv-muted{color:#f0e8f7!important}
 body.vv-compact-ui .vv-panel{padding:13px!important}body.vv-compact-ui .vv-bottom{gap:9px!important}body.vv-compact-ui .vv-view{padding-top:8px}
 body.vv-hide-particles .vv-dashboard-glow,body.vv-hide-particles .vv-status-pulse{display:none!important}
-body.vv-hide-hints .vv-tree-cost{display:none!important}
+body.vv-hide-hints .vv-skill-requirement{display:none!important}
 body.vv-hide-unlock-goals .vv-roster-card .vv-lock-pill{display:none!important}
 @media(max-width:767px){.vv-settings-layout{grid-template-columns:1fr}.vv-settings-tabs{flex-direction:row;overflow-x:auto;padding:7px;white-space:nowrap}.vv-settings-tabs button{padding:10px 12px}.vv-settings-panel{padding:17px!important;min-height:260px}.vv-hud-mail-label,.vv-hud-settings-label{display:none}.vv-mail-rewards{gap:6px}.vv-mail-rewards>div{padding:11px 5px}.vv-mail-rewards strong{font-size:11px}.vv-mail-rewards small{font-size:10px}.vv-mail-letter{padding:17px}}
 
@@ -932,7 +932,7 @@ function refreshLiveStats(){
   const fill=document.querySelector('#'+id+' .fill');if(fill)fill.style.width=Math.max(0,Math.min(100,amount))+'%';
  }
 }
-const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){const before=s.cycles;advance(away);note('⏳ Offline gathering: '+(s.cycles-before)+' cycles completed');setTimeout(()=>toast('Welcome back! '+(s.cycles-before)+' gathering cycles completed.'),500)}save();let prev=Date.now();setInterval(()=>{const now=Date.now();advance((now-prev)/1000);prev=now;save();refreshLiveStats()},1000);if(location.protocol!=='file:'){setTimeout(()=>checkGameUpdate(true),1500);setInterval(()=>{if(document.visibilityState==='visible')checkGameUpdate(true)},5000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkGameUpdate(true)})}
+const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){const before=s.cycles;advance(away);note('⏳ Offline gathering: '+(s.cycles-before)+' cycles completed');setTimeout(()=>{if(vvPrefs.offlineSummary)toast('Welcome back! '+(s.cycles-before)+' gathering cycles completed.')},500)}save();let prev=Date.now();setInterval(()=>{const now=Date.now();advance((now-prev)/1000);prev=now;save();refreshLiveStats()},1000);if(location.protocol!=='file:'){setTimeout(()=>checkGameUpdate(true),1500);setInterval(()=>{if(document.visibilityState==='visible')checkGameUpdate(true)},5000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkGameUpdate(true)})}
 
 
 'use strict';
@@ -1151,10 +1151,10 @@ function vvSettings(){
  let body='';
  if(vvSettingsTab==='Audio')body=`<h3>♫ Audio & Music</h3><p class="vv-muted">Adjust background music, forest ambience and magical sound effects. The existing audio player saves each volume independently.</p><button class="vv-button" type="button" data-vv-open-audio>♫ Open Audio Mixer</button><p class="vv-settings-note">Audio starts only after you choose to enable it.</p>`;
  else if(vvSettingsTab==='Graphics')body=`<h3>✦ Graphics & Appearance</h3>${vvSettingsSwitch('particles','Magical particle effects','Reduce decorative particles for a calmer display.')}${vvSettingsSwitch('compactUI','Compact interface','Reduce spacing in game panels.')}${vvSettingsSwitch('reduceMotion','Reduced animations','Limit transitions and moving effects.')}`;
- else if(vvSettingsTab==='Gameplay')body=`<h3>⚔ Gameplay</h3>${vvSettingsSwitch('confirmSummons','Confirm spirit summons','Ask before spending Stardust on summons.')}${vvSettingsSwitch('offlineSummary','Offline progress summary','Show your gathered cycles when returning to the game.')}${vvSettingsSwitch('showRequirements','Show skill requirements','Display upgrade requirements and costs.')}${vvSettingsSwitch('showUnlockGoals','Show companion unlock goals','Display level requirements for locked companions.')}`;
+ else if(vvSettingsTab==='Gameplay')body=`<h3>⚔ Gameplay</h3>${vvSettingsSwitch('confirmSummons','Confirm spirit summons','Ask before spending Stardust on summons.')}${vvSettingsSwitch('offlineSummary','Offline progress summary','Show your gathered cycles when returning to the game.')}${vvSettingsSwitch('showRequirements','Show skill requirements','Keep skill upgrade requirements visible.')}${vvSettingsSwitch('showUnlockGoals','Show companion unlock goals','Display level requirements for locked companions.')}`;
  else if(vvSettingsTab==='Notifications')body=`<h3>✉ In-game Notices</h3>${vvSettingsSwitch('mailNotices','Mailbox reminder','Show an unread-mail dot on the HUD.')}${vvSettingsSwitch('friendNotices','Friend notices','Show friend notifications when available.')}${vvSettingsSwitch('questNotices','Quest notices','Show quest-completion messages.')}<p class="vv-settings-note">These control in-game notices only; device push notifications are not enabled.</p>`;
  else if(vvSettingsTab==='Accessibility')body=`<h3>♧ Accessibility</h3>${vvSettingsSwitch('largeText','Larger interface text','Increase text size throughout the game.')}${vvSettingsSwitch('highContrast','High contrast','Improve text and panel contrast.')}${vvSettingsSwitch('reduceMotion','Reduce motion','Minimize animation and movement.')}`;
- else if(vvSettingsTab==='Account & Saves')body=`<h3>☾ Account & Save Data</h3><p class="vv-muted">Your game progress is saved in this browser. Moonlit Bonds account sign-in is separate from game progress synchronization.</p><div class="vv-settings-actions">${vvButton('↓ Export Save Backup','exportsave')}${vvLink('♡ Moonlit Bonds Account','Friends','ghost')}${vvLink('↻ Game Updates','Update Game','ghost')}</div><p class="vv-settings-note">For save import, open Game Updates. Save backups should be kept private. Cloud save synchronization is not implemented.</p>`;
+ else if(vvSettingsTab==='Account & Saves')body=`<h3>☾ Account & Save Data</h3><p class="vv-muted">Your game progress is saved in this browser. Moonlit Bonds account sign-in is separate from game progress synchronization.</p><div class="vv-settings-actions">${vvButton('↓ Export Save Backup','exportsave')}${vvLink('♡ Moonlit Bonds Account','Friends','ghost')}${vvLink('↻ Game Updates','Update Game','ghost')}</div><p class="vv-settings-note">For save import, open the Journal backup panel. Save backups should be kept private. Cloud save synchronization is not implemented.</p>`;
  else body=`<h3>✦ About Vioverse</h3><p class="vv-muted">Moonwood Legacy · v${BUILD_VERSION}</p><p class="vv-muted">A moonlit anime idle adventure starring Seraphine.</p><div class="vv-settings-actions">${vvLink('📜 Patch Notes','Patch Notes')}${vvLink('✉ Mailbox','Mailbox','ghost')}</div><p class="vv-settings-note">Settings are stored in this browser and can be changed any time.</p>`;
  return vvSection(vvHead('Make Moonwood your own','Settings','Audio, visuals, gameplay, accessibility and account preferences.','⚙ PERSONALIZE')+`<div class="vv-settings-layout">${nav}<section class="vv-panel vv-settings-panel">${body}</section></div>`);
 }
@@ -1190,8 +1190,8 @@ document.addEventListener('click',event=>{
  if(claim){event.preventDefault();event.stopImmediatePropagation();if(!s.mailWelcomeClaimed){s.mailWelcomeClaimed=true;s.mailWelcomeRead=true;s.stardust+=3;note('✉ Moonveil welcome gift: 3 Stardust, Moonborn title and Welcome Badge.');save();toast('Welcome gift claimed: 3 Stardust and two cosmetics!');if(window.vvAudio)window.vvAudio.effect('quest')}vvMailTab='Archive';render();return}
  const nav=event.target.closest('[data-page="Mailbox"]');
  if(nav){s.mailWelcomeRead=true;save();vvSyncMailBadge()}
- const summon=event.target.closest('[data-action="summon1"],[data-action="summon10"]');
- if(summon&&vvPrefs.confirmSummons){const count=summon.dataset.action==='summon10'?10:1,cost=count===10?90:10;if(!confirm('Spend '+cost+' Stardust on '+count+' spirit summon'+(count===1?'':'s')+'?')){event.preventDefault();event.stopImmediatePropagation();return}}
+ const summon=event.target.closest('[data-action="pull-one"],[data-action="pull-ten"]');
+ if(summon&&!summon.disabled&&vvPrefs.confirmSummons){const count=summon.dataset.action==='pull-ten'?10:1,cost=count===10?90:10;if(!confirm('Spend '+cost+' Stardust on '+count+' spirit summon'+(count===1?'':'s')+'?')){event.preventDefault();event.stopImmediatePropagation();return}}
 },true);
 
 function vvRollCompanion(){
@@ -1231,7 +1231,7 @@ function vvPlayerDisplayName(){return s.playerName||'Moonwood Wanderer'}
 function vvPlayerProfilePanel(){
  const display=escapeText(vvPlayerDisplayName()),stored=escapeText(s.playerName||'');
  return vvPanel('✦ Your Moonwood Identity',
- '<div class="vv-profile-shell"><div class="vv-profile-medallion" aria-hidden="true">☾</div><div class="vv-profile-info"><span class="vv-kicker">YOUR ADVENTURER PROFILE</span><h3>'+display+'</h3><p class="vv-muted">Player Level '+level(s.xp)+' · '+(s.restored?'Moonwood Guardian':'Whispering Grove Wanderer')+'</p></div></div>'+
+ '<div class="vv-profile-shell"><div class="vv-profile-medallion" aria-hidden="true">☾</div><div class="vv-profile-info"><span class="vv-kicker">YOUR ADVENTURER PROFILE</span><h3>'+display+'</h3><p class="vv-muted">Player Level '+level(s.xp)+' · '+(s.mailWelcomeClaimed?'☾ Moonborn · ':'')+(s.restored?'Moonwood Guardian':'Whispering Grove Wanderer')+'</p></div></div>'+
  '<form id="vv-player-name-form" class="vv-profile-form" autocomplete="off"><label for="vv-player-name-input">Choose your player name</label><div class="vv-profile-input-row"><input id="vv-player-name-input" name="playerName" type="text" minlength="2" maxlength="20" autocomplete="nickname" spellcheck="false" placeholder="Enter a name (2–20 characters)" value="'+stored+'" aria-describedby="vv-name-help" required><button class="vv-button" type="submit">✦ Save Name</button></div><small id="vv-name-help">Letters, numbers, spaces, _ and - only. Your name is stored in this browser, not an online account.</small><p class="vv-profile-error" id="vv-profile-error" role="alert" hidden></p></form>','LOCAL PLAYER PROFILE');
 }
 function vvSetPlayerName(raw){
