@@ -1,0 +1,65 @@
+/* Vioverse v1.0.1 — Moonwood skill tree, reference-inspired, playable and responsive */
+.vv-skill-map{--skill-edge:#af77ef;position:relative;isolation:isolate;min-height:790px;overflow:hidden;border:1px solid #ad79d5;border-radius:16px;background:radial-gradient(ellipse at 52% 40%,#4c236d88,transparent 65%),linear-gradient(145deg,#28143df7,#0e0920f9 80%);box-shadow:inset 0 0 0 2px #76469a88,inset 0 0 46px #672b9e55,0 16px 40px #04020a99}
+.vv-skill-map:before{content:'';position:absolute;inset:0;background:url('assets/moonwood-skill-aura.svg') center/cover no-repeat;opacity:.78;pointer-events:none;z-index:-1}
+.vv-skill-map:after{content:'✦';position:absolute;top:14px;left:50%;transform:translateX(-50%);font:36px Georgia,serif;color:#f1c8ff;text-shadow:0 0 16px #e48aff,0 0 35px #9752f3}
+.vv-skill-map-inner{width:100%;max-width:760px;margin:auto;padding:56px clamp(16px,3vw,42px) 28px;position:relative}
+.vv-skill-map-head{text-align:center;max-width:490px;margin:0 auto 20px}
+.vv-skill-map-head .vv-kicker{justify-content:center}.vv-skill-map-head h3{margin:0 0 6px;font:24px Cinzel,Georgia,serif;color:#f9e6ff;text-shadow:0 0 22px #ca87ff99}
+.vv-skill-map-head p{font-size:12px;color:#d1b9e0;line-height:1.7;margin:0}
+.vv-skill-resources{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:15px}
+.vv-skill-resources .vv-tag{font-size:10px;padding:9px 12px;background:#322047ed;border-color:#c39ae2}
+.vv-skill-resources .vv-tag strong{color:#ffe6a6}
+.vv-skill-nodes{position:relative}
+.vv-skill-node{--node-border:#bb8be2;position:relative;display:flex;align-items:center;gap:15px;padding:17px 19px;min-width:0;background:linear-gradient(145deg,#392047f5,#1b102ff7 90%);border:1px solid var(--node-border);border-radius:14px;box-shadow:inset 0 1px #d6abf653,0 0 0 2px #160b23,0 9px 24px #05020c88,0 0 21px #aa69eb24;z-index:1}
+.vv-skill-node:before{content:'✦';position:absolute;left:-6px;top:-8px;color:var(--node-border);font:14px Georgia,serif;text-shadow:0 0 10px var(--node-border)}
+.vv-skill-node:after{content:'✧';position:absolute;right:9px;top:6px;color:#d4a9ef;font:14px Georgia,serif}
+.vv-skill-node.state-complete{--node-border:#9be4c7;background:linear-gradient(135deg,#25473d,#172d32 80%);box-shadow:inset 0 1px #e0ffe65c,0 0 20px #76f8b337}
+.vv-skill-node.state-available{--node-border:#efc58b;background:linear-gradient(145deg,#55405d,#2e1939 85%);box-shadow:inset 0 1px #fff0c36b,0 0 27px #d799ef44}
+.vv-skill-node.state-planned{--node-border:#8665a9;background:linear-gradient(135deg,#24162f,#150e23);opacity:.82}
+.vv-skill-node.state-awakened{--node-border:#f3bcdb;background:linear-gradient(145deg,#5a2f5b,#24152d);box-shadow:0 0 25px #ff8ec64a}
+.vv-skill-glyph{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;border:2px solid var(--node-border);background:radial-gradient(circle at 35% 25%,#7e4fa7,#271438 67%);box-shadow:inset 0 0 15px #b673f83f,0 0 18px #8e50c452;position:relative}
+.vv-skill-glyph:before{content:'✦';position:absolute;top:-10px;font:12px Georgia,serif;color:#e5b7ff}
+.vv-skill-glyph svg{width:39px;height:39px;overflow:visible;filter:drop-shadow(0 0 6px #b683ff)}
+.vv-skill-glyph .glyph-main{stroke:#eee1ff;stroke-width:2.4;fill:none;stroke-linejoin:round;stroke-linecap:round}
+.vv-skill-glyph .glyph-fill{fill:#c59cff;stroke:#f7daff;stroke-width:1.3}
+.vv-skill-node.state-complete .glyph-main{stroke:#c5ffde}.vv-skill-node.state-available .glyph-main{stroke:#ffdeb3}
+.vv-skill-info{flex:1;min-width:0}.vv-skill-info h4{font:15px Cinzel,Georgia,serif!important;margin:0 0 5px;color:#fbebff;letter-spacing:.03em}
+.vv-skill-info p{font-size:12px;line-height:1.55;margin:0;color:#d3bedf}
+.vv-skill-status{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#e5bfff;margin-top:6px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.vv-skill-status.done{color:#a9ebbf}.vv-skill-status.planned{color:#ae96c4}.vv-skill-status.gold{color:#f2d19c}
+.vv-skill-action{margin-top:10px}.vv-skill-action .vv-button{font-size:11px;padding:8px 12px}
+.vv-skill-connect{width:2px;height:46px;margin:0 auto;background:linear-gradient(180deg,#b27ceb,#eed5ff,#bd73e7);box-shadow:0 0 10px #c07aff;position:relative}
+.vv-skill-connect:before,.vv-skill-connect:after{content:'✦';position:absolute;left:50%;transform:translateX(-50%);font:14px Georgia,serif;color:#d3a3ff;text-shadow:0 0 9px #c07aff}.vv-skill-connect:before{top:14px}.vv-skill-connect:after{display:none}
+.vv-skill-split{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:24px}
+.vv-skill-split:before{content:'';position:absolute;top:0;left:25%;width:50%;height:24px;border-top:2px solid #bd83e9;border-left:2px solid #bd83e9;border-right:2px solid #bd83e9;border-radius:11px 11px 0 0;box-shadow:0 -3px 10px #b579ec65}
+.vv-skill-split>.vv-skill-node{align-items:flex-start;flex-direction:column;min-height:190px;justify-content:flex-start;gap:11px}.vv-skill-split>.vv-skill-node .vv-skill-glyph{width:51px;height:51px}.vv-skill-split>.vv-skill-node .vv-skill-glyph svg{width:31px;height:31px}
+.vv-skill-join{height:49px;position:relative;width:50%;margin:auto;border-left:2px solid #b986e5;border-right:2px solid #b986e5;border-bottom:2px solid #b986e5;border-radius:0 0 12px 12px;box-shadow:0 3px 10px #b578ea2b}.vv-skill-join:after{content:'';position:absolute;bottom:-23px;left:50%;height:22px;width:2px;background:#d7b0ff;box-shadow:0 0 9px #e6a8ff}
+.vv-skill-master{margin:22px auto 0;max-width:560px}
+.vv-skill-master .vv-skill-node{border-width:2px;min-height:118px}
+.vv-skill-awaken{display:flex;align-items:center;justify-content:center;margin-top:24px;gap:9px;color:#d7a5ea;font-size:12px;text-align:center}
+.vv-skill-awaken .vv-tag{border-color:#ab719f}
+.vv-skill-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid #8351aa;margin-top:24px}
+.vv-skill-footer small{color:#bba5d1;font-size:11px;max-width:350px;line-height:1.6}
+.vv-skill-layout{display:grid;grid-template-columns:minmax(255px,.42fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.vv-skill-aside{display:grid;gap:15px;align-content:start}
+.vv-skill-portrait{position:relative;height:360px;border:1px solid #c99cec;border-radius:14px;background:linear-gradient(0deg,#120a20bb,transparent 35%),url('assets/seraphine.webp') center top/cover;box-shadow:inset 0 0 0 3px #2d1546,0 0 22px #ad69f53b;overflow:hidden}
+.vv-skill-portrait:after{content:'Seraphine  ·  Epic Forest Whisperer';position:absolute;bottom:0;left:0;right:0;text-align:center;padding:36px 5px 20px;color:#fceaff;font:14px Cinzel,serif;background:linear-gradient(transparent,#10091b)}
+.vv-skill-lore{font-size:12px;color:#cfb9dc;line-height:1.7;margin:0}
+.vv-treeface.vv-tree-v2{padding:12px 12px 16px!important;overflow-y:auto;scrollbar-color:#9870c4 #20142b;background:radial-gradient(circle at 50% 30%,#54287988,#180f2cf7 70%),url('assets/moonwood-skill-aura.svg') center/cover!important}
+.vv-tree-v2 .vv-tree-header{padding:23px 6px 12px;text-align:center}
+.vv-tree-v2 .vv-tree-header h3{font-size:17px;line-height:1.3;margin:5px 0 8px}
+.vv-tree-v2 .vv-tree-header p{color:#cbb1e0;font-size:10px;margin:0 0 10px}
+.vv-tree-v2 .vv-skill-node{padding:9px 10px;gap:9px;border-radius:10px;min-height:0}
+.vv-tree-v2 .vv-skill-glyph{width:37px;height:37px;border-width:1px}.vv-tree-v2 .vv-skill-glyph svg{width:23px;height:23px}
+.vv-tree-v2 .vv-skill-info h4{font-size:11px!important;margin:0 0 3px}.vv-tree-v2 .vv-skill-info p{font-size:10px;line-height:1.3}
+.vv-tree-v2 .vv-skill-status{font-size:9px;margin-top:3px}
+.vv-tree-v2 .vv-skill-connect{height:26px}
+.vv-tree-v2 .vv-skill-split{gap:8px;padding-top:17px}.vv-tree-v2 .vv-skill-split:before{height:17px}
+.vv-tree-v2 .vv-skill-split>.vv-skill-node{min-height:128px;padding:10px 6px}.vv-tree-v2 .vv-skill-split .vv-skill-glyph{width:35px;height:35px}.vv-tree-v2 .vv-skill-split .vv-skill-glyph svg{width:19px;height:19px}
+.vv-tree-v2 .vv-skill-join{height:19px}.vv-tree-v2 .vv-skill-join:after{height:10px;bottom:-11px}
+.vv-tree-v2 .vv-skill-master{margin-top:11px}.vv-tree-v2 .vv-skill-master .vv-skill-node{min-height:0}.vv-tree-v2 .vv-skill-action{margin-top:6px}.vv-tree-v2 .vv-skill-action .vv-button{padding:6px 7px;font-size:10px}
+.vv-tree-v2 .vv-tree-actions{display:grid;gap:8px;margin-top:12px}.vv-tree-v2 .vv-tree-actions button{width:100%;font-size:11px;padding:9px}
+.vv-tree-v2 .vv-kicker{font-size:9px;margin:0}
+.vv-skill-points-pulse{color:#ffe09a;text-shadow:0 0 12px #cb9cf4}
+@media(max-width:1080px){.vv-skill-layout{grid-template-columns:1fr}.vv-skill-aside{grid-template-columns:200px minmax(0,1fr);align-items:start}.vv-skill-portrait{height:290px}.vv-skill-aside .vv-panel{margin:0}}
+@media(max-width:720px){.vv-skill-map{min-height:0}.vv-skill-map-inner{padding:48px 12px 18px}.vv-skill-layout,.vv-skill-aside{grid-template-columns:1fr}.vv-skill-portrait{height:250px;background-position:center 22%}.vv-skill-split{gap:8px}.vv-skill-node{padding:12px;gap:10px}.vv-skill-glyph{width:47px;height:47px}.vv-skill-glyph svg{width:29px;height:29px}.vv-skill-info h4{font-size:12px}.vv-skill-info p{font-size:10px}.vv-skill-split>.vv-skill-node{padding:11px 8px;min-height:175px}.vv-skill-split .vv-skill-glyph{width:42px!important;height:42px!important}.vv-skill-split .vv-skill-glyph svg{width:25px!important;height:25px!important}}
