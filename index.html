@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.5.3</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.6.0</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -623,9 +623,133 @@ html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touc
 .vv-social-friend-actions{display:flex;gap:7px;flex-wrap:wrap}.vv-social-friend-actions .vv-button,.vv-social-friend>.vv-button{min-height:42px;font-size:12px;padding:8px 11px}
 .vv-social-rules{font-size:12px;line-height:1.6;padding:8px 4px}
 @media(max-width:767px){.vv-social-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.vv-social-friend-actions{width:100%}.vv-social-friend-actions .vv-button{flex:1 1 125px}.vv-social-friend>.vv-button{flex:1 1 100%}.vv-social-form{max-width:100%}}
+
+/* Vioverse v1.6.0 — Moonlit Atelier: asset-led visual design overhaul */
+:root{--vv-night:#090f1b;--vv-ink:#121627;--vv-deep:#0a101e;--vv-surface:#141b2b;--vv-surface-2:#1b2235;--vv-silver:#d7dced;--vv-gold:#e8c998;--vv-accent:#b8a5e9;--vv-line:#d2c3e23b;--vv-glow:#ae91e73d;--vv-radius:16px;font-family:'DM Sans',Inter,system-ui,sans-serif;background:#090e1a;color:#f4f0fb}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(90deg,#080e1df0,#0d1121db),url('assets/world.webp') center/cover fixed!important;color:#f4f0fb;font-family:'DM Sans',Inter,system-ui,sans-serif}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 70% 12%,#ac98d620,transparent 46%),linear-gradient(180deg,transparent 0%,#080d18a6 100%)}
+h1,h2,h3,.vv-brand-title,.vv-feature-caption h2{font-family:'Cinzel',Georgia,serif}
+header{background:linear-gradient(105deg,#0b1120f7,#19182cf4)!important;border-bottom:1px solid #e8c99852!important;box-shadow:0 8px 36px #0307139c,0 1px #f8e5ba0e inset;backdrop-filter:blur(20px)}
+.vv-header-inner{max-width:1800px;margin:auto;align-items:center}
+.vv-brand-title{font-family:'Cinzel',serif!important;letter-spacing:.19em!important;color:#f2e4c8!important;text-shadow:0 2px 20px #d6c1ef50;font-weight:700}
+.vv-brand-star{font-size:11px;color:var(--vv-gold);vertical-align:super;margin-left:7px}
+.vv-brand-sub{color:#b8b7c9!important;letter-spacing:.04em}
+.vv-avatar{border:2px solid #d3b989!important;box-shadow:0 0 0 4px #b9a2d119,0 0 23px #c6abdb3a!important;border-radius:12px!important;overflow:hidden}
+.vv-avatar img{object-fit:cover;object-position:center 20%}
+.vv-player-identity{color:#e9dfed!important}
+.vv-level-track{background:#ffffff1c!important;border-radius:30px;overflow:hidden}
+.vv-level-track i{background:linear-gradient(90deg,#ab9ed5,#f4d7a3)!important;box-shadow:0 0 14px #f0d5a69c}
+.vv-resources{gap:8px!important}
+.vv-resource{background:linear-gradient(160deg,#1c2536e8,#141a2ae8)!important;border:1px solid #c8b7d13b!important;border-radius:11px!important;min-height:54px;display:flex!important;align-items:center;gap:10px!important;padding:8px 12px!important;box-shadow:inset 0 1px #ffffff0d,0 4px 18px #06091445}
+.vv-resource-icon{display:grid;place-items:center;min-width:29px;min-height:29px;border-radius:9px;background:#c1a9e01a;color:#ead2a2;font-size:19px!important}
+.vv-resource-stack{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.vv-resource-stack small{font-family:'DM Sans',sans-serif!important;font-size:9px!important;letter-spacing:.12em;text-transform:uppercase;color:#bbb8ca!important;line-height:1.1;white-space:nowrap}
+.vv-resource-stack b{font-size:16px!important;line-height:1.1;font-variant-numeric:tabular-nums;color:#f9f2fa!important}
+.vv-bond-resource .vv-resource-icon{color:#f3aec9}
+.vv-level-resource .vv-resource-icon{color:#f1d48d}
+.vv-quicknav button{border-radius:10px!important;background:#22233780!important;border:1px solid #b4a4bf36!important}
+.vv-quicknav button:hover{background:#34354c!important;border-color:#d5c0937a!important}
+.shell{max-width:1800px;margin:0 auto}
+#nav{background:linear-gradient(180deg,#0d1524f5,#101528ee)!important;border-right:1px solid #e5d2aa35!important;box-shadow:8px 0 30px #05091747}
+#nav button{font-family:'DM Sans',sans-serif!important;border-radius:10px!important;letter-spacing:.01em;transition:background .2s,color .2s,transform .2s,border-color .2s!important}
+#nav button:hover{background:#c1a6e218!important;transform:translateX(2px)}
+#nav button.active{background:linear-gradient(90deg,#d1b99c2b,#b2a1dd20)!important;border-color:#dfc48c70!important;color:#f8e6bc!important;box-shadow:inset 3px 0 #e9cc95,0 4px 15px #0509165e}
+.vv-nav-icon{color:#e5c995!important}
+#main{background:transparent!important}
+.vv-view{max-width:1480px;margin:0 auto}
+.vv-heading{border-bottom:1px solid #c4b5d82e;padding:3px 0 17px;margin-bottom:24px!important}
+.vv-heading h2{font-family:'Cinzel',Georgia,serif!important;font-weight:600!important;letter-spacing:.025em;color:#f8ecdb!important;text-shadow:0 2px 20px #d3bba52a}
+.vv-heading p{color:#c5bfd2!important;line-height:1.6}
+.vv-kicker{color:#e6c993!important}
+.vv-kicker:before{color:#e9c994!important}
+.vv-area-pill,.vv-tag{background:#dfc99917!important;border:1px solid #dbc79b50!important;color:#f3ddad!important;border-radius:999px!important;letter-spacing:.04em}
+.vv-panel,.vv-summon-card,.vv-exchange-card{background:linear-gradient(155deg,#1b2434f3,#121827f4)!important;border:1px solid #d4c5dd3c!important;border-radius:var(--vv-radius)!important;box-shadow:inset 0 1px #ffffff13,0 16px 36px #03071469!important;position:relative;overflow:hidden}
+.vv-panel:before{content:'';height:1px;position:absolute;left:20px;right:20px;top:0;background:linear-gradient(90deg,transparent,#e3cda27c,transparent);pointer-events:none}
+.vv-panel-head{border-bottom:1px solid #e1d5e91c!important;padding-bottom:12px;margin-bottom:14px}
+.vv-panel h3{font-family:'Cinzel',Georgia,serif!important;font-size:15px!important;color:#f1e5d3!important;letter-spacing:.02em}
+.vv-muted,.muted{color:#bfb9cb!important}
+.vv-gold{color:#edce95!important}
+.vv-statline{border-bottom-color:#ffffff13!important}
+.vv-track,.bar{background:#e5e0ef1b!important;border-radius:20px!important;overflow:hidden}
+.vv-track .fill,.bar .fill{background:linear-gradient(90deg,#8e82c9,#e9c68f)!important;box-shadow:0 0 12px #c8a4f65e}
+.vv-button,.btn,.vv-actions button,.vv-actions a{border-radius:10px!important;transition:transform .16s,box-shadow .16s,background .16s,border-color .16s!important}
+.vv-button:hover,.btn:hover{box-shadow:0 7px 24px #c3a4e32e;transform:translateY(-1px)}
+.vv-bottom{gap:17px!important}
+.vv-dashboard{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,34%);min-height:355px;overflow:hidden;border:1px solid #d9c59d7a;border-radius:21px;margin:0 0 30px;background:#111c30;box-shadow:0 20px 60px #02050c9e,0 0 0 1px #ffffff0c inset;isolation:isolate}
+.vv-dashboard-scene{position:absolute;inset:0;background:linear-gradient(90deg,#0b1328eb 0%,#0e1526c7 51%,#10142553 100%),url('assets/moonforest.svg') center 44%/cover no-repeat;z-index:-2}
+.vv-dashboard-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 76% 20%,#d6b9fc30,transparent 42%);z-index:-1;pointer-events:none}
+.vv-dashboard:after{content:'';position:absolute;inset:7px;border:1px solid #e5d6b320;border-radius:15px;pointer-events:none;z-index:4}
+.vv-dashboard-content{padding:34px 32px 27px;display:flex;flex-direction:column;justify-content:center;min-width:0;z-index:2}
+.vv-dashboard-eyebrow{display:flex;align-items:center;gap:10px;color:#e4c996;font-size:10px;font-weight:700;letter-spacing:.17em;margin-bottom:15px}
+.vv-status-pulse{width:7px;height:7px;border-radius:50%;background:#b6e7ca;box-shadow:0 0 0 5px #b6e7ca20,0 0 12px #b6e7ca7a}
+.vv-dashboard-star{opacity:.7}
+.vv-dashboard-content h2{font-family:'Cinzel',Georgia,serif!important;font-size:clamp(27px,3.1vw,46px)!important;font-weight:600;letter-spacing:.015em;line-height:1.13;color:#f6ecdf;margin:0 0 14px}
+.vv-dashboard-content h2 em{font-style:normal;color:#ebcb93}
+.vv-dashboard-content>p{color:#d4cfe1;max-width:530px;line-height:1.65;margin:0 0 19px;font-size:13px}
+.vv-dashboard-actions{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:23px}
+.vv-dashboard-actions a{box-shadow:0 5px 18px #0607159c;border-radius:9px!important}
+.vv-dashboard-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;max-width:630px}
+.vv-dashboard-metrics>div{padding:12px 12px 11px;border:1px solid #e4d7e530;border-radius:11px;background:#080e1ba8;backdrop-filter:blur(9px);min-width:0}
+.vv-dashboard-metrics span{display:block;font-size:9px;letter-spacing:.12em;color:#c4b7d3;margin-bottom:6px;white-space:nowrap}
+.vv-dashboard-metrics strong{display:block;font-family:'Cinzel',serif;font-size:17px;color:#f5dfb6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vv-dashboard-metrics small{display:block;font-size:10px;color:#bcb4c7;margin-top:4px}
+.vv-dashboard-mini{margin-top:7px}
+.vv-dashboard-mini .vv-track{height:4px!important}
+.vv-dashboard-character{position:relative;align-self:stretch;overflow:hidden;min-width:0;display:flex;align-items:flex-end;justify-content:center}
+.vv-dashboard-character:before{content:'';position:absolute;inset:10px 13px 10px 0;background:radial-gradient(ellipse at 50% 55%,#c1a6df40,transparent 68%);border:1px solid #e8c9953b;border-radius:150px 150px 12px 12px;z-index:0}
+.vv-dashboard-character img{width:100%;height:100%;max-height:460px;object-fit:cover;object-position:center 17%;filter:drop-shadow(0 12px 28px #050917c9);mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent 100%);z-index:1;position:absolute;inset:0}
+.vv-dashboard-character-label{position:absolute;bottom:14px;left:14px;right:14px;z-index:3;text-align:center;text-shadow:0 2px 12px #000}
+.vv-dashboard-character-label span{display:block;font-size:9px;color:#f4d6a3;letter-spacing:.16em}
+.vv-dashboard-character-label strong{font-family:'Cinzel',serif;color:#fff2e0;font-size:18px}
+.vv-companion{background:linear-gradient(155deg,#1c2334,#101828)!important;border-color:#d8c5db6b!important;box-shadow:0 12px 38px #02061080!important}
+.vv-companion:before{border-color:#e9cc9875!important}
+.vv-companion .vv-cardface{background:transparent!important}
+.vv-companion .vv-locked{background:linear-gradient(180deg,#1a2433,#121826)!important}
+.vv-roster-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.vv-roster-art{height:200px;width:100%;position:relative;overflow:hidden;border:1px solid #d5bda85e;border-radius:11px;background:radial-gradient(circle at 50% 40%,#a9a0ca3b,#101826 72%);margin-bottom:10px}
+.vv-roster-art:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#121826 0%,transparent 38%);pointer-events:none}
+.vv-slot-portrait{height:100%!important;width:100%;object-fit:contain!important;object-position:center 40%!important;margin:0!important;image-rendering:auto}
+.vv-roster-rarity{color:#e9c892;letter-spacing:.16em;font-size:10px;font-weight:700;margin:3px 0 9px}
+.vv-roster-card h3{color:#f3e6d3!important;font-size:20px!important}
+.vv-roster-card p{color:#c7bdd2!important}
+.vv-lock-pill{border:1px solid #d9bf9461!important;background:#e2c9a914!important;color:#f3dab0!important;border-radius:99px!important}
+.vv-character-feature{border:1px solid #d9c49d91!important;border-radius:17px!important;box-shadow:0 14px 38px #060816a6;overflow:hidden}
+.vv-character-feature img{object-fit:cover;object-position:center 13%;filter:none!important}
+.vv-og-label{position:absolute;z-index:3;top:16px;left:16px;background:#101829cf;border:1px solid #d8c39499;border-radius:99px;color:#e8ce9b;font-size:9px;letter-spacing:.1em;padding:8px 11px}
+.vv-feature-caption{background:linear-gradient(0deg,#080e1df5 4%,#0c1021a1 63%,transparent)!important}
+.vv-feature-caption h2{font-family:'Cinzel',serif!important;color:#fff0dd}
+.vv-archive-card{background:linear-gradient(150deg,#1b2335,#101625)!important;border-color:#d8c59d65!important;box-shadow:0 13px 35px #02051087;transition:transform .2s,border-color .2s,box-shadow .2s}
+.vv-archive-card:hover{transform:translateY(-3px);border-color:#e7d1a3!important;box-shadow:0 19px 42px #020510b0}
+.vv-archive-art{height:250px!important;background:radial-gradient(circle at 50% 40%,#75658950,#0e1627 70%)!important}
+.vv-archive-art img{object-fit:contain!important;object-position:center center!important;padding:7px 5px 0;filter:drop-shadow(0 10px 14px #050915b5)}
+.vv-archive-art:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 63%,#121827aa)}
+.vv-archive-locked .vv-archive-art img{filter:grayscale(.8) brightness(.65)!important}
+.vv-archive-original{position:absolute;left:10px;top:10px;z-index:3;background:#141b2add;border:1px solid #e6ca977a;border-radius:99px;color:#efd5a2;padding:5px 8px;font-size:9px;letter-spacing:.1em}
+.vv-archive-content{background:transparent!important}
+.vv-archive-content h3{color:#f4e6d3!important}
+.vv-archive-special{background:#0b1423aa!important;border-color:#e6d0a052!important}
+.vv-archive-special strong{color:#f1d3a2!important}
+.vv-archive-spirit{background:radial-gradient(circle,#6b5d9340,#10182a 70%)!important}
+.vv-archive-rank{color:#e8ca98!important}
+.vv-gacha-hero,.vv-friends-hero,.vv-scene,.vv-discovery-art{border-color:#d7c4a273!important;box-shadow:0 15px 40px #0306127d}
+.vv-gacha-hero{background:linear-gradient(90deg,#0d1527e8,#18142bd0),url('assets/moonforest.svg') center/cover!important}
+.vv-gacha-orb{filter:drop-shadow(0 0 18px #d3b8f160)}
+.vv-friends-hero{background:linear-gradient(105deg,#121a2ef0,#1c1930da),url('assets/moonforest.svg') center/cover!important}
+.vv-mobile-nav{background:linear-gradient(180deg,#131a2af8,#0c1425fa)!important;border-top:1px solid #d5be9466!important}
+.vv-mobile-nav button.active{color:#f2d4a4!important;background:#e5c89c1c!important}
+.vv-mobile-more{background:#11192cf9!important;border-color:#d8c59a69!important}
+#vv-audio-button{background:linear-gradient(120deg,#263044,#171c2e)!important;border-color:#d5c39b80!important;color:#f3dbaf!important}
+.vv-audio-card{background:linear-gradient(140deg,#1d2939,#0f1625)!important;border-color:#e1c69d!important}
+#toast{border-color:#d7c59d!important;background:#1a2436!important}
+@media(max-width:1080px){.vv-dashboard{grid-template-columns:minmax(0,1fr) 29%}.vv-dashboard-content{padding:24px 20px}.vv-dashboard-metrics{gap:6px}.vv-dashboard-metrics>div{padding:10px 8px}}
+@media(max-width:767px){header{padding:10px 9px!important}.vv-header-inner{gap:8px!important}.vv-resource{min-height:43px!important;padding:6px 8px!important;gap:6px!important}.vv-resource-icon{min-width:23px;min-height:23px;font-size:15px!important}.vv-resource-stack small{font-size:8px!important}.vv-resource-stack b{font-size:13px!important}.vv-dashboard{grid-template-columns:minmax(0,1fr) 30%;min-height:300px;margin-bottom:22px}.vv-dashboard-content{padding:19px 12px 16px}.vv-dashboard-content h2{font-size:clamp(21px,5vw,32px)!important}.vv-dashboard-content>p{font-size:11px;line-height:1.55;margin-bottom:12px}.vv-dashboard-eyebrow{font-size:8px;letter-spacing:.1em;gap:6px}.vv-dashboard-actions{gap:5px;margin-bottom:15px}.vv-dashboard-actions a{font-size:11px!important;padding:9px 8px!important}.vv-dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.vv-dashboard-metrics>div{padding:8px}.vv-dashboard-metrics>div:last-child{grid-column:span 2}.vv-dashboard-metrics span{font-size:8px}.vv-dashboard-metrics strong{font-size:13px}.vv-dashboard-character:before{inset:10px 6px 20px 0}.vv-dashboard-character-label{left:4px;right:4px;bottom:14px}.vv-dashboard-character-label span{font-size:7px}.vv-dashboard-character-label strong{font-size:12px}.vv-roster-art{height:175px}.vv-archive-art{height:190px!important}.vv-archive-art img{padding:4px}}
+@media(max-width:390px){.vv-dashboard{grid-template-columns:1fr;min-height:0}.vv-dashboard-character{display:none}.vv-dashboard-content{padding:22px 17px}.vv-dashboard-content h2{font-size:29px!important}.vv-dashboard-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.vv-dashboard-metrics>div:last-child{grid-column:auto}.vv-dashboard-metrics strong{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.vv-archive-card,.vv-dashboard *{animation:none!important;transition:none!important}}
+
 </style></head><body><header><div class="vv-header-inner">
-<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.5.3 Audio</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
-<div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon">♡</span><b id="vv-bond-badge">Bonds</b></button></div>
+<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE<span class="vv-brand-star" aria-hidden="true">✦</span></div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.6.0</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
+<div class="vv-resources"><div class="vv-resource" title="Gathered Moonwood"><span class="vv-resource-icon" aria-hidden="true">♣</span><span class="vv-resource-stack"><small>Moonwood</small><b id="wood">0</b></span></div><div class="vv-resource" title="Moon Essence"><span class="vv-resource-icon" aria-hidden="true">☾</span><span class="vv-resource-stack"><small>Essence</small><b id="essence">0</b></span></div><div class="vv-resource vv-stardust-resource" title="Stardust"><span class="vv-resource-icon" aria-hidden="true">✧</span><span class="vv-resource-stack"><small>Stardust</small><b id="stardust">0</b></span></div><div class="vv-resource" title="Lunar Butterflies"><span class="vv-resource-icon" aria-hidden="true">🦋</span><span class="vv-resource-stack"><small>Butterflies</small><b id="butterfly">0</b></span></div><div class="vv-resource vv-level-resource" title="Player level"><span class="vv-resource-icon" aria-hidden="true">✦</span><span class="vv-resource-stack"><small>Wanderer</small><b id="vv-level-caption">Lv. 1</b></span><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon" aria-hidden="true">♡</span><span class="vv-resource-stack"><small>Moonlit Bonds</small><b id="vv-bond-badge">Bonds</b></span></button></div>
 <div class="vv-quicknav"><button type="button" id="vv-audio-button" title="Open audio settings" aria-label="Open audio settings">♫ Sound</button><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
 </div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><div id="vv-audio-dialog" class="vv-audio-dialog" hidden role="dialog" aria-modal="true" aria-label="Vioverse sound settings"><div class="vv-audio-card"><div class="vv-audio-top"><h2>♫ Moonwood Audio</h2><button type="button" id="vv-audio-close" aria-label="Close audio settings">✕</button></div><p>Whispers of Moonwood · music, forest ambience, and magical sound effects.</p><label class="vv-audio-check"><input id="vv-audio-enable" type="checkbox"> Enable game audio</label><label>🎵 Music <output id="vv-audio-music-label">30%</output><input id="vv-audio-music" type="range" min="0" max="100" value="30"></label><label>🌲 Forest ambience <output id="vv-audio-ambient-label">20%</output><input id="vv-audio-ambient" type="range" min="0" max="100" value="20"></label><label>✨ Sound effects <output id="vv-audio-sfx-label">65%</output><input id="vv-audio-sfx" type="range" min="0" max="100" value="65"></label><p class="vv-audio-note" id="vv-audio-status">Audio starts only after you enable it. Preferences are saved in this browser.</p><button type="button" id="vv-audio-preview">✦ Test magical chime</button></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
 
@@ -731,7 +855,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.5.3', BUILD_ID='2026-10-25-v153-audio-controls';
+const BUILD_VERSION='1.6.0', BUILD_ID='2026-10-25-v160-moonlit-ui';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -789,7 +913,7 @@ const VV_STORY=[
 ];
 function vvLocked(n,i){
  const c=VV_STORY[i+1],unlocked=level(s.xp)>=c.lv;
- return `<article class="vv-companion ${c.rarity.toLowerCase()}"><div class="vv-cardface vv-locked"><img class="vv-slot-portrait" src="${c.art}" alt="${c.name}" loading="lazy"><h3>${c.name}</h3><p>${c.title}</p><div class="vv-ornament"><span>✧</span></div><p>${unlocked?'Unlocked at Player Lv. '+c.lv:'Unlocks automatically at Player Lv. '+c.lv}</p><span class="vv-lock-pill">${unlocked?'✦ Unlocked':'🔒 Locked'}</span><div style="margin-top:12px">${vvLink('View Collection →','Collection','ghost')}</div></div><div class="vv-frame-detail" aria-hidden="true"></div></article>`;
+ return `<article class="vv-companion ${c.rarity.toLowerCase()}"><div class="vv-cardface vv-locked vv-roster-card"><div class="vv-roster-art"><img class="vv-slot-portrait" src="${c.art}" alt="${c.name}" loading="lazy"></div><span class="vv-roster-rarity">${c.rarity.toUpperCase()}</span><h3>${c.name}</h3><p>${c.title}</p><div class="vv-ornament"><span>✧</span></div><p>${unlocked?'Unlocked at Player Lv. '+c.lv:'Unlocks automatically at Player Lv. '+c.lv}</p><span class="vv-lock-pill">${unlocked?'✦ Unlocked':'🔒 Locked'}</span><div style="margin-top:12px">${vvLink('View Collection →','Collection','ghost')}</div></div><div class="vv-frame-detail" aria-hidden="true"></div></article>`;
 }
 function vvTree(){
  return `<div class="vv-cardface vv-treeface" data-vv-back ${flipped?'':'hidden'}>
@@ -818,21 +942,37 @@ function vvHeroCard(){
  </div>
  ${vvTree()}<div class="vv-frame-detail" aria-hidden="true"></div></article>`;
 }
+function vvDashboard(){
+ const lvl=level(s.xp),prof=level(s.profXp),next=VV_STORY.find(c=>c.lv>lvl);
+ return `<section class="vv-dashboard" aria-label="Your Moonwood adventure">
+ <div class="vv-dashboard-scene" aria-hidden="true"></div><div class="vv-dashboard-glow" aria-hidden="true"></div>
+ <div class="vv-dashboard-content"><div class="vv-dashboard-eyebrow"><span class="vv-status-pulse"></span> THE MOONWOOD IS CALLING <span class="vv-dashboard-star">✦</span> CHAPTER I</div>
+ <h2>Welcome to <em>Moonwood</em></h2>
+ <p>Under a silver moon, every whisper becomes a story. Your forest journey continues with Seraphine at your side.</p>
+ <div class="vv-dashboard-actions">${vvLink('🌿 Continue Gathering','Gathering')}${vvLink('✧ Explore Moonwood','Expeditions','ghost')}</div>
+ <div class="vv-dashboard-metrics">
+ <div><span>✦ PLAYER LEVEL</span><strong>${lvl}</strong><div class="vv-dashboard-mini">${vvTrack(pct(s.xp))}</div></div>
+ <div><span>♣ WOODCUTTING</span><strong>Lv. ${prof}</strong><div class="vv-dashboard-mini">${vvTrack(pct(s.profXp))}</div></div>
+ <div><span>☾ NEXT COMPANION</span><strong>${next?next.name:'All unlocked'}</strong><small>${next?'Unlocks at Lv. '+next.lv:'Moonwood roster complete'}</small></div>
+ </div></div>
+ <div class="vv-dashboard-character"><img src="assets/seraphine.webp" alt="Seraphine, the original Forest Whisperer" loading="eager"><div class="vv-dashboard-character-label"><span>✦ FOREST WHISPERER</span><strong>Seraphine</strong></div></div>
+ </section>`;
+}
 function vvHome(){
  const cards=`<div class="vv-card-stage" id="vv-card-scroll"><div class="vv-cards">${vvHeroCard()}${[5,10,15,30].map(vvLocked).join('')}</div></div>`;
- return vvSection(vvHead('Welcome, '+escapeText(vvPlayerDisplayName()),'My Companions','Level-unlocked companions · swipe to browse','✧ Whispering Grove')+
+ return vvSection(vvDashboard()+vvHead('Your moonlit companions','Companion Roster','Meet your allies and unlock more as your journey grows.','✧ '+escapeText(vvPlayerDisplayName()))+
  cards+
  `<div class="vv-bottom">
  ${vvPanel('✧ Current Area',`<div class="vv-tile-row"><span>🌙 Whispering Grove</span><span class="vv-gold">Lv. 1–10</span></div><p class="vv-muted">An enchanted forest alive with forgotten spirits and silver flowers.</p>${vvLink('Explore the Grove →','Expeditions','ghost')}`)}
  ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Gathering →','Gathering','ghost')}`)}
  ${vvPanel('▤ Journey Objective',`<p class="vv-muted">${nextStep()}</p><div class="vv-actions">${vvLink('View Legacy →','Legacy')}</div>`)}
  ${vvPanel('♡ Moonlit Bonds',`<p class="vv-muted">${vvSocial.friendCount}/50 accepted friends · +${(vvBondBonus()*100).toFixed(1)}% to Wood, Essence, gathering speed, and skill experience.</p>${vvLink('Open Friends & Hearts →','Friends','ghost')}`)}
- ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✧ Discoveries','Discoveries')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
+ ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✧ Discoveries','Discoveries')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✦ Collection','Collection','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
  </div>`);
 }
 function vvCharacters(){
  return vvSection(vvHead('Companion archive','Characters','Meet your companions, inspect talents, and follow each awakening.','1 active · 4 level unlocks')+
- `<div class="vv-roster"><div class="vv-character-feature"><img src="assets/seraphine.webp" alt="Seraphine, silver-haired Forest Whisperer"><div class="vv-feature-caption"><span class="vv-tag">✦ Epic · Woodcutting</span><h2>Seraphine</h2><p class="vv-muted">The Forest Whisperer · Guardian of the Moonwood</p></div></div>
+ `<div class="vv-roster"><div class="vv-character-feature"><span class="vv-og-label">✦ ORIGINAL CHARACTER ART</span><img src="assets/seraphine.webp" alt="Seraphine, silver-haired Forest Whisperer"><div class="vv-feature-caption"><span class="vv-tag">✦ Epic · Woodcutting</span><h2>Seraphine</h2><p class="vv-muted">The Forest Whisperer · Guardian of the Moonwood</p></div></div>
  <div style="display:grid;gap:15px">
  ${vvPanel('✦ Companion Profile',`<p class="vv-muted">A quiet forest guide bound to the moonlit roots. Seraphine gathers resources automatically while your story unfolds.</p>${vvStat('Character level',level(s.xp))}${vvTrack(pct(s.xp))}${vvStat('Woodcutting', 'Lv. '+level(s.profXp))}${vvTrack(pct(s.profXp),null,true)}${vvStat('Gathering cycle',speed().toFixed(1)+' seconds')}${vvStat('Awakening',s.awakened?'✦ Awakening I':'Not yet awakened')}`,'ACTIVE')}
  ${vvPanel('✧ Branching Talents',`<div class="vv-skill-table"><div class="vv-skill-tile"><span>🌲</span><strong>Forest Fundamentals</strong><p>Gathering basics · learned</p></div><div class="vv-skill-tile"><span>⚡</span><strong>Swift Hands</strong><p>Improves gathering with mastery.</p></div><div class="vv-skill-tile"><span>🦋</span><strong>Moon Sight</strong><p>Future discovery talents.</p></div><div class="vv-skill-tile"><span>✦</span><strong>Forest Mastery</strong><p>Rank ${s.skillSpent}/5 · ${s.skill} points to spend</p></div></div><div class="vv-actions" style="margin-top:15px">${vvButton('Spend 1 skill point','skill',s.skill<1||s.skillSpent>=5)}${vvLink('Awakening path →','Legacy','ghost')}</div>`)}
@@ -931,7 +1071,7 @@ function vvCollection(){
  const rank=total>=9?5:total>=7?4:total>=5?3:total>=3?2:total>=1?1:0;
  const characters=VV_STORY.map(c=>{
   const has=lvl>=c.lv;
-  return `<article class="vv-archive-card ${has?'':'vv-archive-locked'}"><div class="vv-archive-art"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span></div><div class="vv-archive-content"><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Unlocked':'🔒 Unlock at Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
+  return `<article class="vv-archive-card ${has?'':'vv-archive-locked'}"><div class="vv-archive-art vv-archive-${c.name.toLowerCase()}"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span>${c.active?'<span class="vv-archive-original">ORIGINAL ART</span>':''}</div><div class="vv-archive-content"><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Unlocked':'🔒 Unlock at Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
  }).join('');
  const spirits=VV_COMPANIONS.map(c=>{
   const has=Number(s.ownedCompanions[c.id]||0)>0,equipped=s.equippedCompanion===c.id;
