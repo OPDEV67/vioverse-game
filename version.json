@@ -1,6 +1,6 @@
 {
-  "version": "1.4.0",
-  "build": "2026-10-25-v140-spirit-gacha",
-  "title": "Vioverse — Spirit Gacha & Stardust",
-  "notes": "Playable Wood-to-Stardust exchange, single and ten-pull companion summons, transparent rarity odds, persistent Rare/Epic/Legendary pity guarantees, duplicate Stardust compensation, four persistent summonable companions, equipable gathering passives, and save-compatible economy migration. Existing five-second updates remain enabled."
+  "version": "1.4.1",
+  "build": "2026-10-25-v141-mobile-experience",
+  "title": "Vioverse — Automatic Mobile Experience",
+  "notes": "Automatic responsive iPhone and Android layout with safe-area bottom navigation, a More menu for every screen, compact resource HUD, mobile Skill Tree, touch-friendly Gacha and Shop, and existing save compatibility."
 }
