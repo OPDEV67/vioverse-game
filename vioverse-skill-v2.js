@@ -320,7 +320,7 @@
   };
   const baseCharacters=typeof vvBaseCharacters==='function'?vvBaseCharacters:vvCharacters;
   vvCharacters=function(){
-    const original=baseCharacters();
+    const original=baseCharacters().replace('data-action="skill"','data-page="Skill Tree"').replace('Spend 1 skill point','Open Skill Tree');
     const i=original.lastIndexOf('</div>');
     const action=`<div class="vv-panel" style="margin-top:17px;text-align:center">
       <div class="vv-kicker" style="justify-content:center">MOONWOOD CONSTELLATION</div>
