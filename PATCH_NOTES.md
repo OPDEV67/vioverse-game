@@ -1,5 +1,11 @@
 # Vioverse Patch Notes
 
+## v1.4.2 — Friends & Invitations
+- Added a Friends tab to the desktop sidebar and the mobile More menu.
+- Added Share invitation, using native sharing on supported phones, and Copy game link with fallback.
+- Friends tab explains that real friend requests and online presence require accounts and a backend, and are not yet active.
+- Existing saves, Gacha, gathering, and responsive mobile navigation are preserved.
+
 ## v1.4.1 — Automatic Mobile Experience
 - Automatically adapts layout to narrow screens; no separate mobile-mode switch required.
 - Adds fixed five-tab mobile navigation (Home, Gathering, Gacha, Characters, More) and a More menu for all remaining screens.
