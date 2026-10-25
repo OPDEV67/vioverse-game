@@ -789,6 +789,51 @@ body.vv-hide-hints .vv-skill-requirement{display:none!important}
 body.vv-hide-unlock-goals .vv-roster-card .vv-lock-pill{display:none!important}
 @media(max-width:767px){.vv-settings-layout{grid-template-columns:1fr}.vv-settings-tabs{flex-direction:row;overflow-x:auto;padding:7px;white-space:nowrap}.vv-settings-tabs button{padding:10px 12px}.vv-settings-panel{padding:17px!important;min-height:260px}.vv-hud-mail-label,.vv-hud-settings-label{display:none}.vv-mail-rewards{gap:6px}.vv-mail-rewards>div{padding:11px 5px}.vv-mail-rewards strong{font-size:11px}.vv-mail-rewards small{font-size:10px}.vv-mail-letter{padding:17px}}
 
+
+/* v1.6.2 — Moonlit companion gallery: shared filigree, framed portraits and avatars */
+.vv-story-card{--story-glow:#bca1e7;--story-bg:#271b39;--story-ink:#e4d6f7}
+.vv-story-card.rare{--story-glow:#9cddbb;--story-bg:#142c2a;--story-ink:#d5f2e3}
+.vv-story-card.epic{--story-glow:#f39abf;--story-bg:#31172e;--story-ink:#ffe0eb}
+.vv-story-card.mythic{--story-glow:#8eaaff;--story-bg:#151e40;--story-ink:#d6e3ff}
+.vv-story-card.legendary{--story-glow:#f2d19c;--story-bg:#2b2434;--story-ink:#fff0d2}
+.vv-story-card .vv-cardface{background:linear-gradient(180deg,var(--story-bg),#0d1424)!important;align-items:stretch;justify-content:flex-start;padding:0!important}
+.vv-story-card .vv-cardface:before{border-color:color-mix(in srgb,var(--story-glow),transparent 25%)!important;inset:9px;z-index:4}
+.vv-story-art{height:61%;min-height:0;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 35%,var(--story-bg),#080d1b 85%);flex-shrink:0}
+.vv-story-art>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:none;transform:scale(1.01)}
+.vv-story-art:after{content:'';position:absolute;inset:8px;z-index:3;pointer-events:none;border:1px solid color-mix(in srgb,var(--story-glow),transparent 30%);border-radius:7px}
+.vv-story-art:before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:url('assets/filigree-frame.svg') center center/100% 100% no-repeat;filter:drop-shadow(0 0 6px var(--story-glow));opacity:.88}
+.vv-story-art-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#0e1524 0%,#0e152480 17%,transparent 52%)}
+.vv-story-crescent{position:absolute;z-index:4;top:9px;left:50%;transform:translateX(-50%);font-size:23px;color:var(--story-ink);text-shadow:0 0 14px var(--story-glow)}
+.vv-story-art-rarity,.vv-story-art-state{position:absolute;z-index:4;bottom:16px;font-size:10px;letter-spacing:.11em;font-weight:700;background:#0c1421dd;border:1px solid color-mix(in srgb,var(--story-glow),transparent 40%);border-radius:8px;color:var(--story-ink);padding:7px}
+.vv-story-art-rarity{left:17px}.vv-story-art-state{right:17px}
+.vv-story-info{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;padding:0 15px 18px;background:linear-gradient(180deg,var(--story-bg),#0b1322 70%);position:relative}
+.vv-story-avatar{height:68px;width:68px;flex-shrink:0;border-radius:50%;padding:4px;overflow:hidden;margin-top:-34px;position:relative;z-index:5;border:2px solid var(--story-glow);box-shadow:0 0 0 4px #101829,0 0 16px var(--story-glow);background:var(--story-bg)}
+.vv-story-avatar img{height:100%;width:100%;border-radius:50%;object-fit:cover;object-position:center 24%;filter:none}
+.vv-story-info h3{font:22px 'Cinzel',Georgia,serif!important;color:var(--story-ink)!important;margin:1px 0!important}
+.vv-story-role{font-size:11px!important;letter-spacing:.06em;color:var(--story-glow)!important;margin:0!important}
+.vv-story-divider{color:var(--story-glow);line-height:1}
+.vv-story-lore{font-size:11px!important;line-height:1.45!important;color:#d1c7d9!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0!important}
+.vv-story-info .vv-lock-pill{font-size:10px!important;margin-top:auto;padding:5px 9px!important}
+.vv-story-link{width:100%}.vv-story-link .vv-button{width:100%;padding:8px!important;font-size:11px!important}
+.vv-story-locked .vv-story-art>img{filter:grayscale(.7) brightness(.66)!important}
+.vv-story-locked .vv-story-avatar img{filter:grayscale(.7) brightness(.66)!important}
+.vv-story-unlocked .vv-story-art>img{filter:none!important}
+.vv-story-unlocked .vv-story-avatar img{filter:none!important}
+.vv-story-collection .vv-archive-art{height:240px;background:#0d1625}
+.vv-story-collection .vv-archive-art:before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:url('assets/filigree-frame.svg') center/100% 100% no-repeat;opacity:.9}
+.vv-story-collection .vv-archive-art img{object-fit:cover;object-position:center 24%;filter:none!important}
+.vv-story-collection.vv-archive-locked .vv-archive-art img{filter:grayscale(1) brightness(.48)!important}
+.vv-story-collection.vv-archive-locked .vv-archive-art:after{content:'☾';position:absolute;inset:0;display:grid;place-items:center;font-size:65px;color:#e0d7e566;background:#0a10202b;z-index:1}
+.vv-story-collection .vv-archive-art .vv-tag{z-index:4}
+.vv-archive-obtained{position:absolute;z-index:4;bottom:15px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#101a2be8;border:1px solid #d8c49b9c;border-radius:99px;color:#f0dba9;font-size:10px;letter-spacing:.08em;padding:8px 12px}
+.vv-story-collection.vv-archive-locked .vv-archive-obtained{border-color:#a9a9b1;color:#d0d0d7}
+.vv-story-collection .vv-archive-content{position:relative;padding-top:35px}
+.vv-archive-avatar{width:63px;height:63px;border-radius:50%;position:absolute;top:-33px;left:18px;border:3px solid #d9c39d;background:#111b2b;overflow:hidden;z-index:5;box-shadow:0 0 0 3px #101828}
+.vv-archive-avatar img{height:100%;width:100%;object-fit:cover;object-position:center 23%;filter:none}
+.vv-archive-avatar.vv-avatar-locked img{filter:grayscale(1) brightness(.5)}
+.vv-story-collection.vv-archive-locked .vv-archive-content{background:#141823}
+@media(max-width:640px){.vv-story-collection .vv-archive-art{height:190px}.vv-story-avatar{width:62px;height:62px;margin-top:-31px}.vv-story-lore{font-size:10px!important}}
+
 </style></head><body><header><div class="vv-header-inner">
 <div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE<span class="vv-brand-star" aria-hidden="true">✦</span></div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.6.0</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource" title="Gathered Moonwood"><span class="vv-resource-icon" aria-hidden="true">♣</span><span class="vv-resource-stack"><small>Moonwood</small><b id="wood">0</b></span></div><div class="vv-resource" title="Moon Essence"><span class="vv-resource-icon" aria-hidden="true">☾</span><span class="vv-resource-stack"><small>Essence</small><b id="essence">0</b></span></div><div class="vv-resource vv-stardust-resource" title="Stardust"><span class="vv-resource-icon" aria-hidden="true">✧</span><span class="vv-resource-stack"><small>Stardust</small><b id="stardust">0</b></span></div><div class="vv-resource" title="Lunar Butterflies"><span class="vv-resource-icon" aria-hidden="true">🦋</span><span class="vv-resource-stack"><small>Butterflies</small><b id="butterfly">0</b></span></div><div class="vv-resource vv-level-resource" title="Player level"><span class="vv-resource-icon" aria-hidden="true">✦</span><span class="vv-resource-stack"><small>Wanderer</small><b id="vv-level-caption">Lv. 1</b></span><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon" aria-hidden="true">♡</span><span class="vv-resource-stack"><small>Moonlit Bonds</small><b id="vv-bond-badge">Bonds</b></span></button></div>
@@ -955,7 +1000,11 @@ const VV_STORY=[
 ];
 function vvLocked(n,i){
  const c=VV_STORY[i+1],unlocked=level(s.xp)>=c.lv;
- return `<article class="vv-companion ${c.rarity.toLowerCase()}"><div class="vv-cardface vv-locked vv-roster-card"><div class="vv-roster-art"><img class="vv-slot-portrait" src="${c.art}" alt="${c.name}" loading="lazy"></div><span class="vv-roster-rarity">${c.rarity.toUpperCase()}</span><h3>${c.name}</h3><p>${c.title}</p><div class="vv-ornament"><span>✧</span></div><p>${unlocked?'Unlocked at Player Lv. '+c.lv:'Unlocks automatically at Player Lv. '+c.lv}</p><span class="vv-lock-pill">${unlocked?'✦ Unlocked':'🔒 Locked'}</span><div style="margin-top:12px">${vvLink('View Collection →','Collection','ghost')}</div></div><div class="vv-frame-detail" aria-hidden="true"></div></article>`;
+ return `<article class="vv-companion vv-story-card ${c.rarity.toLowerCase()} ${unlocked?'vv-story-unlocked':'vv-story-locked'}" aria-label="${c.name} ${unlocked?'unlocked':'locked until level '+c.lv}">
+ <div class="vv-cardface vv-roster-card">
+ <div class="vv-story-art"><img src="${c.art}" alt="${c.name} character artwork" loading="lazy"><div class="vv-story-art-shade"></div><div class="vv-story-crescent" aria-hidden="true">☾</div><span class="vv-story-art-rarity">${c.rarity.toUpperCase()}</span><span class="vv-story-art-state">${unlocked?'✦ UNLOCKED':'🔒 LV. '+c.lv}</span></div>
+ <div class="vv-story-info"><div class="vv-story-avatar"><img src="${c.art}" alt="" loading="lazy"></div><h3>${c.name}</h3><p class="vv-story-role">${c.title}</p><div class="vv-story-divider">✦</div><p class="vv-story-lore">${c.lore}</p><span class="vv-lock-pill">${unlocked?'✦ Available in your Collection':'🔒 Unlock at Player Lv. '+c.lv}</span><div class="vv-story-link">${vvLink('View in Collection →','Collection','ghost')}</div></div>
+ </div><div class="vv-frame-detail" aria-hidden="true"></div></article>`;
 }
 function vvTree(){
  return `<div class="vv-cardface vv-treeface" data-vv-back ${flipped?'':'hidden'}>
@@ -1113,7 +1162,7 @@ function vvCollection(){
  const rank=total>=9?5:total>=7?4:total>=5?3:total>=3?2:total>=2?1:0;
  const characters=VV_STORY.map(c=>{
   const has=lvl>=c.lv;
-  return `<article class="vv-archive-card ${has?'':'vv-archive-locked'}"><div class="vv-archive-art vv-archive-${c.name.toLowerCase()}"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span>${c.active?'<span class="vv-archive-original">ORIGINAL ART</span>':''}</div><div class="vv-archive-content"><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Unlocked':'🔒 Unlock at Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
+  return `<article class="vv-archive-card vv-story-collection ${has?'vv-collected':'vv-archive-locked'}" aria-label="${c.name}: ${has?'obtained':'not obtained'}"><div class="vv-archive-art vv-archive-${c.name.toLowerCase()}"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span><span class="vv-archive-obtained">${has?'✦ OBTAINED':'🔒 NOT OBTAINED'}</span>${c.active?'<span class="vv-archive-original">ORIGINAL ART</span>':''}</div><div class="vv-archive-content"><div class="vv-archive-avatar ${has?'':'vv-avatar-locked'}"><img src="${c.art}" alt="" loading="lazy"></div><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Obtained':'🔒 Not obtained · Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
  }).join('');
  const spirits=VV_COMPANIONS.map(c=>{
   const has=Number(s.ownedCompanions[c.id]||0)>0,equipped=s.equippedCompanion===c.id;
@@ -1121,7 +1170,7 @@ function vvCollection(){
  }).join('');
  return vvSection(vvHead('The Moonwood archive','Collection','Explore every character and spirit, their stories, specials, bonuses and unlock goals.','✦ '+total+' / 9 collected')+
  `<div class="vv-archive-summary">${vvPanel('✦ Collection progress',`<strong>${total} / 9 collected</strong>${vvTrack(total/9*100)}<p class="vv-muted">${unlocked}/5 story characters · ${owned}/4 summoned spirits</p>`,'SAVED')}${vvPanel('☾ Collector title',`<h3 class="vv-archive-rank">${VV_COLLECTION_TITLES[rank]}</h3><p class="vv-muted">Starter → Apprentice → Adept → Expert → Master → Legendary</p><p class="vv-muted vv-small">Collection titles are cosmetic and do not grant stats.</p>`,'RANK '+(rank+1)+'/6')}</div>`+
- `<div class="vv-ornament"><span>✦ STORY CHARACTERS ✦</span></div><p class="vv-muted">Automatically unlocked at Player Levels 1, 5, 10, 15 and 30. Only Seraphine currently has active character gameplay bonuses.</p><div class="vv-archive-grid">${characters}</div>`+
+ `<div class="vv-ornament"><span>✦ STORY CHARACTERS ✦</span></div><p class="vv-muted">Story companions are obtained automatically at Player Levels 1, 5, 10, 15 and 30. Unobtained characters are shown in grayscale; only Seraphine currently has active character gameplay bonuses.</p><div class="vv-archive-grid">${characters}</div>`+
  `<div class="vv-ornament"><span>✧ SUMMONABLE SPIRITS ✧</span></div><p class="vv-muted">Summon spirits with Stardust and equip one at a time to activate its passive bonus.</p><div class="vv-archive-grid">${spirits}</div>`+
  `<div class="vv-actions">${vvLink('✧ Spirit Gacha','Gacha')}${vvLink('♙ Character Skills','Characters','ghost')}</div>`);
 }
