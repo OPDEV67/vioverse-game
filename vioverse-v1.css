@@ -94,3 +94,25 @@ main{padding:27px clamp(14px,2vw,30px) 40px!important;width:100%;max-width:1810p
 @media(max-width:1060px){.vv-header-inner{grid-template-columns:1fr auto}.vv-resources{grid-column:1 / -1;grid-row:2;justify-content:flex-start}.vv-quicknav{grid-column:2;grid-row:1}header{position:relative}nav{top:0;max-height:calc(100vh - 10px)}.vv-columns,.vv-discovery-main{grid-template-columns:1fr}.vv-discoveries{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:720px){.shell{grid-template-columns:1fr!important}nav{position:sticky;top:0;z-index:45;max-height:none;overflow:auto;display:flex!important;gap:5px;white-space:nowrap;align-self:stretch;padding:7px!important;border-right:0!important;border-bottom:1px solid #70448a}nav button{min-height:55px!important;min-width:76px!important;margin:0!important;gap:4px}.vv-nav-icon{font-size:19px}.vv-nav-label{font-size:10px}.vv-header-inner{grid-template-columns:minmax(0,1fr)}.vv-quicknav{display:none}.vv-resources{grid-column:auto;grid-row:auto;justify-content:flex-start}.vv-brand-title{font-size:20px}.vv-avatar{height:53px;width:53px}.vv-resource{font-size:11px;min-width:80px}.vv-bottom,.vv-grid,.vv-roster{grid-template-columns:1fr}.vv-discoveries{grid-template-columns:repeat(2,minmax(0,1fr))}.vv-books{grid-template-columns:1fr}.vv-card-stage{margin-right:-12px}.vv-scene{min-height:260px}.vv-discovery-art{min-height:320px}.vv-heading h2{font-size:23px!important}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Extra detail pass — companion silhouettes, reference-inspired illustrated discovery rarity gallery */
+.vv-locked{isolation:isolate}
+.vv-locked .vv-locked-art{position:absolute;inset:4px;z-index:0;pointer-events:none;opacity:.33;filter:grayscale(1) brightness(.33) sepia(.12);background:url('assets/seraphine.webp') center 18%/cover no-repeat;mask-image:linear-gradient(180deg,#000 4%,#0008 65%,transparent 98%)}
+.vv-locked.epic .vv-locked-art{filter:grayscale(1) brightness(.33) sepia(.4)}
+.vv-locked>*:not(.vv-locked-art){position:relative;z-index:2}
+.vv-companion.rare .vv-locked-art{filter:grayscale(1) brightness(.33) sepia(.2) hue-rotate(170deg);background-position:55% 17%}
+.vv-companion.mythic .vv-locked-art{filter:grayscale(1) brightness(.31) sepia(.5) hue-rotate(285deg);background-position:32% 20%}
+.vv-companion.legendary .vv-locked-art{filter:grayscale(1) brightness(.32) sepia(.8);background-position:62% 21%}
+.vv-discovery-tile .vv-artbox{font-size:0;background-image:url('assets/discovery-codex.svg');background-size:500% 100%;background-repeat:no-repeat;border-bottom:1px solid var(--tile-color,#996fc1);box-shadow:inset 0 -20px 23px #0b071db3}
+.vv-discovery-tile:nth-child(1) .vv-artbox{background-position:0% 50%}
+.vv-discovery-tile:nth-child(2) .vv-artbox{background-position:25% 50%}
+.vv-discovery-tile:nth-child(3) .vv-artbox{background-position:50% 50%}
+.vv-discovery-tile:nth-child(4) .vv-artbox{background-position:75% 50%}
+.vv-discovery-tile:nth-child(5) .vv-artbox{background-position:100% 50%}
+.vv-discovery-tile{box-shadow:0 0 0 1px #bd8ce322,0 7px 22px #03010a9e}
+.vv-discovery-tile .vv-artbox{height:142px}
+.vv-discovery-art img{transform:scale(1.23);object-position:center 18%}
+.vv-companion .vv-locked-symbol{opacity:.9}
+.vv-panel{overflow:hidden}
+.vv-view .vv-panel .vv-button{max-width:100%}
