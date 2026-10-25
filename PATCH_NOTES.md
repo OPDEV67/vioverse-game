@@ -1,5 +1,12 @@
 # Vioverse Patch Notes
 
+## v1.4.1 — Automatic Mobile Experience
+- Automatically adapts layout to narrow screens; no separate mobile-mode switch required.
+- Adds fixed five-tab mobile navigation (Home, Gathering, Gacha, Characters, More) and a More menu for all remaining screens.
+- Adds safe-area padding for iPhone home indicator and compact horizontal resource HUD.
+- Stacks Skill Tree, Gacha, Shop, and companion cards into touch-friendly mobile layouts.
+- Preserves all existing gameplay, local save key, and automatic update checks.
+
 ## v1.4.0 — Spirit Gacha & Stardust
 - Added the playable Moonlit Exchange: exchange 250 Wood for 1 Stardust using fixed, optional amounts. No sell-all action and no real-money currency.
 - Added single summons (10 Stardust) and discounted ten-pulls (90 Stardust).
