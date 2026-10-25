@@ -1,6 +1,6 @@
 {
-  "version": "0.9.0",
-  "build": "2026-10-25-v09-journal",
-  "title": "Living Journal & Save Backups",
-  "notes": "New Moonveil Journal with Legacy milestones, discoveries, remembered choices, and export/import save backups. Auto-update checks remain every 5 seconds."
+  "version": "0.9.3",
+  "build": "2026-10-25-v093-smooth-scroll",
+  "title": "Smooth Companion Scrolling",
+  "notes": "Idle gathering now updates the counters and progress bars without rebuilding the Home screen each second, avoiding blinking and scrollbar jumps. Existing saves, companion flip, Journal and automatic update checks are preserved."
 }
