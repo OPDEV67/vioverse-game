@@ -1,6 +1,6 @@
 {
-  "version": "1.2.0",
-  "build": "2026-10-25-v120-standalone-stable",
-  "title": "Vioverse Stable Replacement — Unified Game",
-  "notes": "The old layered interface was replaced by a complete self-contained HTML game entrypoint, eliminating dependence on extra JavaScript/CSS files. Preserves all 14 screens, gothic-purple UI, Characters and the interactive circular Forest Skill Tree, save data, idle gathering, branching expeditions, Forest Mastery upgrades and refunds, and five-second update checks. The correct GitHub-clone server launcher remains included."
+  "version": "1.3.0",
+  "build": "2026-10-25-v130-royal-responsive",
+  "title": "Vioverse — Royal Responsive Polish",
+  "notes": "Compact single-row HUD for laptop and tablet widths; improved responsive companion profile and constellation sizing; clearer skill-node labels, selected states and keyboard focus; clickable skill-points badge opens Forest Mastery details. No looping animations added. Existing save key moonveil_legacy_v02 and 5-second update checks remain unchanged."
 }
