@@ -1,6 +1,6 @@
 {
-  "version": "1.4.2",
-  "build": "2026-10-25-v142-friends-invites",
-  "title": "Vioverse — Friends & Invitations",
-  "notes": "Adds Friends tab on desktop and in the mobile More menu. Share Vioverse through the native iPhone/Android share sheet or copy the public invite link. Clearly labels real friend requests and online status as future features requiring accounts and a backend. Preserves existing saves."
+  "version": "1.4.3",
+  "build": "2026-10-25-v143-player-profile-polish",
+  "title": "Vioverse — Player Identity & UI Polish",
+  "notes": "Adds editable local player names in Friends, profile badge in the HUD, personal welcome message, smoother subtle panel interactions, gentle Gacha glow, mobile refinements, reduced-motion accessibility, and existing save compatibility."
 }
