@@ -1,6 +1,6 @@
 # Vioverse
 
-**Current release: v1.4.1 — Automatic Mobile Experience**
+**Current release: v1.4.2 — Friends & Invitations**
 
 Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
@@ -22,6 +22,10 @@ Progress is stored in browser local storage under `moonveil_legacy_v02`. This re
 ## Mobile layout
 
 On iPhone and Android, Vioverse automatically shows a compact HUD and a bottom navigation bar with Home, Gathering, Gacha, Characters, and More. The More menu contains the other game screens. The layout responds to screen width; there is no separate mobile build or switch. Desktop keeps the original sidebar.
+
+## Friends and invitations
+
+Open **Friends** from the desktop sidebar or the mobile **More** menu to share the public Vioverse game link. The Share invitation button uses your device's share sheet where available, with Copy game link as a fallback. Friends lists, friend requests, and online status are not yet implemented; they will require player accounts and an online backend.
 
 ## Current release highlights
 
