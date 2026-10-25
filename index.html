@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.4.3</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.5.0</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -594,11 +594,30 @@ html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touc
 .vv-button:active,.vv-mobile-nav button:active{transform:scale(.98)}
 @media(max-width:767px){.vv-player-identity{max-width:170px;font-size:9px}.vv-profile-shell{gap:11px}.vv-profile-medallion{flex-basis:52px;width:52px;height:52px;font-size:27px}.vv-profile-info h3{font-size:19px}.vv-profile-input-row .vv-button{flex:1 1 100%}}
 @media(prefers-reduced-motion:reduce){.vv-view>.vv-heading,.vv-view>.vv-friends-hero,.vv-view>.vv-gacha-hero,.vv-gacha-orb>span{animation:none!important}.vv-panel,.vv-summon-card,.vv-exchange-card,.vv-companion,.vv-resource,.vv-player-identity{transition:none!important}}
+
+/* v1.5 Moonlit Bonds */
+.vv-bond-resource{font:inherit;cursor:pointer;color:#f3d6ff}.vv-bond-resource .vv-resource-icon{color:#f3a3d8}
+.vv-social-root{display:grid;gap:15px;margin-bottom:19px}.vv-social-notice{padding:12px 14px;border:1px solid #a16ebf;border-radius:11px;background:#44244f;color:#fff1fa;font-size:13px;line-height:1.5}
+.vv-social-account{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 14px;border:1px solid #805aa1;border-radius:12px;background:#261439;color:#e9cbf8;font-size:13px}
+.vv-social-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.vv-social-tabs .vv-button{flex:1 1 150px;justify-content:center}
+.vv-social-form{display:grid;gap:13px;max-width:520px}.vv-social-form label{display:grid;gap:6px;color:#e9d3f5;font-size:13px;font-weight:700}
+.vv-social-form input,.vv-social-search input{min-height:46px;min-width:0;width:100%;padding:11px 13px;border:1px solid #9b72bb;border-radius:9px;background:#11091f;color:#fff1ff;font:500 15px system-ui,sans-serif}
+.vv-social-form input:focus,.vv-social-search input:focus{outline:2px solid #d5a1ff;outline-offset:2px}.vv-social-form>.vv-button{min-height:45px}
+.vv-social-dashboard{display:grid;gap:15px}.vv-social-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.vv-social-metrics>div{display:grid;gap:6px;min-width:0;padding:15px 12px;border:1px solid #9a6bbd;border-radius:11px;background:linear-gradient(145deg,#332044,#1b112a)}
+.vv-social-metrics span{color:#c8b0d9;font-size:10px;letter-spacing:.06em}.vv-social-metrics strong{color:#ffe1ff;font-size:clamp(17px,2.5vw,24px);font-family:Georgia,serif}
+.vv-social-search{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:13px}.vv-social-search input{flex:1 1 200px;width:auto}.vv-social-search button{min-height:45px}
+.vv-social-friend{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 3px;border-bottom:1px solid #62417b88}
+.vv-social-friend:last-child{border-bottom:0}.vv-social-friend-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border:1px solid #9566ba;border-radius:50%;background:#3a2253;color:#f2b7db;font-size:24px}
+.vv-social-friend-name{display:grid;gap:2px;min-width:120px;flex:1 1 130px;overflow-wrap:anywhere}.vv-social-friend-name strong{color:#f6e5ff;font-size:14px}.vv-social-friend-name small{color:#c5b0d4;font-size:12px}.vv-social-friend-name .vv-heart-received{color:#ffbddb}
+.vv-social-friend-actions{display:flex;gap:7px;flex-wrap:wrap}.vv-social-friend-actions .vv-button,.vv-social-friend>.vv-button{min-height:42px;font-size:12px;padding:8px 11px}
+.vv-social-rules{font-size:12px;line-height:1.6;padding:8px 4px}
+@media(max-width:767px){.vv-social-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.vv-social-friend-actions{width:100%}.vv-social-friend-actions .vv-button{flex:1 1 125px}.vv-social-friend>.vv-button{flex:1 1 100%}.vv-social-form{max-width:100%}}
 </style></head><body><header><div class="vv-header-inner">
-<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.4.3 Player Profile</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
-<div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div></div>
+<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.5 Moonlit Bonds</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
+<div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon">♡</span><b id="vv-bond-badge">Bonds</b></button></div>
 <div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
-</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script>
+</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
 
 'use strict';
 
@@ -608,10 +627,13 @@ const VV_COMPANIONS=[
  {id:'lunelle',name:'Lunelle',title:'Swift Whisper',rarity:'Epic',icon:'✨',description:'A swift forest spirit that shortens every gathering cycle.',passive:'Gathering cycles 10% faster',effects:{wood:0,essence:0,speed:.10}},
  {id:'astra',name:'Astra',title:'Celestial Guardian',rarity:'Legendary',icon:'☾',description:'A celestial protector whose blessing enriches both wood and Essence.',passive:'Wood and Essence rewards +10%',effects:{wood:.10,essence:.10,speed:0}}
 ];
-function vvCompanionEffect(kind){const c=VV_COMPANIONS.find(x=>x.id===s.equippedCompanion);return c&&c.effects?Number(c.effects[kind])||0:0}
+const vvSocial={client:null,session:null,hub:null,results:[],query:'',message:'',busy:false,authMode:'signup',friendCount:0,loading:false};
+function vvBondBonus(){return Math.min(50,Math.max(0,vvSocial.friendCount||0))*.005}
+function vvCompanionEffect(kind){const c=VV_COMPANIONS.find(x=>x.id===s.equippedCompanion);const base=c&&c.effects?Number(c.effects[kind])||0:0;return base+vvBondBonus()}
 function vvGrantEssence(base){const amount=base*(1+vvCompanionEffect('essence'))+(Number(s.essenceBonusRemainder)||0);const gain=Math.floor(amount+1e-9);s.essence+=gain;s.essenceBonusRemainder=amount-gain}
 
-const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,playerName:''});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
+function vvGrantSkillXp(baseCharacter,baseProfession){const boost=1+vvBondBonus();const charAmount=baseCharacter*boost+(Number(s.characterXpBonusRemainder)||0);const profAmount=baseProfession*boost+(Number(s.skillXpBonusRemainder)||0);const charGain=Math.floor(charAmount+1e-9),profGain=Math.floor(profAmount+1e-9);s.xp+=charGain;s.profXp+=profGain;s.characterXpBonusRemainder=charAmount-charGain;s.skillXpBonusRemainder=profAmount-profGain}
+const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,skillXpBonusRemainder:0,characterXpBonusRemainder:0,playerName:''});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
 if(typeof s.playerName!=='string')s.playerName='';s.playerName=s.playerName.trim().slice(0,20);
 s.stardust=Math.max(0,Math.floor(Number(s.stardust)||0));
 if(!s.ownedCompanions||typeof s.ownedCompanions!=='object'||Array.isArray(s.ownedCompanions))s.ownedCompanions={};
@@ -621,7 +643,7 @@ s.gachaPity={rare:0,epic:0,legendary:0,...s.gachaPity};
 for(const key of ['rare','epic','legendary'])s.gachaPity[key]=Math.max(0,Math.floor(Number(s.gachaPity[key])||0));
 s.gachaPulls=Math.max(0,Math.floor(Number(s.gachaPulls)||0));
 if(!Array.isArray(s.lastSummon))s.lastSummon=[];if(!Array.isArray(s.economyHistory))s.economyHistory=[];
-s.woodBonusRemainder=Math.max(0,Math.min(.999,Number(s.woodBonusRemainder)||0));s.essenceBonusRemainder=Math.max(0,Math.min(.999,Number(s.essenceBonusRemainder)||0));
+s.woodBonusRemainder=Math.max(0,Math.min(.999,Number(s.woodBonusRemainder)||0));s.essenceBonusRemainder=Math.max(0,Math.min(.999,Number(s.essenceBonusRemainder)||0));s.skillXpBonusRemainder=Math.max(0,Math.min(.999,Number(s.skillXpBonusRemainder)||0));s.characterXpBonusRemainder=Math.max(0,Math.min(.999,Number(s.characterXpBonusRemainder)||0));
 if(s.equippedCompanion&&!s.ownedCompanions[s.equippedCompanion])s.equippedCompanion='';
 let page='Home',flipped=false,encounter=0,selected=-1,scrollPos=0,patchIndex=0;const level=x=>1+Math.floor(Math.sqrt(x/45));const pct=x=>{const a=Math.floor(Math.sqrt(x/45));return Math.min(100,(x-45*a*a)/(45*(2*a+1))*100)};const fmt=x=>Math.floor(x).toLocaleString();const speed=()=>8/(1+.35+s.skillSpent*.06+(s.awakened?.15:0)+(s.restored?.1:0))*(1-vvCompanionEffect('speed'));
 function note(t){s.log.unshift(t);s.log=s.log.slice(0,35)}function toast(t){let e=document.getElementById('toast');e.textContent=t;e.hidden=false;clearTimeout(window.tt);window.tt=setTimeout(()=>e.hidden=true,3700)}function save(){s.last=Date.now();try{localStorage.setItem(KEY,JSON.stringify(s))}catch{}}function advance(dt){
@@ -634,7 +656,7 @@ function note(t){s.log.unshift(t);s.log=s.log.slice(0,35)}function toast(t){let 
   const remaining=Math.max(0.000001,duration-s.progress);
   if(d<remaining){s.progress+=d;break}
   d-=remaining;s.progress=0;cycles++;
-  s.cycles++;const woodAmount=(3+(s.awakened?1:0))*(1+vvCompanionEffect('wood'))+(Number(s.woodBonusRemainder)||0);const woodGain=Math.floor(woodAmount+1e-9);s.wood+=woodGain;s.woodBonusRemainder=woodAmount-woodGain;s.xp+=3;s.profXp+=10;
+  s.cycles++;const woodAmount=(3+(s.awakened?1:0))*(1+vvCompanionEffect('wood'))+(Number(s.woodBonusRemainder)||0);const woodGain=Math.floor(woodAmount+1e-9);s.wood+=woodGain;s.woodBonusRemainder=woodAmount-woodGain;vvGrantSkillXp(3,10);
   if(s.cycles%9===0)vvGrantEssence(1);
   if(s.cycles%18===0){s.discoveryCount++;vvGrantEssence(3);discoveries++}
   if(s.cycles%38===0){s.butterfly++;butterflies++}
@@ -699,7 +721,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.4.3', BUILD_ID='2026-10-25-v143-player-profile-polish';
+const BUILD_VERSION='1.5.0', BUILD_ID='2026-10-25-v150-moonlit-bonds';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -788,6 +810,7 @@ function vvHome(){
  ${vvPanel('✧ Current Area',`<div class="vv-tile-row"><span>🌙 Whispering Grove</span><span class="vv-gold">Lv. 1–10</span></div><p class="vv-muted">An enchanted forest alive with forgotten spirits and silver flowers.</p>${vvLink('Explore the Grove →','Expeditions','ghost')}`)}
  ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Gathering →','Gathering','ghost')}`)}
  ${vvPanel('▤ Journey Objective',`<p class="vv-muted">${nextStep()}</p><div class="vv-actions">${vvLink('View Legacy →','Legacy')}</div>`)}
+ ${vvPanel('♡ Moonlit Bonds',`<p class="vv-muted">${vvSocial.friendCount}/50 accepted friends · +${(vvBondBonus()*100).toFixed(1)}% to Wood, Essence, gathering speed, and skill experience.</p>${vvLink('Open Friends & Hearts →','Friends','ghost')}`)}
  ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✧ Discoveries','Discoveries')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
  </div>`);
 }
@@ -938,13 +961,162 @@ document.addEventListener('submit',event=>{
  if(!vvSetPlayerName(field&&field.value)){if(error){error.hidden=false;error.textContent='Please enter 2–20 letters, numbers, spaces, _ or -.'}}
 },true);
 
+
+/* Moonlit Bonds: authenticated backend; browser never writes friendship or heart tables directly. */
+function vvSocialSyncBadge(){
+ const el=document.getElementById('vv-bond-badge');
+ if(el)el.textContent=vvSocial.session&&vvSocial.hub?'+'+(vvBondBonus()*100).toFixed(1)+'%':'Bonds';
+}
+function vvSocialNotice(message){vvSocial.message=String(message||'');if(page==='Friends')render();else if(message)toast(message)}
+function vvSocialError(error){return error&&error.message?error.message:'The moonlit connection failed. Please try again.'}
+async function vvSocialLoad(){
+ if(!vvSocial.client||!vvSocial.session){vvSocial.hub=null;vvSocial.friendCount=0;vvSocialSyncBadge();if(page==='Friends')render();return}
+ try{
+  const result=await vvSocial.client.rpc('vv_get_hub');
+  if(result.error)throw result.error;
+  if(!vvSocial.session)return;
+  vvSocial.hub=result.data;
+  vvSocial.friendCount=Math.min(50,Math.max(0,Number(result.data&&result.data.friend_count)||0));
+  vvSocial.message='';
+ }catch(error){vvSocial.message=vvSocialError(error);vvSocial.hub=null;vvSocial.friendCount=0}
+ vvSocialSyncBadge();
+ if(page==='Friends'||page==='Home')render();
+}
+async function vvSocialInit(){
+ if(!window.supabase||!window.supabase.createClient){vvSocialNotice('Friends requires an internet connection to the Vioverse account service.');return}
+ try{
+  vvSocial.client=window.supabase.createClient('https://vjyoaxgmubunodxldzmj.supabase.co','sb_publishable_2Cf9pumdXrTfL5jI7AEe5g_D3XWdpYo',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+  const result=await vvSocial.client.auth.getSession();
+  vvSocial.session=result.data&&result.data.session||null;
+  vvSocial.client.auth.onAuthStateChange((event,session)=>{
+   vvSocial.session=session||null;
+   if(!session){vvSocial.hub=null;vvSocial.friendCount=0;vvSocial.results=[];vvSocialSyncBadge()}
+   setTimeout(()=>vvSocialLoad(),0);
+  });
+  await vvSocialLoad();
+  setInterval(()=>{if(document.visibilityState==='visible'&&vvSocial.session&&!vvSocial.busy)vvSocialLoad()},60000);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&vvSocial.session)vvSocialLoad()});
+ }catch(error){vvSocialNotice(vvSocialError(error))}
+}
+function vvSocialAuthPanel(){
+ const mode=vvSocial.authMode;
+ return vvPanel('☾ Vioverse Account',
+ '<p class="vv-muted">Create a free Vioverse account to add real friends and send daily hearts. Your existing game save stays on this device.</p>'+
+ '<div class="vv-social-tabs"><button type="button" class="vv-button '+(mode==='signup'?'':'ghost')+'" data-vv-social="mode" data-mode="signup">Create Account</button><button type="button" class="vv-button '+(mode==='login'?'':'ghost')+'" data-vv-social="mode" data-mode="login">Sign In</button></div>'+
+ '<form id="vv-social-auth-form" class="vv-social-form"><label>Email address<input name="email" type="email" autocomplete="email" maxlength="200" required placeholder="you@example.com"></label>'+
+ '<label>Password<input name="password" type="password" autocomplete="'+(mode==='signup'?'new-password':'current-password')+'" minlength="6" required placeholder="At least 6 characters"></label>'+
+ '<button type="submit" class="vv-button" '+(vvSocial.busy?'disabled':'')+'>'+(mode==='signup'?'✦ Create Account':'☾ Sign In')+'</button></form>'+
+ '<p class="vv-muted vv-small">You may need to confirm your email before signing in. Never share your password.</p>','ONLINE FRIENDS');
+}
+function vvSocialProfileSetup(){
+ return vvPanel('✦ Claim Your Unique Username',
+ '<p class="vv-muted">You are signed in. Choose a unique username so friends can find you. This is separate from your local display name.</p>'+
+ '<form id="vv-social-profile-form" class="vv-social-form"><label>Unique username (3–20 characters)<input name="username" type="text" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" autocomplete="off" placeholder="moonwalker_01"></label>'+
+ '<label>Display name<input name="display_name" type="text" minlength="2" maxlength="20" required value="'+escapeText(s.playerName||'Moonwood Wanderer')+'"></label>'+
+ '<button class="vv-button" type="submit" '+(vvSocial.busy?'disabled':'')+'>✦ Create Online Profile</button></form>','ONE-TIME SETUP');
+}
+function vvSocialFriendRow(r){
+ const accepted=r.status==='accepted',incoming=r.recipient===vvSocial.session.user.id;
+ const name=escapeText(r.display_name||r.username),username=escapeText(r.username||'');
+ const buttons=accepted?
+ '<button class="vv-button '+(r.sent_today?'ghost':'')+'" data-vv-social="heart" data-target="'+r.friend_id+'" '+(r.sent_today?'disabled':'')+'>'+(r.sent_today?'♡ Sent Today':'♥ Send Heart')+'</button>'+
+ '<button class="vv-button ghost" data-vv-social="remove" data-id="'+r.id+'">Remove</button>':
+ incoming?'<button class="vv-button" data-vv-social="accept" data-id="'+r.id+'">Accept</button><button class="vv-button ghost" data-vv-social="decline" data-id="'+r.id+'">Decline</button>':
+ '<button class="vv-button ghost" data-vv-social="remove" data-id="'+r.id+'">Cancel Request</button>';
+ return '<div class="vv-social-friend"><div class="vv-social-friend-icon" aria-hidden="true">'+(accepted?'♡':'✧')+'</div><div class="vv-social-friend-name"><strong>'+name+'</strong><small>@'+username+'</small>'+(accepted&&r.received_today?'<small class="vv-heart-received">♥ Sent you a heart today</small>':'')+'</div><div class="vv-social-friend-actions">'+buttons+'</div></div>';
+}
+function vvSocialFriendsSection(){
+ const hub=vvSocial.hub,rows=Array.isArray(hub.rows)?hub.rows:[];
+ const accepted=rows.filter(r=>r.status==='accepted'),incoming=rows.filter(r=>r.status==='pending'&&r.recipient===vvSocial.session.user.id),outgoing=rows.filter(r=>r.status==='pending'&&r.requester===vvSocial.session.user.id);
+ const results=vvSocial.results||[];
+ const ids=new Set(rows.map(r=>r.friend_id));
+ return '<div class="vv-social-dashboard"><div class="vv-social-metrics"><div><span>FRIENDS</span><strong>'+accepted.length+' / 50</strong></div><div><span>ALL SKILLS</span><strong>+'+(vvBondBonus()*100).toFixed(1)+'%</strong></div><div><span>HEARTS SENT TODAY</span><strong>'+Number(hub.hearts_sent_today||0)+'</strong></div><div><span>HEARTS RECEIVED TODAY</span><strong>'+Number(hub.hearts_received_today||0)+'</strong></div></div>'+
+ vvPanel('✦ Find Adventurers','<form id="vv-social-search-form" class="vv-social-search"><input name="query" type="search" minlength="2" maxlength="20" placeholder="Search unique username" value="'+escapeText(vvSocial.query)+'" required><button type="submit" class="vv-button">Search</button></form>'+
+ (results.length?results.map(r=>'<div class="vv-social-friend"><div class="vv-social-friend-icon" aria-hidden="true">✧</div><div class="vv-social-friend-name"><strong>'+escapeText(r.display_name)+'</strong><small>@'+escapeText(r.username)+'</small></div><button type="button" class="vv-button" data-vv-social="request" data-target="'+r.id+'" '+(ids.has(r.id)||accepted.length>=50?'disabled':'')+'>'+(ids.has(r.id)?'Connected / Pending':'Add Friend')+'</button></div>').join(''):(vvSocial.query?'<p class="vv-muted">No matching adventurers yet.</p>':'<p class="vv-muted">Search by username to send a real friend request.</p>')),'PLAYER SEARCH')+
+ (incoming.length?vvPanel('✉ Incoming Requests',incoming.map(vvSocialFriendRow).join(''),incoming.length+' WAITING'):'')+
+ (outgoing.length?vvPanel('✧ Sent Requests',outgoing.map(vvSocialFriendRow).join(''),outgoing.length+' PENDING'):'')+
+ vvPanel('♥ Your Moonlit Circle',accepted.length?accepted.map(vvSocialFriendRow).join(''):'<div class="vv-empty-state"><span>♡</span><strong>Your circle is waiting</strong><p>Invite a friend or search their username to start exchanging hearts.</p></div>',accepted.length+' / 50 FRIENDS')+
+ '<p class="vv-muted vv-social-rules">Every accepted friend gives +0.5% to Wood, Essence, gathering speed, and skill experience, up to +25%. Send one heart to each friend daily. Hearts reset at 00:00 UTC and are a social gift, not spendable currency yet.</p></div>';
+}
+function vvSocialPanel(){
+ if(!vvSocial.client)return vvPanel('♡ Moonlit Bonds','<p class="vv-muted">Connecting to the online Friends service… If this stays here, check your internet connection and reload.</p>','ONLINE FRIENDS');
+ const signed=!!vvSocial.session;
+ const hub=vvSocial.hub;
+ return '<div class="vv-social-root">'+
+ (vvSocial.message?'<div class="vv-social-notice" role="status">'+escapeText(vvSocial.message)+'</div>':'')+
+ (signed?'<div class="vv-social-account"><span>☾ Signed in'+(hub&&hub.profile?' as @'+escapeText(hub.profile.username):'')+'</span><button type="button" class="vv-button ghost" data-vv-social="logout">Sign Out</button></div>':'')+
+ (!signed?vvSocialAuthPanel():!hub?vvPanel('♡ Moonlit Bonds','<p class="vv-muted">Loading your friends and hearts…</p>'):!hub.profile?vvSocialProfileSetup():vvSocialFriendsSection())+'</div>';
+}
+async function vvSocialPerform(action,args){
+ if(!vvSocial.client||vvSocial.busy)return;
+ vvSocial.busy=true;vvSocial.message='';
+ try{
+  const result=await vvSocial.client.rpc(action,args);
+  if(result.error)throw result.error;
+  vvSocial.results=[];
+  await vvSocialLoad();
+  vvSocialNotice(typeof result.data==='string'?result.data:'✦ Moonlit Bonds updated!');
+ }catch(error){vvSocialNotice(vvSocialError(error))}
+ finally{vvSocial.busy=false}
+}
+document.addEventListener('submit',async event=>{
+ const form=event.target;
+ if(!form||!['vv-social-auth-form','vv-social-profile-form','vv-social-search-form'].includes(form.id))return;
+ event.preventDefault();event.stopImmediatePropagation();
+ if(!vvSocial.client||vvSocial.busy)return;
+ const data=new FormData(form);
+ if(form.id==='vv-social-auth-form'){
+  const email=String(data.get('email')||'').trim(),password=String(data.get('password')||'');
+  vvSocial.busy=true;
+  try{
+   const result=vvSocial.authMode==='signup'?
+    await vvSocial.client.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}}):
+    await vvSocial.client.auth.signInWithPassword({email,password});
+   if(result.error)throw result.error;
+   vvSocial.session=result.data&&result.data.session||null;
+   if(vvSocial.session){await vvSocialLoad();vvSocialNotice('Welcome to Moonlit Bonds!')}
+   else vvSocialNotice('Check your email to confirm your account, then return here and sign in.');
+  }catch(error){vvSocialNotice(vvSocialError(error))}
+  finally{vvSocial.busy=false}
+ }else if(form.id==='vv-social-profile-form'){
+  await vvSocialPerform('vv_set_profile',{p_username:String(data.get('username')||''),p_display_name:String(data.get('display_name')||'')});
+ }else{
+  const query=String(data.get('query')||'').trim().toLowerCase();
+  if(!/^[a-z0-9_]{2,20}$/.test(query)){vvSocialNotice('Search 2–20 letters, numbers or underscores.');return}
+  vvSocial.busy=true;vvSocial.query=query;
+  try{const result=await vvSocial.client.rpc('vv_search_players',{p_query:query});if(result.error)throw result.error;vvSocial.results=result.data||[];vvSocial.message='';render()}
+  catch(error){vvSocialNotice(vvSocialError(error))}
+  finally{vvSocial.busy=false}
+ }
+},true);
+document.addEventListener('click',async event=>{
+ const btn=event.target.closest('[data-vv-social]');
+ if(!btn)return;
+ event.preventDefault();event.stopImmediatePropagation();
+ if(vvSocial.busy)return;
+ const action=btn.dataset.vvSocial;
+ if(action==='mode'){vvSocial.authMode=btn.dataset.mode==='login'?'login':'signup';vvSocial.message='';render();return}
+ if(action==='logout'){
+  vvSocial.busy=true;
+  try{const result=await vvSocial.client.auth.signOut();if(result.error)throw result.error;vvSocial.session=null;vvSocial.hub=null;vvSocial.friendCount=0;vvSocial.results=[];vvSocialNotice('Signed out of Moonlit Bonds. Your local game save is unchanged.')}
+  catch(error){vvSocialNotice(vvSocialError(error))}
+  finally{vvSocial.busy=false}
+  return;
+ }
+ const methods={request:['vv_request_friend',{p_target:btn.dataset.target}],accept:['vv_respond_friend',{p_friendship:btn.dataset.id,p_accept:true}],decline:['vv_respond_friend',{p_friendship:btn.dataset.id,p_accept:false}],remove:['vv_remove_friend',{p_friendship:btn.dataset.id}],heart:['vv_send_heart',{p_friend:btn.dataset.target}]};
+ if(methods[action]){
+  if(action==='remove'&&!confirm('Remove this friend or cancel this request?'))return;
+  await vvSocialPerform(methods[action][0],methods[action][1]);
+ }
+},true);
+
 function vvFriends(){
  const invite='https://opdev67.github.io/vioverse-game/';
  return vvSection(vvHead('Together beneath the moon','Friends','Invite someone to discover Vioverse and begin their own Moonwood journey.','✧ Invite your circle')+
- vvPlayerProfilePanel()+
+ vvPlayerProfilePanel()+vvSocialPanel()+
  '<div class="vv-friends-hero"><div class="vv-friends-emblem" aria-hidden="true">☾<span>✧</span></div><div><div class="vv-kicker">THE MOONLIT CIRCLE</div><h2>Every adventure is brighter with friends</h2><p>Share Vioverse with someone you know. They can open the public game on iPhone, Android, or PC and start their own journey.</p><div class="vv-friends-actions">'+vvButton('✧ Share invitation','friends-share')+vvButton('Copy game link','friends-copy',false,'ghost')+'</div></div></div>'+
  vvPanel('✦ Your Invitation', '<p class="vv-muted">Send this public link to your friends:</p><div class="vv-friends-url">'+invite+'</div><p class="vv-muted vv-small">Everyone currently plays independently, with their own browser save. Your personal save is never included in the invitation.</p>','PUBLIC GAME LINK')+
- vvPanel('☾ Friends & Online Status', '<div class="vv-friends-upcoming"><span aria-hidden="true">♙</span><div><strong>Friends list is coming next</strong><p>Friend requests, profiles, online status, and shared activities require player accounts and an online service. They are not active yet, so this screen will never pretend a player is online or a request was sent.</p></div></div>','COMING IN A FUTURE UPDATE'));
+ vvPanel('☾ Your Progress Stays Safe', '<p class="vv-muted">Friends and hearts are stored online in Vioverse. Your Wood, companions, and story progress still save in this browser. Signing into an account does not yet sync or replace your local game save.</p>','ACCOUNT & SAVE NOTE'));
 }
 function vvFriendsShare(){
  const url='https://opdev67.github.io/vioverse-game/';
@@ -975,7 +1147,7 @@ function vvRender(){
  main.innerHTML=(screens[page]||vvHome)();
  if(page==='Home'){const sc=document.getElementById('vv-card-scroll');if(sc)sc.scrollLeft=scrollPos}
  document.getElementById('wood').textContent=fmt(s.wood);document.getElementById('essence').textContent=fmt(s.essence);document.getElementById('butterfly').textContent=fmt(s.butterfly);const dust=document.getElementById('stardust');if(dust)dust.textContent=fmt(s.stardust);document.getElementById('level').textContent=level(s.xp);
- const playerLabel=document.getElementById('vv-player-hud-name');if(playerLabel)playerLabel.textContent=vvPlayerDisplayName();
+ const playerLabel=document.getElementById('vv-player-hud-name');if(playerLabel)playerLabel.textContent=vvPlayerDisplayName();vvSocialSyncBadge();
  const rank=document.getElementById('vv-level-caption');if(rank)rank.textContent='Lv. '+level(s.xp);
  const xp=document.querySelector('.vv-level-track i');if(xp)xp.style.width=pct(s.xp)+'%';
 }
@@ -1387,4 +1559,5 @@ function vvSkillGlyph(kind){
  sync();
 })();
 
+setTimeout(vvSocialInit,80);
 </script></body></html>
