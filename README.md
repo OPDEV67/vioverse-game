@@ -1,6 +1,6 @@
 # Vioverse
 
-**Current release: v1.5.0 — Moonlit Bonds**
+**Current release: v1.5.1 — Google Sign-In**
 
 Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
@@ -22,6 +22,10 @@ Progress is stored in browser local storage under `moonveil_legacy_v02`. This re
 ## Mobile layout
 
 On iPhone and Android, Vioverse automatically shows a compact HUD and a bottom navigation bar with Home, Gathering, Gacha, Characters, and More. The More menu contains the other game screens. The layout responds to screen width; there is no separate mobile build or switch. Desktop keeps the original sidebar.
+
+## Google Sign-In setup
+
+The Friends login now includes **Continue with Google**. To activate it, open the [Vioverse Supabase Google provider](https://supabase.com/dashboard/project/vjyoaxgmubunodxldzmj/auth/providers) and enable Google. Create a **Web application** OAuth client in [Google Cloud Console](https://console.cloud.google.com/apis/credentials). Under **Authorized redirect URIs**, add `https://vjyoaxgmubunodxldzmj.supabase.co/auth/v1/callback`. Copy the OAuth Client ID and Client Secret into Supabase's Google provider settings and save. Google OAuth consent-screen configuration and testing/publishing requirements also apply. The app return URL remains `https://opdev67.github.io/vioverse-game/` under Supabase Auth → URL Configuration. Do not share your Google Client Secret or put it in the game's public GitHub repository.
 
 ## Moonlit Bonds — Online Friends and Hearts
 
