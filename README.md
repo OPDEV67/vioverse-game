@@ -1,3 +1,7 @@
+## Vioverse Audio (v1.5.3)
+
+Use **♫ Sound** to enable audio and adjust music, forest ambience and SFX volumes. Settings persist per browser. Music starts only with player consent and pauses in hidden tabs. The audio player expects six MP3 files in `assets/audio/`. The GitHub Actions workflow `.github/workflows/build-audio.yml` generates them with `scripts/generate_audio.py` and commits them to the repository. If the workflow has not yet published the MP3s, the game plays lightweight Web Audio synthesizer fallbacks instead. The source music and sound effects are original procedural compositions, not ElevenLabs output.
+
 # Vioverse
 
 **Current release: v1.5.2 — Character & Spirit Collection**
