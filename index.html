@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.5.2</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.5.3</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -597,6 +597,9 @@ html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touc
 
 /* v1.5.2 Collection archive */
 .vv-archive-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:12px 0 22px}.vv-archive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px;margin:16px 0 30px}.vv-archive-card{border:1px solid #7b5a9b;border-radius:15px;background:linear-gradient(155deg,#281839,#150f27);overflow:hidden;box-shadow:0 10px 30px #07030e66}.vv-archive-locked .vv-archive-art img{filter:grayscale(.55) brightness(.7)}.vv-archive-art{height:210px;position:relative;overflow:hidden;background:#140e24}.vv-archive-art img{width:100%;height:100%;object-fit:cover;object-position:center 24%}.vv-archive-art .vv-tag,.vv-archive-spirit .vv-tag{position:absolute;right:10px;top:10px;background:#231332ee}.vv-archive-spirit{height:140px;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#563574,#160e29 70%)}.vv-archive-spirit>span:first-child{font-size:60px}.vv-archive-content{padding:17px;display:grid;gap:10px}.vv-archive-content h3{margin:0;font-family:Cinzel,serif;color:#f6e5ff}.vv-archive-content p{margin:0}.vv-archive-lore{line-height:1.6;color:#dfcde9;font-size:13px}.vv-archive-special{padding:12px;border:1px solid #795a9a;border-radius:10px;background:#21152e}.vv-archive-special strong{color:#ebc68d}.vv-archive-special p{margin:7px 0;font-size:13px}.vv-archive-special small{color:#b9a5ca}.vv-archive-rank{font-size:25px;color:#e9c68f;margin:6px 0}.vv-slot-portrait{width:100%;height:130px;object-fit:cover;object-position:center 22%;border-radius:8px;margin-bottom:10px}@media(max-width:640px){.vv-archive-summary{grid-template-columns:1fr}.vv-archive-grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}.vv-archive-art{height:155px}.vv-archive-content{padding:12px}}
+/* v1.5.3 sound controls */
+#vv-audio-button{border:1px solid #946ab0;border-radius:9px;background:#291b3e;padding:7px 12px;color:#e9d2ff}#vv-audio-button:hover{background:#47305d}.vv-audio-dialog[hidden]{display:none!important}.vv-audio-dialog{position:fixed;inset:0;z-index:10000;background:#090511cb;display:grid;place-items:center;padding:16px}.vv-audio-card{width:min(440px,100%);border:1px solid #a47bbf;border-radius:18px;padding:24px;background:linear-gradient(145deg,#302044,#160f25);box-shadow:0 20px 80px #000a;display:grid;gap:17px;color:#f2e4ff}.vv-audio-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.vv-audio-top h2{font-family:Cinzel,serif;font-size:20px;margin:0}.vv-audio-top button,.vv-audio-card>button{background:#3c2858;border:1px solid #9c7db9;border-radius:9px;padding:8px 12px}.vv-audio-card p{margin:0;color:#cdbbdc;line-height:1.5}.vv-audio-card label{display:grid;gap:7px;font-size:13px;font-weight:600}.vv-audio-card label input[type=range]{width:100%;accent-color:#c18ee8}.vv-audio-card output{float:right;color:#e9c88b}.vv-audio-card .vv-audio-check{display:flex;align-items:center;gap:12px}.vv-audio-check input{width:18px;height:18px;accent-color:#bd89e7}.vv-audio-card .vv-audio-note{font-size:12px}
+@media(max-width:767px){#vv-audio-button{position:fixed;right:10px;bottom:calc(83px + var(--vv-safe-bottom));z-index:270;border-radius:999px;padding:9px 13px;box-shadow:0 5px 22px #000a}}
 /* v1.5.1 Google account sign-in */
 .vv-google-button{width:100%;max-width:520px;min-height:50px;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 16px;border:1px solid #bda5d4;border-radius:10px;background:#fff;color:#292137;font:700 15px system-ui,sans-serif;cursor:pointer;transition:transform .15s,box-shadow .15s}
 .vv-google-button:hover{transform:translateY(-1px);box-shadow:0 4px 20px #c2a2ff55}.vv-google-button:focus-visible{outline:3px solid #d6a5ff;outline-offset:3px}.vv-google-button:disabled{opacity:.6;cursor:wait}
@@ -621,10 +624,10 @@ html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touc
 .vv-social-rules{font-size:12px;line-height:1.6;padding:8px 4px}
 @media(max-width:767px){.vv-social-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.vv-social-friend-actions{width:100%}.vv-social-friend-actions .vv-button{flex:1 1 125px}.vv-social-friend>.vv-button{flex:1 1 100%}.vv-social-form{max-width:100%}}
 </style></head><body><header><div class="vv-header-inner">
-<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.5.1 Google Sign-In</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
+<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.5.3 Audio</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon">♡</span><b id="vv-bond-badge">Bonds</b></button></div>
-<div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
-</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
+<div class="vv-quicknav"><button type="button" id="vv-audio-button" title="Open audio settings" aria-label="Open audio settings">♫ Sound</button><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
+</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><div id="vv-audio-dialog" class="vv-audio-dialog" hidden role="dialog" aria-modal="true" aria-label="Vioverse sound settings"><div class="vv-audio-card"><div class="vv-audio-top"><h2>♫ Moonwood Audio</h2><button type="button" id="vv-audio-close" aria-label="Close audio settings">✕</button></div><p>Whispers of Moonwood · music, forest ambience, and magical sound effects.</p><label class="vv-audio-check"><input id="vv-audio-enable" type="checkbox"> Enable game audio</label><label>🎵 Music <output id="vv-audio-music-label">30%</output><input id="vv-audio-music" type="range" min="0" max="100" value="30"></label><label>🌲 Forest ambience <output id="vv-audio-ambient-label">20%</output><input id="vv-audio-ambient" type="range" min="0" max="100" value="20"></label><label>✨ Sound effects <output id="vv-audio-sfx-label">65%</output><input id="vv-audio-sfx" type="range" min="0" max="100" value="65"></label><p class="vv-audio-note" id="vv-audio-status">Audio starts only after you enable it. Preferences are saved in this browser.</p><button type="button" id="vv-audio-preview">✦ Test magical chime</button></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
 
 'use strict';
 
@@ -728,7 +731,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.5.2', BUILD_ID='2026-10-25-v152-collection';
+const BUILD_VERSION='1.5.3', BUILD_ID='2026-10-25-v153-audio-controls';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -952,7 +955,7 @@ function vvDoPull(count){
  const cost=count===10?90:10;if(s.stardust<cost){toast('You need '+cost+' Stardust. Exchange gathered Wood in the Moonlit Shop.');return}
  s.stardust-=cost;const results=[];
  for(let i=0;i<count;i++){const c=vvRollCompanion(),duplicate=Number(s.ownedCompanions[c.id]||0)>0;if(duplicate)s.stardust+=3;else s.ownedCompanions[c.id]=1;results.push({id:c.id,rarity:c.rarity,duplicate});s.gachaPulls++;note(duplicate?'✦ Duplicate '+c.name+' converted into 3 Stardust.':'✦ New companion: '+c.name+' ('+c.rarity+').');}
- s.lastSummon=results;const dupes=results.filter(r=>r.duplicate).length,detail='Summoned '+count+' · spent '+cost+' Stardust'+(dupes?' · '+dupes+' duplicate(s), +'+(dupes*3)+' Stardust':'');
+ s.lastSummon=results;if(window.vvAudio)window.vvAudio.effect(results.some(r=>r.rarity==='Legendary'||r.rarity==='Epic')?'discovery':'quest');const dupes=results.filter(r=>r.duplicate).length,detail='Summoned '+count+' · spent '+cost+' Stardust'+(dupes?' · '+dupes+' duplicate(s), +'+(dupes*3)+' Stardust':'');
  s.economyHistory.unshift({type:'summon',detail,at:Date.now()});s.economyHistory=s.economyHistory.slice(0,20);save();toast(count===10?'✦ Ten summons complete · '+dupes+' duplicate(s) converted.':'✦ Summon complete · '+(dupes?'duplicate converted to Stardust.':'new companion added.'));render();
 }
 function vvGacha(){
@@ -1599,6 +1602,109 @@ function vvSkillGlyph(kind){
  document.addEventListener('click',e=>{const toggle=e.target.closest('#vv-mobile-more-toggle');if(toggle){e.preventDefault();const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));sync();return}const nav=e.target.closest('#vv-mobile-nav [data-page],#vv-mobile-more [data-page]');if(nav){closeMenu();requestAnimationFrame(sync);return}if(!e.target.closest('#vv-mobile-more'))closeMenu()},true);
  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
  const main=document.getElementById('main');if(main&&typeof MutationObserver!=='undefined'){new MutationObserver(sync).observe(main,{childList:true})}
+ sync();
+})();
+
+
+/* v1.5.3 Moonwood audio: real MP3 assets when present; procedural fallback while awaiting binary upload. */
+(function(){
+ const STORE='vioverse_audio_preferences_v1';
+ const files={theme:'assets/audio/vioverse-whispers-of-moonwood-theme.mp3',forest:'assets/audio/vioverse-forest-ambience.mp3',quest:'assets/audio/vioverse-quest-completed.mp3',level:'assets/audio/vioverse-level-up.mp3',discovery:'assets/audio/vioverse-rare-discovery.mp3',friend:'assets/audio/vioverse-friend-accepted.mp3'};
+ const defaults={enabled:false,music:30,ambient:20,sfx:65};
+ let pref={...defaults};try{const saved=JSON.parse(localStorage.getItem(STORE)||'{}');for(const k of Object.keys(defaults))if(typeof saved[k]===typeof defaults[k])pref[k]=saved[k]}catch{}
+ for(const k of ['music','ambient','sfx'])pref[k]=Math.max(0,Math.min(100,pref[k]));
+ const music=new Audio(files.theme),forest=new Audio(files.forest);music.loop=true;forest.loop=true;music.preload='none';forest.preload='none';
+ const unavailable=new Set(),clips={};let ctx=null,timer=null,ambientNode=null,ambientGain=null,step=0;
+ const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+ function context(){if(!AudioContextClass)return null;if(!ctx)ctx=new AudioContextClass();if(ctx.state==='suspended')ctx.resume().catch(()=>{});return ctx}
+ function beep(freq,duration,volume,when=0,type='sine'){
+  const c=context();if(!c)return;const t=c.currentTime+when,o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.max(.0001,volume),t+.025);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+duration+.02);
+ }
+ function chime(kind){
+  if(!pref.enabled||!pref.sfx)return;
+  const v=pref.sfx/100*.11,seq=kind==='friend'?[523,659,784]:kind==='level'?[392,523,659,784,1047]:kind==='discovery'?[311,466,622,932]:kind==='quest'?[523,659,880]:[523,784];
+  seq.forEach((f,i)=>beep(f,.36,v,i*.13,'sine'));
+ }
+ function synthMusic(){
+  if(timer||!pref.enabled||!pref.music||!unavailable.has('theme'))return;
+  const melody=[0,4,7,12,7,4,2,7,0,3,7,10,7,3,5,7,0,4,7,11,7,4,2,4,0,5,9,12,9,5,4,2];
+  const base=[220,196,174.61,164.81];
+  function note(){
+   if(!pref.enabled||!pref.music)return;
+   const idx=step%melody.length,bar=Math.floor(idx/8),root=base[bar],semitones=melody[idx];
+   if(idx%2===0)beep(root*Math.pow(2,semitones/12),.55,pref.music/100*.045,0,'sine');
+   if(idx%8===0){beep(root/2,1.7,pref.music/100*.026,0,'triangle');beep(root*1.5,1.2,pref.music/100*.018,.08,'sine')}
+   step++;
+  }
+  note();timer=setInterval(note,375);
+ }
+ function stopSynth(){if(timer){clearInterval(timer);timer=null}}
+ function synthForest(){
+  if(ambientNode||!pref.enabled||!pref.ambient||!unavailable.has('forest'))return;
+  const c=context();if(!c)return;
+  const buf=c.createBuffer(1,c.sampleRate*3,c.sampleRate),a=buf.getChannelData(0);
+  for(let i=0;i<a.length;i++)a[i]=(Math.random()*2-1)*.5;
+  const src=c.createBufferSource(),low=c.createBiquadFilter(),gain=c.createGain();
+  src.buffer=buf;src.loop=true;low.type='lowpass';low.frequency.value=380;gain.gain.value=pref.ambient/100*.028;src.connect(low);low.connect(gain);gain.connect(c.destination);src.start();ambientNode=src;ambientGain=gain;
+ }
+ function stopForest(){if(ambientNode){try{ambientNode.stop()}catch{}ambientNode.disconnect();ambientNode=null;ambientGain=null}}
+ function volume(){
+  music.volume=pref.music/100*.55;forest.volume=pref.ambient/100*.35;
+  if(ambientGain)ambientGain.gain.value=pref.enabled?pref.ambient/100*.028:0;
+ }
+ function playLoop(name,element){
+  if(!pref.enabled||!pref[name]){element.pause();if(name==='music')stopSynth();else stopForest();return}
+  const id=name==='music'?'theme':'forest';
+  if(unavailable.has(id)){if(id==='theme')synthMusic();else synthForest();return}
+  element.play().then(()=>{if(id==='theme')stopSynth();else stopForest()}).catch(()=>{unavailable.add(id);if(id==='theme')synthMusic();else synthForest()});
+ }
+ music.addEventListener('error',()=>{unavailable.add('theme');if(pref.enabled)synthMusic()});
+ forest.addEventListener('error',()=>{unavailable.add('forest');if(pref.enabled)synthForest()});
+ function sync(){
+  volume();
+  if(pref.enabled){context();playLoop('music',music);playLoop('ambient',forest)}
+  else{music.pause();forest.pause();stopSynth();stopForest()}
+  const button=document.getElementById('vv-audio-button');if(button)button.textContent=pref.enabled?'♫ Sound on':'♫ Sound off';
+  const toggle=document.getElementById('vv-audio-enable');if(toggle)toggle.checked=pref.enabled;
+  for(const k of ['music','ambient','sfx']){const el=document.getElementById('vv-audio-'+k),label=document.getElementById('vv-audio-'+k+'-label');if(el)el.value=pref[k];if(label)label.textContent=pref[k]+'%'}
+  try{localStorage.setItem(STORE,JSON.stringify(pref))}catch{}
+ }
+ function effect(kind){
+  if(!pref.enabled||!pref.sfx)return;
+  if(unavailable.has(kind)){chime(kind);return}
+  const clip=clips[kind]||(clips[kind]=new Audio(files[kind]));clip.volume=pref.sfx/100*.75;clip.currentTime=0;
+  clip.play().catch(()=>{unavailable.add(kind);chime(kind)});
+ }
+ const api={effect,enabled:()=>pref.enabled};window.vvAudio=api;
+ const button=document.getElementById('vv-audio-button'),dialog=document.getElementById('vv-audio-dialog');
+ if(button&&dialog){
+  button.addEventListener('click',()=>{dialog.hidden=false;sync()});
+  document.getElementById('vv-audio-close').addEventListener('click',()=>dialog.hidden=true);
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.hidden=true});
+  document.getElementById('vv-audio-enable').addEventListener('change',e=>{pref.enabled=e.target.checked;sync()});
+  for(const k of ['music','ambient','sfx'])document.getElementById('vv-audio-'+k).addEventListener('input',e=>{pref[k]=Number(e.target.value);sync()});
+  document.getElementById('vv-audio-preview').addEventListener('click',()=>{if(!pref.enabled){pref.enabled=true;sync()}effect('quest')});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden)dialog.hidden=true});
+ }
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();forest.pause();stopSynth();stopForest()}else if(pref.enabled)sync()});
+ const oldToast=toast;
+ toast=function(message){
+  oldToast(message);
+  const msg=String(message).toLowerCase();
+  if(/friend request accepted|friendship accepted|accepted your friend|friend accepted|heart sent|sent a heart/.test(msg))effect('friend');
+  else if(/level up|reached level/.test(msg))effect('level');
+  else if(/quest completed|mission completed|objective completed|restored the moonwood/.test(msg))effect('quest');
+  else if(/rare discovery|lunar butterfly|magical discovery/.test(msg))effect('discovery');
+ };
+ const originalAdvance=advance;
+ advance=function(dt){
+  const before=level(s.xp),disc=s.discoveryCount,flies=s.butterfly,cycles=originalAdvance(dt);
+  if(cycles>0&&pref.enabled&&!document.hidden){
+   if(level(s.xp)>before)effect('level');
+   else if(s.butterfly>flies||s.discoveryCount>disc)effect('discovery');
+  }
+  return cycles;
+ };
  sync();
 })();
 
