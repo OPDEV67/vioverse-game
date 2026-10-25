@@ -1053,23 +1053,23 @@ function vvDashboard(){
 function vvHome(){
  const cards=`<div class="vv-card-stage" id="vv-card-scroll"><div class="vv-cards">${vvHeroCard()}${[5,10,15,30].map(vvLocked).join('')}</div></div>`;
  return vvSection(vvDashboard()+vvHead('Your moonlit companions','Companion Roster','Meet your allies and unlock more as your journey grows.','✧ '+escapeText(vvPlayerDisplayName()))+
- cards+
+ cards+vvMegaWorld()+
  `<div class="vv-bottom">
  ${vvPanel('✧ Current Area',`<div class="vv-tile-row"><span>🌙 Whispering Grove</span><span class="vv-gold">Lv. 1–10</span></div><p class="vv-muted">An enchanted forest alive with forgotten spirits and silver flowers.</p>${vvLink('Explore the Grove →','Expeditions','ghost')}`)}
- ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Working →','Working','ghost')}`)}
+ ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>${level(s.xp)>=5?'Available now':'Unlock Lv. 5'}</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>${level(s.xp)>=10?'Available now':'Unlock Lv. 10'}</small></div><div class="vv-tile-row"><span>🌿 Herbalism</span><small>${level(s.xp)>=15?'Available now':'Unlock Lv. 15'}</small></div>${vvLink('Open Working →','Working','ghost')}`)}
  ${vvPanel('▤ Journey Objective',`<p class="vv-muted">${nextStep()}</p><div class="vv-actions">${vvLink('View Legacy →','Legacy')}</div>`)}
  ${vvPanel('♡ Moonlit Bonds',`<p class="vv-muted">${vvSocial.friendCount}/50 accepted friends · +${(vvBondBonus()*100).toFixed(1)}% to Wood, Essence, gathering speed, and skill experience.</p>${vvLink('Open Friends & Hearts →','Friends','ghost')}`)}
  ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✉ Mailbox','Mailbox')}${vvLink('⚙ Settings','Settings','ghost')}${vvLink('✧ Discoveries','Discoveries','ghost')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✦ Collection','Collection','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
  </div>`);
 }
 function vvCharacters(){
- return vvSection(vvHead('Companion archive','Characters','Meet your companions, inspect talents, and follow each awakening.','1 active · 4 level unlocks')+
+ return vvSection(vvHead('Companion archive','Characters','Meet your companions, inspect talents, build bonds and remember their stories.','5 characters · persistent memories')+
  `<div class="vv-roster"><div class="vv-character-feature"><span class="vv-og-label">✦ ORIGINAL CHARACTER ART</span><img src="assets/seraphine.webp" alt="Seraphine, silver-haired Forest Whisperer"><div class="vv-feature-caption"><span class="vv-tag">✦ Epic · Woodcutting</span><h2>Seraphine</h2><p class="vv-muted">The Forest Whisperer · Guardian of the Moonwood</p></div></div>
  <div style="display:grid;gap:15px">
  ${vvPanel('✦ Companion Profile',`<p class="vv-muted">A quiet forest guide bound to the moonlit roots. Seraphine gathers resources automatically while your story unfolds.</p>${vvStat('Character level',level(s.xp))}${vvTrack(pct(s.xp))}${vvStat('Woodcutting', 'Lv. '+level(s.profXp))}${vvTrack(pct(s.profXp),null,true)}${vvStat('Gathering cycle',speed().toFixed(1)+' seconds')}${vvStat('Awakening',s.awakened?'✦ Awakening I':'Not yet awakened')}`,'ACTIVE')}
  ${vvPanel('✧ Branching Talents',`<div class="vv-skill-table"><div class="vv-skill-tile"><span>🌲</span><strong>Forest Fundamentals</strong><p>Gathering basics · learned</p></div><div class="vv-skill-tile"><span>⚡</span><strong>Swift Hands</strong><p>Improves gathering with mastery.</p></div><div class="vv-skill-tile"><span>🦋</span><strong>Moon Sight</strong><p>Future discovery talents.</p></div><div class="vv-skill-tile"><span>✦</span><strong>Forest Mastery</strong><p>Rank ${s.skillSpent}/5 · ${s.skill} points to spend</p></div></div><div class="vv-actions" style="margin-top:15px">${vvButton('Spend 1 skill point','skill',s.skill<1||s.skillSpent>=5)}${vvLink('Awakening path →','Legacy','ghost')}</div>`)}
  </div></div>
- <div class="vv-actions">${vvLink('✦ View full Collection →','Collection')}${vvLink('✧ Spirit Gacha →','Gacha','ghost')}</div>`);
+ <div class="vv-actions">${vvLink('✦ View full Collection →','Collection')}${vvLink('✧ Spirit Gacha →','Gacha','ghost')}</div>`+vvMegaBonds());
 }
 function vvExpeditions(){
  const ev=activeEvent();
@@ -1233,23 +1233,46 @@ document.addEventListener('click',event=>{
 },true);
 
 function vvGathering(){
- const profs=[['🌳','Woodcutting',1,level(s.profXp),'Active · automatic'],['⛏','Mining',5,0,'Planned profession'],['🎣','Fishing',10,0,'Planned profession'],['🌿','Herbalism',15,0,'Planned profession']];
- return vvSection(vvHead('Under the forest canopy','Working Professions','Your companions gather even while you are away. Up to eight hours of offline progress.','✧ Always working')+
- `<div class="vv-scene" style="min-height:240px"><div class="vv-scene-foreground"><h2>Seraphine · Forest Whisperer</h2><p>Moonwood yields to patient hands. Gathering never needs a start button.</p></div></div>
- <div class="vv-grid" style="margin-top:18px">${profs.map((x,i)=>`<div class="vv-panel"><span style="font-size:29px">${x[0]}</span><h3 style="margin:8px 0">${x[1]}</h3><span class="vv-tag">${i===0?'ACTIVE':'MILESTONE LV. '+x[2]}</span><p class="vv-muted">${x[4]}</p>${vvStat('Profession level',i===0?'Lv. '+x[3]:'Not yet implemented')}${vvTrack(i===0?pct(s.profXp):0,null,i===0)}</div>`).join('')}</div>
- ${vvPanel('✧ Working Record',`<div class="vv-grid"><div class="vv-mini-metric"><span>🪵</span><div><b>${fmt(s.wood)}</b><small>Moonwood collected</small></div></div><div class="vv-mini-metric"><span>✦</span><div><b>${fmt(s.cycles)}</b><small>Gathering cycles</small></div></div><div class="vv-mini-metric"><span>⚡</span><div><b>${speed().toFixed(1)}s</b><small>Time per cycle</small></div></div></div><p class="vv-muted">Profession levels and bonuses update automatically as Seraphine gathers.</p>`,'LIVE IDLE')}`);
+ const active=level(s.profXp),player=level(s.xp);
+ const primary=`<div class="vv-panel vv-main-work"><div class="vv-work-title"><span>🌳</span><div><span class="vv-kicker">AUTOMATIC PROFESSION</span><h3>Woodcutting · Lv. ${active}</h3><p class="vv-muted">Seraphine keeps gathering Moonwood, Woodcutting XP and rare discoveries while you're away (up to eight hours).</p></div></div>
+ ${vvStat('Next Woodcutting level',Math.floor(pct(s.profXp))+'%')}${vvTrack(pct(s.profXp),null,true)}
+ ${vvStat('Every cycle',speed().toFixed(1)+' seconds')}${vvTrack(s.progress/speed()*100,'mega-main-work-progress',true)}
+ </div>`;
+ const side=VV_MEGA_WORK.map(w=>{
+  const unlocked=player>=w.lv,wait=Math.max(0,Math.ceil((s.mega.lastWork[w.id]+(w.cooldown-(w.id==='fishing'&&s.mega.crafted.includes('hook')?5:0))*1000-Date.now())/1000)),xp=s.mega.professions[w.id];
+  return `<article class="vv-panel vv-mega-work ${unlocked?'is-active':'is-locked'}"><span class="vv-mega-work-icon">${w.icon}</span><span class="vv-tag">${unlocked?'✦ OPEN · LV. '+(1+Math.floor(xp/60)):'🔒 PLAYER LV. '+w.lv}</span>
+ <h3>${w.name}</h3><p class="vv-muted">${w.flavor}</p>
+ ${vvStat('Materials in inventory',fmt(s.mega.materials[w.material]))}
+ ${vvStat('Profession experience',xp+' XP')}
+ <div class="vv-mega-work-action">${vvButton(unlocked?(wait?'Resting · '+wait+'s':'Work · +'+w.reward+' '+w.material):'Locked until Lv. '+w.lv,'mega-work-'+w.id,!unlocked||wait>0,'ghost')}</div>
+ </article>`;
+ }).join('');
+ return vvSection(vvHead('Moonwood professions','Working','Woodcutting runs automatically. Unlock optional manual professions as your player level increases.','🌿 '+active+' WOODCUTTING')+
+ `<div class="vv-work-scene"><div><span class="vv-kicker">THE WHISPERING GROVE</span><h2>Every Craft Begins With a Story</h2><p>Gather patiently, work at your own pace, then make something beautiful in the Moonlit Atelier.</p></div></div>`+
+ primary+`<div class="vv-mega-work-grid">${side}</div>`+
+ vvPanel('✧ Working Record',`<div class="vv-grid"><div class="vv-mini-metric"><span>🪵</span><div><b>${fmt(s.wood)}</b><small>Moonwood collected</small></div></div><div class="vv-mini-metric"><span>✦</span><div><b>${fmt(s.cycles)}</b><small>Working cycles</small></div></div><div class="vv-mini-metric"><span>⚡</span><div><b>${speed().toFixed(1)}s</b><small>Per idle cycle</small></div></div></div>`,'LIVE IDLE')+
+ `<div class="vv-actions">${vvLink('✧ Craft at the Atelier','Inventory')}${vvLink('☾ Restore the Grove','Legacy','ghost')}</div>`);
 }
 function vvInventory(){
- const items=[['🪵','Moonwood',s.wood,'Gathered from trees and expeditions'],['✧','Moon Essence',s.essence,'Earned through magical discoveries'],['✧','Stardust',s.stardust,'Earned by exchanging Wood; spent on companion summons'],['🦋','Lunar Butterfly',s.butterfly,'Rare spirit used for Awakening I']];
- return vvSection(vvHead('Treasures of the grove','Inventory','Everything you have earned is stored in your current browser save.','✧ '+items.length+' resource types')+
- `<div class="vv-grid">${items.map(x=>`<div class="vv-panel"><div class="vv-mini-metric"><span>${x[0]}</span><div><b>${fmt(x[2])}</b><small>${x[1]}</small></div></div><p class="vv-muted">${x[3]}</p></div>`).join('')}</div>
- <div class="vv-columns" style="margin-top:17px">${vvPanel('🌙 Crafting & Equipment',`<p class="vv-muted">Equipment, crafting materials, and equipment slots are planned features. Your current resources are ready for Legacy restoration.</p>${vvLink('See Legacy requirements →','Legacy')}`)}${vvPanel('✎ Safekeeping',`<p class="vv-muted">Your inventory and progress are saved automatically in this browser. You can export a backup from the Journal.</p>${vvLink('Open Journal →','Journal','ghost')}`)}</div>`);
+ const items=[
+ ['🪵','Moonwood',s.wood,'From automatic Woodcutting, expeditions and quests'],
+ ['☾','Moon Essence',s.essence,'A mysterious discovery and restoration resource'],
+ ['✧','Stardust',s.stardust,'Trade gathered Wood to summon spirits'],
+ ['🦋','Lunar Butterfly',s.butterfly,'A rare spirit used for Seraphine Awakening'],
+ ['⛏','Moonstone',s.mega.materials.ore,'Mined at Player Level 5'],
+ ['🎣','Silverscale',s.mega.materials.fish,'Caught at Player Level 10'],
+ ['🌿','Moonpetals',s.mega.materials.herbs,'Gathered at Player Level 15']
+ ];
+ return vvSection(vvHead('Treasures of the grove','Inventory & Crafting','Materials, unique recipes, and keepsakes that honor your choices.','✧ '+s.mega.crafted.length+' / '+VV_MEGA_ITEMS.length+' crafted')+
+ `<div class="vv-mega-material-grid">${items.map(x=>`<div class="vv-mega-material"><span>${x[0]}</span><div><strong>${fmt(x[2])}</strong><b>${x[1]}</b><small>${x[3]}</small></div></div>`).join('')}</div>`+
+ vvMegaWorkshop()+
+ vvPanel('✎ Safekeeping',`<p class="vv-muted">All materials, crafted items, equipment, bonds and restored sites are preserved in the browser save and exported with your backup.</p>${vvLink('Back up your save →','Journal','ghost')}`));
 }
 function vvMissions(){
  const goals=[['Explore the Whispering Grove',s.expeditions>0,'Make your first expedition choice.','Expeditions'],['Find the Forgotten Moonwood',s.shrineFound,'Locate the lost tree.','Expeditions'],['Decode the restoration ritual',s.clue,'Learn the moonlit inscription.','Legacy'],['Awaken Seraphine',s.awakened,'Collect the required resources.','Legacy'],['Restore the Ancient Tree',s.restored,'Bring Moonwood back to life.','Legacy']];
  return vvSection(vvHead('The quest board','Missions & Milestones','Your story goals, remembered choices, and next steps in one place.','✧ '+goals.filter(x=>x[1]).length+'/'+goals.length+' milestones')+
  `<div class="vv-columns">${vvPanel('✦ Story Milestones',goals.map((x,i)=>`<div class="vv-progress-step ${x[1]?'done':''}"><div class="vv-progress-number">${x[1]?'✓':i+1}</div><div style="flex:1"><h3>${x[0]}</h3><p class="vv-muted">${x[2]}</p></div>${vvLink(x[1]?'View':'Go →',x[3],'ghost')}</div>`).join(''))}
- ${vvPanel('☾ The Next Chapter',`<div class="vv-tag">CURRENT OBJECTIVE</div><h3 style="margin-top:13px">${nextStep()}</h3><p class="vv-muted">These are progression milestones, not daily chores. Claimable daily mission rewards are planned for a future release.</p>${vvLink('Explore the Grove →','Expeditions')}`)}</div>`);
+ ${vvPanel('☾ The Next Chapter',`<div class="vv-tag">CURRENT OBJECTIVE</div><h3 style="margin-top:13px">${nextStep()}</h3><p class="vv-muted">Explore and restore at your own pace. No daily streak penalties or forced timers.</p>${vvLink('Explore the Grove →','Expeditions')}`)}</div>`+vvMegaAchievements());
 }
 function vvLegacy(){
  const readyAwake=s.clue&&s.wood>=20&&s.essence>=8&&s.butterfly>=1;const readyRestore=s.awakened&&s.wood>=40&&s.essence>=12;
@@ -1261,7 +1284,7 @@ function vvLegacy(){
  <div style="display:grid;gap:16px">${vvPanel('✦ Seraphine · Awakening I',`<p class="vv-muted">Awaken the Forest Whisperer and enrich every gathering cycle.</p>${vvStat('Wood',fmt(s.wood)+' / 20')}${vvStat('Essence',fmt(s.essence)+' / 8')}${vvStat('Lunar Butterfly',fmt(s.butterfly)+' / 1')}<div class="vv-actions" style="margin-top:16px">${s.awakened?'<span class="vv-tag">✓ Awakened</span>':vvButton('Awaken Seraphine','awaken',!readyAwake)}</div>`)}
  ${vvPanel('☾ Restore the Moonwood',`<p class="vv-muted">The Grove transforms forever once the Moonwood is reborn.</p>${vvStat('Wood',fmt(s.wood)+' / 40')}${vvStat('Essence',fmt(s.essence)+' / 12')}<div class="vv-actions" style="margin-top:16px">${s.restored?'<span class="vv-tag">✓ Grove restored</span>':vvButton('Restore Ancient Tree','restore',!readyRestore)}</div>`)}
  ${vvPanel('✎ Next Step',`<p class="vv-muted">${nextStep()}</p>${vvLink('Return to Expeditions →','Expeditions','ghost')}`)}
- </div></div>`);
+ </div></div>`+vvMegaWorld()+vvMegaRestorationPanel());
 }
 function vvJournal(){
  const entries=[['🌲','First Gathering',s.cycles>0,'Seraphine began collecting Moonwood.'],['🦋','Lunar Butterfly',s.discoveryCount>0||s.butterfly>0,'A brilliant spirit in the violet flowers.'],['☾','Forgotten Moonwood',s.shrineFound,'An ancient tree calls from the Grove.'],['📜','Restoration Ritual',s.clue,'Secrets revealed within the inscription.'],['✦','Seraphine Awakening',s.awakened,'A companion embraced her first awakening.'],['🌸','Moonwood Reborn',s.restored,'The forest is restored.'],['🕯','Lantern Spirit',s.spiritHelped,'A new ally remembers your kindness.'],['🍃','Silverleaf Trail',s.moonPath,'A secret path was discovered.']];
@@ -1303,13 +1326,13 @@ function vvCollection(){
  const rank=total>=9?5:total>=7?4:total>=5?3:total>=3?2:total>=2?1:0;
  const characters=VV_STORY.map(c=>{
   const has=lvl>=c.lv;
-  return `<article class="vv-archive-card vv-story-collection ${has?'vv-collected':'vv-archive-locked'}" aria-label="${c.name}: ${has?'obtained':'not obtained'}"><div class="vv-archive-art vv-archive-${c.name.toLowerCase()}"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span><span class="vv-archive-obtained">${has?'✦ OBTAINED':'🔒 NOT OBTAINED'}</span>${c.active?'<span class="vv-archive-original">ORIGINAL ART</span>':''}</div><div class="vv-archive-content"><div class="vv-archive-avatar ${has?'':'vv-avatar-locked'}"><img src="${c.art}" alt="" loading="lazy"></div><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Obtained':'🔒 Not obtained · Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
+  return `<article class="vv-archive-card vv-story-collection ${has?'vv-collected':'vv-archive-locked'}" aria-label="${c.name}: ${has?'obtained':'not obtained'}"><div class="vv-archive-art vv-archive-${c.name.toLowerCase()}"><img src="${c.art}" alt="${c.name} portrait" loading="lazy"><span class="vv-tag">${c.rarity}</span><span class="vv-archive-obtained">${has?'✦ OBTAINED':'🔒 NOT OBTAINED'}</span>${c.active?'<span class="vv-archive-original">ORIGINAL ART</span>':''}</div><div class="vv-archive-content"><div class="vv-archive-avatar ${has?'':'vv-avatar-locked'}"><img src="${c.art}" alt="" loading="lazy"></div><h3>${c.name}</h3><p class="vv-muted">${c.title}</p>${has?'<small class="vv-bond-archive">♡ '+(s.mega.bond[c.name]||0)+'/5 companion memories</small>':''}<span class="vv-tag">${has?'✦ Obtained':'🔒 Not obtained · Player Lv. '+c.lv}</span><p class="vv-archive-lore">${c.lore}</p><div class="vv-archive-special"><strong>✧ ${c.special}</strong><p>${c.bonus}</p></div>${c.active?vvLink('View skills →','Characters','ghost'):''}</div></article>`;
  }).join('');
  const spirits=VV_COMPANIONS.map(c=>{
   const has=Number(s.ownedCompanions[c.id]||0)>0,equipped=s.equippedCompanion===c.id;
   return `<article class="vv-archive-card ${has?'':'vv-archive-locked'}"><div class="vv-archive-spirit"><span aria-hidden="true">${c.icon}</span><span class="vv-tag">${c.rarity}</span></div><div class="vv-archive-content"><h3>${c.name}</h3><p class="vv-muted">${c.title}</p><span class="vv-tag">${has?'✦ Discovered':'🔒 Not summoned'}</span><p class="vv-archive-lore">${c.description}</p><div class="vv-archive-special"><strong>✧ Special passive</strong><p>${c.passive}</p><small>${has?(equipped?'Active — equipped':'Equip to activate this bonus'):'Preview only — summon to unlock'}</small></div><div class="vv-actions">${has?(equipped?vvButton('✓ Equipped · Unequip','equip-none',false,'ghost'):vvButton('Equip spirit','equip-'+c.id)):vvLink('Summon →','Gacha','ghost')}</div></div></article>`;
  }).join('');
- return vvSection(vvHead('The Moonwood archive','Collection','Explore every character and spirit, their stories, specials, bonuses and unlock goals.','✦ '+total+' / 9 collected')+
+ return vvSection(vvHead('The Moonwood archive','Collection','Explore collected characters and spirits, unique bonds and unlock goals.','✦ '+total+' / 9 collected')+
  `<div class="vv-archive-summary">${vvPanel('✦ Collection progress',`<strong>${total} / 9 collected</strong>${vvTrack(total/9*100)}<p class="vv-muted">${unlocked}/5 story characters · ${owned}/4 summoned spirits</p>`,'SAVED')}${vvPanel('☾ Collector title',`<h3 class="vv-archive-rank">${VV_COLLECTION_TITLES[rank]}</h3><p class="vv-muted">Starter → Apprentice → Adept → Expert → Master → Legendary</p><p class="vv-muted vv-small">Collection titles are cosmetic and do not grant stats.</p>`,'RANK '+(rank+1)+'/6')}</div>`+
  `<div class="vv-ornament"><span>✦ STORY CHARACTERS ✦</span></div><p class="vv-muted">Story companions are obtained automatically at Player Levels 1, 5, 10, 15 and 30. Unobtained characters are shown in grayscale; only Seraphine currently has active character gameplay bonuses.</p><div class="vv-archive-grid">${characters}</div>`+
  `<div class="vv-ornament"><span>✧ SUMMONABLE SPIRITS ✧</span></div><p class="vv-muted">Summon spirits with Stardust and equip one at a time to activate its passive bonus.</p><div class="vv-archive-grid">${spirits}</div>`+
