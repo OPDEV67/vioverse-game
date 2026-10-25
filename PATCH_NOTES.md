@@ -1,11 +1,15 @@
-# Vioverse v0.4 — Patch 02
+# Vioverse Patch Notes
 
-Patch 02 is bundled into the game. Open Patch Notes and click Next Patch from Patch 01 to activate it. Alternatively select Patch 02 and click Apply Patch 02 Now. Activation is saved in browser localStorage and preserved across reloads.
+## v0.5 — Online Update System
+- Added **Update Game** in the sidebar.
+- **Check for Updates** reads the deployed `version.json` without caching.
+- Newer published versions show their patch notes and **Update Game Now** reloads the site.
+- Browser progress is saved before reloading.
+- Requires GitHub Pages (does not work when opening `index.html` locally).
+- Future patches must update `version.json` with a higher version and unique build ID, and deploy new game files.
 
-- Branching expedition choices with persistent story flags
-- Silverleaf versus Humming route
-- Lantern spirit ally and later rewards
-- Wood and Woodcutting-level requirements
-- Hidden root passage and contextual encounters
+## v0.4 — Patch 02
+- Meaningful expedition branches, permanent choices, and additional encounters.
 
-Patches 03 and 04 remain roadmap previews; no button can automatically write and download a new game build.
+## v0.3 — Patch 01
+- Gathering and offline progression reliability.

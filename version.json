@@ -1,0 +1,6 @@
+{
+  "version": "0.5.0",
+  "build": "2026-10-25-v05-updater",
+  "title": "Online Update System",
+  "notes": "Added Check for Updates, published patch notes, and one-click loading of newly deployed versions. Existing gathering, expeditions and save data remain compatible."
+}

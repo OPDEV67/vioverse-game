@@ -1,12 +1,15 @@
 # Vioverse
 
-A magical fantasy idle gathering and exploration game.
+Fantasy idle gathering and exploration game.
 
 ## Play
-Open `index.html` in a browser, or host the repository root with GitHub Pages.
+Publish the repository root with GitHub Pages and visit https://opdev67.github.io/vioverse-game/
 
-## Version
-v0.4 — Patch 02. Includes automatic gathering, Seraphine, Whispering Grove expeditions, Awakening I, and Ancient Moonwood restoration.
+## Publishing updates
+1. Update `index.html` and any assets.
+2. Increase `version` in `version.json`, set a new unique `build`, and write user-facing `notes`.
+3. Commit and push all changed files to `main`.
+4. Wait for GitHub Pages deployment to succeed.
+5. Players can select **Update Game → Check for Updates → Update Game Now**.
 
-## Saves
-Browser progress is stored in localStorage. The original save key `moonveil_legacy_v02` is intentionally retained for compatibility with prior versions on the same origin.
+Saves are stored in localStorage on the same browser and origin. Back up save data before major migrations.
