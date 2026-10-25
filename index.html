@@ -834,11 +834,57 @@ body.vv-hide-unlock-goals .vv-roster-card .vv-lock-pill{display:none!important}
 .vv-story-collection.vv-archive-locked .vv-archive-content{background:#141823}
 @media(max-width:640px){.vv-story-collection .vv-archive-art{height:190px}.vv-story-avatar{width:62px;height:62px;margin-top:-31px}.vv-story-lore{font-size:10px!important}}
 
+
+/* v1.7.0 mega patch — Moonwood atelier, working, characters, restoration */
+.vv-mega-work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:17px 0}
+.vv-main-work{padding:22px!important;margin:18px 0;border-color:#e4c79c80!important;background:linear-gradient(110deg,#1f302f,#151a30)!important}
+.vv-work-title{display:flex;align-items:center;gap:17px;margin-bottom:18px}.vv-work-title>span{font-size:50px}.vv-work-title h3{font-size:22px!important;color:#f8e7c8!important;margin:7px 0!important}
+.vv-work-scene{position:relative;min-height:190px;border:1px solid #dfc69c72;border-radius:18px;overflow:hidden;background:linear-gradient(90deg,#101928ea,#121d28a9),url('assets/moonforest.svg') center 47%/cover no-repeat;display:flex;align-items:center;padding:28px}
+.vv-work-scene h2{font:clamp(21px,3vw,32px) 'Cinzel',Georgia,serif;color:#f7e5c9;margin:9px 0}.vv-work-scene p{max-width:530px;color:#ded0e2;line-height:1.65}
+.vv-mega-work{min-height:305px;display:flex;flex-direction:column;gap:11px;position:relative;overflow:hidden;background:linear-gradient(145deg,#20243a,#111b26)!important;border-color:#b2a0c057!important}
+.vv-mega-work.is-locked{opacity:.66}.vv-mega-work h3{font:19px 'Cinzel',Georgia,serif!important;color:#f1e0c3!important}
+.vv-mega-work .vv-muted{font-size:12px!important;min-height:38px}.vv-mega-work-icon{font-size:37px;filter:drop-shadow(0 2px 10px #ab9bda80)}
+.vv-mega-work-action{margin-top:auto}.vv-mega-work-action button{width:100%;white-space:normal}
+.vv-mega-material-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px;margin:18px 0 23px}
+.vv-mega-material{background:linear-gradient(140deg,#1f2538,#111a2a);border:1px solid #c7b5c457;border-radius:13px;padding:14px;display:flex;gap:11px;align-items:flex-start}
+.vv-mega-material>span{font-size:29px}.vv-mega-material>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.vv-mega-material strong{font-size:22px;color:#f8dbb0}.vv-mega-material b{font-size:12px;color:#f3e9f7}.vv-mega-material small{font-size:11px;color:#bab1c9;line-height:1.4}
+.vv-mega-recipe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}
+.vv-mega-recipe{border:1px solid #e0c39d55;border-radius:15px;padding:18px 14px;background:linear-gradient(145deg,#20263b,#121b2c);display:flex;flex-direction:column;gap:11px}
+.vv-mega-recipe-icon{font-size:31px}.vv-mega-recipe h3{font:16px 'Cinzel',Georgia,serif!important;color:#eed8b6!important;margin:0}
+.vv-mega-recipe p{font-size:12px;color:#d2c6da;line-height:1.5;min-height:55px;margin:0}.vv-mega-recipe small{font-size:11px;color:#dbc296;line-height:1.45}
+.vv-mega-recipe .vv-button{margin-top:auto;font-size:12px;padding:10px;white-space:normal}
+.vv-living-world{margin:22px 0;min-height:254px;position:relative;isolation:isolate;border:1px solid #ddc69d85;border-radius:18px;overflow:hidden;background:linear-gradient(110deg,#0b1427ec,#141c2ccc 72%),url('assets/moonforest.svg') center/cover}
+.vv-living-world:before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.25;background:radial-gradient(circle at 78% 29%,#d0b7ee,transparent 28%);z-index:-1}
+.vv-world-lantern-grove{border-color:#f2cd82b0;background:linear-gradient(105deg,#0b1427ed,#273326a6 78%),url('assets/moonforest.svg') center/cover}
+.vv-world-silver-bridge{border-color:#9bc7e8c4;background:linear-gradient(110deg,#0b1427ec,#193a45a0 79%),url('assets/moonforest.svg') center/cover}
+.vv-world-moon-garden{border-color:#eebbdcc4;background:linear-gradient(110deg,#0b1427de,#46375c8c 83%),url('assets/moonforest.svg') center/cover}
+.vv-world-inner{padding:clamp(19px,4vw,35px);max-width:780px;position:relative;z-index:2}.vv-world-inner h2{font:clamp(23px,4vw,39px) 'Cinzel',Georgia,serif;color:#f8e6cd;margin:14px 0 12px}
+.vv-world-inner p{color:#e0d5e6;line-height:1.6}.vv-world-orbit{position:absolute;right:8%;top:5%;font-size:clamp(80px,11vw,160px);opacity:.3;color:#d6b6f3;filter:drop-shadow(0 0 20px #d8b4ee)}
+.vv-world-flags{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.vv-world-flags span{font-size:11px;color:#e2cda8;background:#101a2cc9;border:1px solid #e4c69b61;border-radius:99px;padding:7px 10px}
+.vv-world-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:19px}
+.vv-project{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:14px;align-items:center;padding:17px 0;border-bottom:1px solid #b6adbd2f}
+.vv-project:last-child{border-bottom:0}.vv-project-icon{font-size:34px}.vv-project-detail h3{font:17px 'Cinzel',Georgia,serif!important;color:#f4e1c7!important;margin:0 0 5px}
+.vv-project-detail p{color:#d3c5d9;font-size:12px;line-height:1.6;margin:0 0 8px}.vv-project-detail small{color:#d7c096;font-size:11px}.vv-project.is-built h3{color:#c2e9d1!important}
+.vv-bond-person{display:grid;grid-template-columns:65px minmax(0,1fr) auto;gap:13px;align-items:center;padding:15px 0;border-bottom:1px solid #c9b7ce3b}
+.vv-bond-person.is-locked{opacity:.65}.vv-bond-person:last-child{border-bottom:0}
+.vv-bond-portrait{height:60px;width:60px;overflow:hidden;border-radius:50%;border:2px solid #e3c89c;background:#111827}
+.vv-bond-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}.vv-bond-person.is-locked img{filter:grayscale(1)}
+.vv-bond-info strong{color:#f2e5d2;font:16px 'Cinzel',Georgia,serif}.vv-bond-info p{font:italic 12px Georgia,serif;color:#d1c0d9;line-height:1.55;margin:6px 0}
+.vv-bond-info span,.vv-bond-archive{font-size:11px;color:#d7b9dd}
+.vv-achievement-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.vv-achievement{display:grid;grid-template-columns:28px minmax(0,1fr) 22px;align-items:center;gap:10px;background:#11192aad;border:1px solid #a49ab04c;border-radius:12px;padding:12px;opacity:.68}
+.vv-achievement.is-done{opacity:1;border-color:#ddc18f88;background:#2b284099}.vv-achievement>span{font-size:22px}.vv-achievement strong{display:block;font-size:12px;color:#f3e8d7}
+.vv-achievement small{display:block;color:#c9bed6;line-height:1.5;font-size:10px;margin-top:3px}.vv-achievement>b{color:#d6c29d;font-size:13px}
+.vv-audio-test-actions{display:flex;gap:8px;flex-wrap:wrap}.vv-audio-test-actions button{flex:1;min-width:140px}
+@media(max-width:830px){.vv-mega-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.vv-mega-work-grid{grid-template-columns:1fr}.vv-mega-work{min-height:235px}.vv-project{grid-template-columns:40px minmax(0,1fr);gap:9px}.vv-project>div:last-child{grid-column:2}.vv-bond-person{grid-template-columns:50px minmax(0,1fr)}.vv-bond-person>div:last-child{grid-column:2}.vv-bond-portrait{width:48px;height:48px}.vv-achievement-list{grid-template-columns:1fr}.vv-work-title>span{font-size:37px}.vv-world-inner{padding:21px}.vv-world-orbit{right:3%;top:2%;font-size:75px}}
+
 </style></head><body><header><div class="vv-header-inner">
 <div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE<span class="vv-brand-star" aria-hidden="true">✦</span></div><button type="button" class="vv-player-identity" data-page="Friends" title="Edit your player name"><span aria-hidden="true">✦</span><span id="vv-player-hud-name">Moonwood Wanderer</span><span aria-hidden="true">✎</span></button><div class="vv-brand-sub">Moonwood Legacy · v1.6.0</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource" title="Gathered Moonwood"><span class="vv-resource-icon" aria-hidden="true">♣</span><span class="vv-resource-stack"><small>Moonwood</small><b id="wood">0</b></span></div><div class="vv-resource" title="Moon Essence"><span class="vv-resource-icon" aria-hidden="true">☾</span><span class="vv-resource-stack"><small>Essence</small><b id="essence">0</b></span></div><div class="vv-resource vv-stardust-resource" title="Stardust"><span class="vv-resource-icon" aria-hidden="true">✧</span><span class="vv-resource-stack"><small>Stardust</small><b id="stardust">0</b></span></div><div class="vv-resource" title="Lunar Butterflies"><span class="vv-resource-icon" aria-hidden="true">🦋</span><span class="vv-resource-stack"><small>Butterflies</small><b id="butterfly">0</b></span></div><div class="vv-resource vv-level-resource" title="Player level"><span class="vv-resource-icon" aria-hidden="true">✦</span><span class="vv-resource-stack"><small>Wanderer</small><b id="vv-level-caption">Lv. 1</b></span><b id="level" style="display:none">1</b></div><button type="button" class="vv-resource vv-bond-resource" data-page="Friends" title="Moonlit Bonds friendship bonus"><span class="vv-resource-icon" aria-hidden="true">♡</span><span class="vv-resource-stack"><small>Moonlit Bonds</small><b id="vv-bond-badge">Bonds</b></span></button></div>
 <button type="button" id="vv-audio-button" title="Open audio settings" aria-label="Open audio settings">♫ Sound</button><div class="vv-quicknav"><button type="button" class="vv-hud-mail" data-page="Mailbox" aria-label="Open mailbox"><span aria-hidden="true">✉</span><span class="vv-hud-mail-label">Mail</span><span id="vv-mail-unread" class="vv-mail-dot" aria-label="Unread mail"></span></button><button type="button" data-page="Settings" title="Game settings" aria-label="Game settings"><span aria-hidden="true">⚙</span><span class="vv-hud-settings-label">Settings</span></button><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
-</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><div id="vv-audio-dialog" class="vv-audio-dialog" hidden role="dialog" aria-modal="true" aria-label="Vioverse sound settings"><div class="vv-audio-card"><div class="vv-audio-top"><h2>♫ Moonwood Audio</h2><button type="button" id="vv-audio-close" aria-label="Close audio settings">✕</button></div><p>Whispers of Moonwood · music, forest ambience, and magical sound effects.</p><label class="vv-audio-check"><input id="vv-audio-enable" type="checkbox"> Enable game audio</label><label>🎵 Music <output id="vv-audio-music-label">30%</output><input id="vv-audio-music" type="range" min="0" max="100" value="30"></label><label>🌲 Forest ambience <output id="vv-audio-ambient-label">20%</output><input id="vv-audio-ambient" type="range" min="0" max="100" value="20"></label><label>✨ Sound effects <output id="vv-audio-sfx-label">65%</output><input id="vv-audio-sfx" type="range" min="0" max="100" value="65"></label><p class="vv-audio-note" id="vv-audio-status">Audio starts only after you enable it. Preferences are saved in this browser.</p><button type="button" id="vv-audio-preview">✦ Test magical chime</button></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
+</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><div id="vv-audio-dialog" class="vv-audio-dialog" hidden role="dialog" aria-modal="true" aria-label="Vioverse sound settings"><div class="vv-audio-card"><div class="vv-audio-top"><h2>♫ Moonwood Audio</h2><button type="button" id="vv-audio-close" aria-label="Close audio settings">✕</button></div><p>Whispers of Moonwood · music, forest ambience, and magical sound effects.</p><label class="vv-audio-check"><input id="vv-audio-enable" type="checkbox"> Enable game audio</label><label>🎵 Music <output id="vv-audio-music-label">30%</output><input id="vv-audio-music" type="range" min="0" max="100" value="30"></label><label>🌲 Forest ambience <output id="vv-audio-ambient-label">20%</output><input id="vv-audio-ambient" type="range" min="0" max="100" value="20"></label><label>✨ Sound effects <output id="vv-audio-sfx-label">65%</output><input id="vv-audio-sfx" type="range" min="0" max="100" value="65"></label><p class="vv-audio-note" id="vv-audio-status">Audio starts only after you enable it. Preferences are saved in this browser.</p><div class="vv-audio-test-actions"><button type="button" id="vv-audio-play-theme">♫ Play Moonwood Theme</button><button type="button" id="vv-audio-preview">✦ Test magical chime</button></div></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.0/dist/umd/supabase.min.js" crossorigin="anonymous"></script><script>
 
 'use strict';
 
@@ -1362,7 +1408,7 @@ function vvSettings(){
  const tabs=['Audio','Graphics','Gameplay','Notifications','Accessibility','Account & Saves','About'];
  const nav=`<div class="vv-settings-tabs" role="tablist" aria-label="Settings categories">${tabs.map(t=>`<button type="button" role="tab" aria-selected="${t===vvSettingsTab}" class="${t===vvSettingsTab?'is-active':''}" data-vv-settings-tab="${t}">${t}</button>`).join('')}</div>`;
  let body='';
- if(vvSettingsTab==='Audio')body=`<h3>♫ Audio & Music</h3><p class="vv-muted">Adjust background music, forest ambience and magical sound effects. The existing audio player saves each volume independently.</p><button class="vv-button" type="button" data-vv-open-audio>♫ Open Audio Mixer</button><p class="vv-settings-note">Audio starts only after you choose to enable it.</p>`;
+ if(vvSettingsTab==='Audio')body=`<h3>♫ Audio & Music</h3><p class="vv-muted">Play the built-in Moonwood theme, forest ambience and magical sound effects without external files. Volumes are saved individually.</p><button class="vv-button" type="button" data-vv-open-audio>♫ Open Audio Mixer & Play Theme</button><p class="vv-settings-note">Audio starts only after you choose to enable it.</p>`;
  else if(vvSettingsTab==='Graphics')body=`<h3>✦ Graphics & Appearance</h3>${vvSettingsSwitch('particles','Magical particle effects','Reduce decorative particles for a calmer display.')}${vvSettingsSwitch('compactUI','Compact interface','Reduce spacing in game panels.')}${vvSettingsSwitch('reduceMotion','Reduced animations','Limit transitions and moving effects.')}`;
  else if(vvSettingsTab==='Gameplay')body=`<h3>⚔ Gameplay</h3>${vvSettingsSwitch('confirmSummons','Confirm spirit summons','Ask before spending Stardust on summons.')}${vvSettingsSwitch('offlineSummary','Offline progress summary','Show your gathered cycles when returning to the game.')}${vvSettingsSwitch('showRequirements','Show skill requirements','Keep skill upgrade requirements visible.')}${vvSettingsSwitch('showUnlockGoals','Show companion unlock goals','Display level requirements for locked companions.')}`;
  else if(vvSettingsTab==='Notifications')body=`<h3>✉ In-game Notices</h3>${vvSettingsSwitch('mailNotices','Mailbox reminder','Show an unread-mail dot on the HUD.')}${vvSettingsSwitch('friendNotices','Friend notices','Show friend notifications when available.')}${vvSettingsSwitch('questNotices','Quest notices','Show quest-completion messages.')}<p class="vv-settings-note">These control in-game notices only; device push notifications are not enabled.</p>`;
@@ -2079,7 +2125,8 @@ function vvSkillGlyph(kind){
  let pref={...defaults};try{const saved=JSON.parse(localStorage.getItem(STORE)||'{}');for(const k of Object.keys(defaults))if(typeof saved[k]===typeof defaults[k])pref[k]=saved[k]}catch{}
  for(const k of ['music','ambient','sfx'])pref[k]=Math.max(0,Math.min(100,pref[k]));
  const music=new Audio(files.theme),forest=new Audio(files.forest);music.loop=true;forest.loop=true;music.preload='none';forest.preload='none';
- const unavailable=new Set(),clips={};let ctx=null,timer=null,ambientNode=null,ambientGain=null,step=0;
+ // Audio files are not deployed yet: play the complete procedural score without 404 requests.
+ const unavailable=new Set(['theme','forest','quest','level','discovery','friend']),clips={};let ctx=null,timer=null,ambientNode=null,ambientGain=null,step=0;
  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
  function context(){if(!AudioContextClass)return null;if(!ctx)ctx=new AudioContextClass();if(ctx.state==='suspended')ctx.resume().catch(()=>{});return ctx}
  function beep(freq,duration,volume,when=0,type='sine'){
@@ -2097,8 +2144,9 @@ function vvSkillGlyph(kind){
   function note(){
    if(!pref.enabled||!pref.music)return;
    const idx=step%melody.length,bar=Math.floor(idx/8),root=base[bar],semitones=melody[idx];
-   if(idx%2===0)beep(root*Math.pow(2,semitones/12),.55,pref.music/100*.045,0,'sine');
-   if(idx%8===0){beep(root/2,1.7,pref.music/100*.026,0,'triangle');beep(root*1.5,1.2,pref.music/100*.018,.08,'sine')}
+   if(idx%2===0)beep(root*Math.pow(2,semitones/12),.72,pref.music/100*.135,0,'sine');
+   if(idx%4===2)beep(root*2*Math.pow(2,melody[(idx+3)%melody.length]/12),.48,pref.music/100*.045,.1,'triangle');
+   if(idx%8===0){beep(root/2,2.35,pref.music/100*.065,0,'triangle');beep(root*1.5,1.6,pref.music/100*.038,.08,'sine')}
    step++;
   }
   note();timer=setInterval(note,375);
@@ -2110,12 +2158,12 @@ function vvSkillGlyph(kind){
   const buf=c.createBuffer(1,c.sampleRate*3,c.sampleRate),a=buf.getChannelData(0);
   for(let i=0;i<a.length;i++)a[i]=(Math.random()*2-1)*.5;
   const src=c.createBufferSource(),low=c.createBiquadFilter(),gain=c.createGain();
-  src.buffer=buf;src.loop=true;low.type='lowpass';low.frequency.value=380;gain.gain.value=pref.ambient/100*.028;src.connect(low);low.connect(gain);gain.connect(c.destination);src.start();ambientNode=src;ambientGain=gain;
+  src.buffer=buf;src.loop=true;low.type='lowpass';low.frequency.value=380;gain.gain.value=pref.ambient/100*.07;src.connect(low);low.connect(gain);gain.connect(c.destination);src.start();ambientNode=src;ambientGain=gain;
  }
  function stopForest(){if(ambientNode){try{ambientNode.stop()}catch{}ambientNode.disconnect();ambientNode=null;ambientGain=null}}
  function volume(){
   music.volume=pref.music/100*.55;forest.volume=pref.ambient/100*.35;
-  if(ambientGain)ambientGain.gain.value=pref.enabled?pref.ambient/100*.028:0;
+  if(ambientGain)ambientGain.gain.value=pref.enabled?pref.ambient/100*.07:0;
  }
  function playLoop(name,element){
   if(!pref.enabled||!pref[name]){element.pause();if(name==='music')stopSynth();else stopForest();return}
@@ -2130,6 +2178,7 @@ function vvSkillGlyph(kind){
   if(pref.enabled){context();playLoop('music',music);playLoop('ambient',forest)}
   else{music.pause();forest.pause();stopSynth();stopForest()}
   const button=document.getElementById('vv-audio-button');if(button)button.textContent=pref.enabled?'♫ Sound on':'♫ Sound off';
+  const status=document.getElementById('vv-audio-status');if(status)status.textContent=pref.enabled?'♫ Moonwood’s in-browser soundtrack is '+(ctx?.state==='running'?'playing':'ready — tap Play Theme to resume audio')+'. MP3 files are not required.':'♫ Music is off. Select Enable game audio, then Play Theme; your browser requires a tap to start sound.';
   const toggle=document.getElementById('vv-audio-enable');if(toggle)toggle.checked=pref.enabled;
   for(const k of ['music','ambient','sfx']){const el=document.getElementById('vv-audio-'+k),label=document.getElementById('vv-audio-'+k+'-label');if(el)el.value=pref[k];if(label)label.textContent=pref[k]+'%'}
   try{localStorage.setItem(STORE,JSON.stringify(pref))}catch{}
@@ -2148,7 +2197,8 @@ function vvSkillGlyph(kind){
   dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.hidden=true});
   document.getElementById('vv-audio-enable').addEventListener('change',e=>{pref.enabled=e.target.checked;sync()});
   for(const k of ['music','ambient','sfx'])document.getElementById('vv-audio-'+k).addEventListener('input',e=>{pref[k]=Number(e.target.value);sync()});
-  document.getElementById('vv-audio-preview').addEventListener('click',()=>{if(!pref.enabled){pref.enabled=true;sync()}effect('quest')});
+  document.getElementById('vv-audio-preview').addEventListener('click',()=>{if(!pref.enabled){pref.enabled=true;sync()}context();effect('quest')});
+  document.getElementById('vv-audio-play-theme').addEventListener('click',()=>{pref.enabled=true;if(pref.music<30)pref.music=30;context();sync();synthMusic();toast('♫ Playing the Moonwood theme');});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden)dialog.hidden=true});
  }
  document.addEventListener('visibilitychange',()=>{if(document.hidden){music.pause();forest.pause();stopSynth();stopForest()}else if(pref.enabled)sync()});
