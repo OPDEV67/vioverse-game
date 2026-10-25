@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "build": "2026-10-25-v110-interactive-constellation",
-  "title": "The Living Constellation — Interactive Forest Skill Tree",
-  "notes": "New full-screen interactive circular Moonwood Skill Tree inspired by the approved gothic-purple reference artwork. Dedicated Skill Tree page with Seraphine portrait, eight selectable nodes and an updating skill-details panel. Forest Mastery upgrades and optional confirmed point refunds work with your existing save. The Home and Characters skill buttons open the full tree directly without flashing. Other talents are clearly marked as planned; auto-update checks remain every 5 seconds."
+  "version": "1.2.0",
+  "build": "2026-10-25-v120-standalone-stable",
+  "title": "Vioverse Stable Replacement — Unified Game",
+  "notes": "The old layered interface was replaced by a complete self-contained HTML game entrypoint, eliminating dependence on extra JavaScript/CSS files. Preserves all 14 screens, gothic-purple UI, Characters and the interactive circular Forest Skill Tree, save data, idle gathering, branching expeditions, Forest Mastery upgrades and refunds, and five-second update checks. The correct GitHub-clone server launcher remains included."
 }
