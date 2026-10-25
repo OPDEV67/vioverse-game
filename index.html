@@ -850,11 +850,11 @@ const VV_COMPANIONS=[
 ];
 const vvSocial={client:null,session:null,hub:null,results:[],query:'',message:'',busy:false,authMode:'signup',friendCount:0,loading:false};
 function vvBondBonus(){return Math.min(50,Math.max(0,vvSocial.friendCount||0))*.005}
-function vvCompanionEffect(kind){const c=VV_COMPANIONS.find(x=>x.id===s.equippedCompanion);const base=c&&c.effects?Number(c.effects[kind])||0:0;return base+vvBondBonus()}
+function vvCompanionEffect(kind){const c=VV_COMPANIONS.find(x=>x.id===s.equippedCompanion);const base=c&&c.effects?Number(c.effects[kind])||0:0;return base+vvBondBonus()+(kind==='wood'&&s.mega?.equipped==='talisman'?.02:0)}
 function vvGrantEssence(base){const amount=base*(1+vvCompanionEffect('essence'))+(Number(s.essenceBonusRemainder)||0);const gain=Math.floor(amount+1e-9);s.essence+=gain;s.essenceBonusRemainder=amount-gain}
 
 function vvGrantSkillXp(baseCharacter,baseProfession){const boost=1+vvBondBonus();const charAmount=baseCharacter*boost+(Number(s.characterXpBonusRemainder)||0);const profAmount=baseProfession*boost+(Number(s.skillXpBonusRemainder)||0);const charGain=Math.floor(charAmount+1e-9),profGain=Math.floor(profAmount+1e-9);s.xp+=charGain;s.profXp+=profGain;s.characterXpBonusRemainder=charAmount-charGain;s.skillXpBonusRemainder=profAmount-profGain}
-const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,skillXpBonusRemainder:0,characterXpBonusRemainder:0,playerName:'',mailWelcomeClaimed:false,mailWelcomeRead:false});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
+const KEY='moonveil_legacy_v02';const initial=()=>({wood:0,essence:0,butterfly:0,xp:0,profXp:0,cycles:0,progress:0,awakened:false,restored:false,shrineFound:false,clue:false,branch:0,expeditions:0,discoveryCount:0,log:[],last:Date.now(),skill:0,skillSpent:0,patch02:false,spiritHelped:false,spiritTrust:0,moonPath:false,rootSeal:false,routeChoice:"",encounterStep:0,stardust:0,ownedCompanions:{},equippedCompanion:'',gachaPity:{rare:0,epic:0,legendary:0},gachaPulls:0,lastSummon:[],economyHistory:[],woodBonusRemainder:0,essenceBonusRemainder:0,skillXpBonusRemainder:0,characterXpBonusRemainder:0,playerName:'',mailWelcomeClaimed:false,mailWelcomeRead:false,mega:{}});let s;try{s={...initial(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{s=initial()};if(!Array.isArray(s.log))s.log=[];
 if(typeof s.playerName!=='string')s.playerName='';s.playerName=s.playerName.trim().slice(0,20);
 s.stardust=Math.max(0,Math.floor(Number(s.stardust)||0));
 if(!s.ownedCompanions||typeof s.ownedCompanions!=='object'||Array.isArray(s.ownedCompanions))s.ownedCompanions={};
@@ -866,6 +866,7 @@ s.gachaPulls=Math.max(0,Math.floor(Number(s.gachaPulls)||0));
 if(!Array.isArray(s.lastSummon))s.lastSummon=[];if(!Array.isArray(s.economyHistory))s.economyHistory=[];
 s.woodBonusRemainder=Math.max(0,Math.min(.999,Number(s.woodBonusRemainder)||0));s.essenceBonusRemainder=Math.max(0,Math.min(.999,Number(s.essenceBonusRemainder)||0));s.skillXpBonusRemainder=Math.max(0,Math.min(.999,Number(s.skillXpBonusRemainder)||0));s.characterXpBonusRemainder=Math.max(0,Math.min(.999,Number(s.characterXpBonusRemainder)||0));
 if(s.equippedCompanion&&!s.ownedCompanions[s.equippedCompanion])s.equippedCompanion='';
+s.mega=vvSanitizeMega(s.mega);
 let page='Home',flipped=false,encounter=0,selected=-1,scrollPos=0,patchIndex=0;const level=x=>1+Math.floor(Math.sqrt(x/45));const pct=x=>{const a=Math.floor(Math.sqrt(x/45));return Math.min(100,(x-45*a*a)/(45*(2*a+1))*100)};const fmt=x=>Math.floor(x).toLocaleString();const speed=()=>8/(1+.35+s.skillSpent*.06+(s.awakened?.15:0)+(s.restored?.1:0))*(1-vvCompanionEffect('speed'));
 function note(t){s.log.unshift(t);s.log=s.log.slice(0,35)}function toast(t){let e=document.getElementById('toast');e.textContent=t;e.hidden=false;clearTimeout(window.tt);window.tt=setTimeout(()=>e.hidden=true,3700)}function save(){s.last=Date.now();try{localStorage.setItem(KEY,JSON.stringify(s))}catch{}}function advance(dt){
  // Simulate only elapsed time, capped to 8 hours for offline progress.
@@ -964,7 +965,7 @@ function installGameUpdate(){if(updateInfo.state!=='available'||!updateInfo.mani
 
 function render(){const sc=document.querySelector('.cards');if(sc)scrollPos=sc.scrollLeft;document.getElementById('nav').innerHTML=['Home','Expeditions','Discoveries','Legacy','Journal','Patch Notes','Update Game'].map(n=>`<button data-page="${n}" class="${page===n?'active':''}">${({Home:'⌂',Expeditions:'✧',Discoveries:'🦋',Legacy:'☾',Journal:'✎','Patch Notes':'▤','Update Game':'↻'})[n]} &nbsp;${n}</button>`).join('');document.getElementById('main').innerHTML=({Home:home,Expeditions:expeditions,Discoveries:discoveries,Legacy:legacy,Journal:journal,'Patch Notes':patchNotes,'Update Game':updateScreen})[page]();document.getElementById('wood').textContent=fmt(s.wood);document.getElementById('essence').textContent=fmt(s.essence);document.getElementById('butterfly').textContent=fmt(s.butterfly);const dust=document.getElementById('stardust');if(dust)dust.textContent=fmt(s.stardust);document.getElementById('level').textContent=level(s.xp);if(page==='Home'&&document.querySelector('.cards'))document.querySelector('.cards').scrollLeft=scrollPos}
 function exportSave(){save();const payload={game:'Vioverse',format:1,exportedAt:new Date().toISOString(),state:s};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='vioverse-save-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Save backup downloaded!')}
-document.addEventListener('change',async e=>{if(e.target?.id!=='save-import')return;const file=e.target.files?.[0];if(!file)return;try{if(file.size>1024*1024)throw Error('Save file is too large.');const obj=JSON.parse(await file.text());if(obj.game!=='Vioverse'||obj.format!==1||!obj.state||typeof obj.state!=='object'||Array.isArray(obj.state))throw Error('Not a valid Vioverse backup.');if(!confirm('Restore this backup? Your current browser save will be replaced.'))return;const clean={...initial()};for(const [key,value] of Object.entries(obj.state)){if(!(key in clean))continue;const expected=typeof clean[key];if(key==='log'){if(Array.isArray(value))clean.log=value.filter(x=>typeof x==='string').slice(0,35);continue;}if(expected===typeof value&&(['number','string','boolean'].includes(expected))){if(expected!=='number'||Number.isFinite(value))clean[key]=value;}}clean.last=Date.now();s=clean;save();page='Journal';toast('Save restored successfully');render()}catch(err){toast('Could not restore save: '+err.message)}finally{e.target.value=''}});
+document.addEventListener('change',async e=>{if(e.target?.id!=='save-import')return;const file=e.target.files?.[0];if(!file)return;try{if(file.size>1024*1024)throw Error('Save file is too large.');const obj=JSON.parse(await file.text());if(obj.game!=='Vioverse'||obj.format!==1||!obj.state||typeof obj.state!=='object'||Array.isArray(obj.state))throw Error('Not a valid Vioverse backup.');if(!confirm('Restore this backup? Your current browser save will be replaced.'))return;const clean={...initial()};for(const [key,value] of Object.entries(obj.state)){if(!(key in clean))continue;const expected=typeof clean[key];if(key==='log'){if(Array.isArray(value))clean.log=value.filter(x=>typeof x==='string').slice(0,35);continue;}if(key==='mega'){clean.mega=vvSanitizeMega(value);continue;}if(['ownedCompanions','gachaPity'].includes(key)){if(value&&typeof value==='object'&&!Array.isArray(value))clean[key]=Object.fromEntries(Object.entries(value).filter(([k,v])=>k.length<40&&Number.isFinite(v)&&v>=0).slice(0,20));continue;}if(key==='lastSummon'||key==='economyHistory'){if(Array.isArray(value))clean[key]=value.filter(v=>v&&typeof v==='object'&&!Array.isArray(v)).slice(0,20);continue;}if(expected===typeof value&&(['number','string','boolean'].includes(expected))){if(expected!=='number'||Number.isFinite(value))clean[key]=value;}}clean.last=Date.now();s=clean;s.mega=vvSanitizeMega(s.mega);save();page='Journal';toast('Save restored successfully');render()}catch(err){toast('Could not restore save: '+err.message)}finally{e.target.value=''}});
 document.addEventListener('click',e=>{const t=e.target.closest('[data-page],[data-action]');if(!t)return;if(t.dataset.page){page=t.dataset.page;flipped=false}else{const a=t.dataset.action;if(a==='checkupdate'){checkGameUpdate();return}else if(a==='installupdate'){installGameUpdate();return}else if(a==='exportsave'){exportSave();return}else if(a==='nextpatch'){patchIndex=(patchIndex+1)%PATCHES.length;if(patchIndex===1&&!s.patch02){s.patch02=true;note('📜 Patch 02 installed: meaningful expedition branches unlocked');toast('Patch 02 applied! New expedition paths are live.')}}else if(a==='applypatch02'){if(!s.patch02){s.patch02=true;note('📜 Patch 02 installed: meaningful expedition branches unlocked');toast('Patch 02 applied! Explore the Grove.')}}else if(a==='prevpatch'){patchIndex=Math.max(0,patchIndex-1)}else if(a==='flip')flipped=!flipped;else if(a==='legacy'||a==='expeditions')page=a==='legacy'?'Legacy':'Expeditions';else if(a==='skill'&&s.skill>0&&s.skillSpent<5){s.skillSpent++;s.skill--;toast('Forest Mastery improved!')}else if(a.startsWith('choose'))resolveChoice(+a.slice(6));else if(a==='awaken'&&s.clue&&s.wood>=20&&s.essence>=8&&s.butterfly>=1&&!s.awakened){s.wood-=20;s.essence-=8;s.butterfly--;s.awakened=true;note('✦ Seraphine reached Awakening I!');toast('Seraphine Awakened! Her card has transformed.')}else if(a==='restore'&&s.awakened&&s.wood>=40&&s.essence>=12&&!s.restored){s.wood-=40;s.essence-=12;s.restored=true;note('🌸 MOONWOOD REBORN — the Grove will remember forever');toast('The Ancient Moonwood has been restored!')}}save();render();if(autoUpdatePending&&page!=='Expeditions')tryAutoUpdate()});
 function refreshLiveStats(){
  const write=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};
@@ -1091,6 +1092,146 @@ function vvDiscoveries(){
  <div class="vv-discoveries">${outcomes.map(x=>`<div class="vv-discovery-tile" style="--tile-color:${x[3]}"><div class="vv-artbox">${x[2]}</div><span class="vv-tag">${x[0]}</span><h3>${x[1]}</h3><p>${x[4]}</p></div>`).join('')}</div>
  <div style="margin-top:20px">${vvPanel('📖 Discovery History',`<div class="log">${s.log.filter(x=>/discover|butterfly|Moonlit|Butterfly/i.test(x)).slice(0,12).map(x=>`<p>${escapeText(x)}</p>`).join('')||'<p class="vv-muted">Your journal is awaiting its first magical discovery.</p>'}</div>`)}</div>`);
 }
+
+/* v1.7.0 — The Forest Remembers: optional side professions, crafting, companion bonds and living restoration. */
+const VV_MEGA_WORK=[
+ {id:'mining',name:'Moonstone Mining',icon:'⛏',lv:5,material:'ore',reward:2,cooldown:35,scene:'Silverstone Quarry',flavor:'Tap the silver seams for raw moonstone.'},
+ {id:'fishing',name:'Starwater Fishing',icon:'🎣',lv:10,material:'fish',reward:1,cooldown:40,scene:'Starlit Pool',flavor:'Listen to the water and find silverscale fish.'},
+ {id:'herbalism',name:'Dusk Herbalism',icon:'🌿',lv:15,material:'herbs',reward:2,cooldown:45,scene:'Moonpetal Clearing',flavor:'Gather moonpetals without disturbing the spirits.'}
+];
+const VV_MEGA_ITEMS=[
+ {id:'lantern',name:'Whisperlight Lantern',icon:'🏮',cost:{wood:30,essence:2},desc:'A warm decorative light for your Moonwood home.'},
+ {id:'talisman',name:'Forest Talisman',icon:'🍃',cost:{wood:50,herbs:5,essence:3},desc:'Equip to improve Wood yield by a modest 2%.',equip:true},
+ {id:'hook',name:'Silver Fishing Hook',icon:'🪝',cost:{wood:35,ore:6},desc:'A keepsake from the quarry; fishing work returns 5 seconds sooner.',equip:true},
+ {id:'charm',name:'Starwater Charm',icon:'🐚',cost:{fish:4,ore:4,essence:4},desc:'A cosmetic charm celebrating the Starwater Pool.',equip:true}
+];
+const VV_MEGA_SITES=[
+ {id:'lanternGrove',name:'Whisperlight Grove',icon:'🏮',cost:{wood:70,essence:5},desc:'Place glowing lanterns and guide wandering spirits home.',scene:'The forest paths glow with handmade moon-lanterns.'},
+ {id:'silverBridge',name:'Silverleaf Bridge',icon:'🌉',cost:{wood:110,ore:8},desc:'Rebuild the bridge over the starwater and uncover a hidden crossing.',scene:'A pale bridge reaches across the illuminated waters.'},
+ {id:'moonGarden',name:'Moonpetal Garden',icon:'🌸',cost:{wood:160,herbs:7,fish:3,essence:8},desc:'Revive the forgotten gardens and let the moonflowers bloom.',scene:'Silver-blue moonflowers cover the reclaimed shrine.'}
+];
+const VV_MEGA_BOND_LINES={
+ Seraphine:['The roots hum when you are near.','The Moonwood remembers every gentle hand.','You do not need to rush to find your place.','There is a small light waiting beyond the ancient tree.','We have written our own constellation.'],
+ Elowen:['Even the oldest trees still grow.','Leave a few petals for tomorrow.','I have watched this grove since before the silence.','Healing a forest takes more than magic.','The roots know you as one of their own.'],
+ Lira:['Every breeze hides a melody.','Some songs are better shared than kept.','I once sang to an empty forest.','The lanterns have found a new rhythm.','This song belongs to our journey.'],
+ Nyx:['Silence can be a kind of promise.','Not every shadow means danger.','The dark holds lost memories too.','I trust those who keep their word.','Even dusk has learned your name.'],
+ Ciel:['The constellations look different here.','A single star can guide a traveler.','What matters is the path you choose.','The heavens cannot decide everything.','This is where our story begins.']
+};
+function vvSanitizeMega(raw){
+ const x=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
+ const count=(n,max=1000000)=>Math.max(0,Math.min(max,Math.floor(Number(n)||0)));
+ const timestamp=n=>Math.max(0,Math.min(Date.now()+86400000,Number(n)||0));
+ const allowed=['mining','fishing','herbalism'],names=['Seraphine','Elowen','Lira','Nyx','Ciel'];
+ const work={};for(const id of allowed)work[id]=timestamp(x.lastWork?.[id]);
+ const xp={};for(const id of allowed)xp[id]=count(x.professions?.[id]);
+ const bond={},bondLast={};for(const name of names){bond[name]=count(x.bond?.[name],5);bondLast[name]=timestamp(x.bondLast?.[name])}
+ const crafted=Array.isArray(x.crafted)?[...new Set(x.crafted.filter(id=>VV_MEGA_ITEMS.some(v=>v.id===id)))]:[];
+ const equipped=crafted.includes(x.equipped)&&VV_MEGA_ITEMS.some(v=>v.id===x.equipped&&v.equip)?x.equipped:'';
+ const sites={};for(const id of ['lanternGrove','silverBridge','moonGarden'])sites[id]=x.sites?.[id]===true;
+ return {materials:{ore:count(x.materials?.ore),fish:count(x.materials?.fish),herbs:count(x.materials?.herbs)},lastWork:work,professions:xp,crafted,equipped,sites,bond,bondLast,history:Array.isArray(x.history)?x.history.filter(v=>typeof v==='string').slice(0,12):[]};
+}
+function vvMegaNum(id){return id==='wood'?s.wood:id==='essence'?s.essence:id==='butterfly'?s.butterfly:id==='stardust'?s.stardust:s.mega.materials[id]||0}
+function vvMegaCost(cost){return Object.entries(cost).map(([id,qty])=>qty+' '+({wood:'Wood',essence:'Essence',ore:'Moonstone',fish:'Silverscale',herbs:'Moonpetals'}[id]||id)).join(' · ')}
+function vvMegaCanAfford(cost){return Object.entries(cost).every(([id,qty])=>vvMegaNum(id)>=qty)}
+function vvMegaSpend(cost){if(!vvMegaCanAfford(cost))return false;for(const [id,qty]of Object.entries(cost)){if(id==='wood')s.wood-=qty;else if(id==='essence')s.essence-=qty;else s.mega.materials[id]-=qty}return true}
+function vvMegaLog(msg){s.mega.history.unshift(msg);s.mega.history=s.mega.history.slice(0,12);note(msg)}
+function vvMegaWork(id){
+ const w=VV_MEGA_WORK.find(x=>x.id===id);if(!w)return;
+ if(level(s.xp)<w.lv){toast('Reach Player Lv. '+w.lv+' to unlock '+w.name+'.');return}
+ const now=Date.now(),cd=w.cooldown-(s.mega.crafted.includes('hook')&&id==='fishing'?5:0);
+ const wait=Math.ceil((s.mega.lastWork[id]+cd*1000-now)/1000);
+ if(wait>0){toast('The '+w.scene+' is settling. Try again in '+wait+'s.');return}
+ s.mega.lastWork[id]=now;s.mega.materials[w.material]+=w.reward;
+ s.mega.professions[id]+=w.reward*5;
+ vvMegaLog(w.icon+' '+w.name+': +'+w.reward+' '+({ore:'Moonstone',fish:'Silverscale',herbs:'Moonpetals'}[w.material])+'.');
+ toast(w.icon+' Found '+w.reward+' '+w.material+'!');window.vvAudio?.effect('discovery');
+}
+function vvMegaCraft(id){
+ const item=VV_MEGA_ITEMS.find(x=>x.id===id);
+ if(!item||s.mega.crafted.includes(id))return;
+ if(!vvMegaSpend(item.cost)){toast('Not enough materials to craft '+item.name+'.');return}
+ s.mega.crafted.push(id);vvMegaLog('✧ Crafted '+item.name+'.');toast('✧ '+item.name+' added to Inventory.');window.vvAudio?.effect('quest');
+}
+function vvMegaEquip(id){
+ const item=VV_MEGA_ITEMS.find(x=>x.id===id&&x.equip);
+ if(id!=='none'&&(!item||!s.mega.crafted.includes(id)))return;
+ s.mega.equipped=id==='none'?'':id;toast(id==='none'?'Equipment unequipped.':item.name+' equipped.');
+}
+function vvMegaRestore(id){
+ const site=VV_MEGA_SITES.find(x=>x.id===id);if(!site||s.mega.sites[id])return;
+ if(!s.restored){toast('Restore the Ancient Moonwood first in Legacy.');return}
+ if(!vvMegaSpend(site.cost)){toast('More materials are needed to restore '+site.name+'.');return}
+ s.mega.sites[id]=true;vvMegaLog('🌙 The Moonwood remembers: '+site.name+' has been restored.');toast('✦ '+site.name+' is alive!');window.vvAudio?.effect('discovery');
+}
+function vvMegaTalk(name){
+ const c=VV_STORY.find(x=>x.name===name);if(!c||level(s.xp)<c.lv)return;
+ const now=Date.now(),wait=s.mega.bondLast[name]+12*3600000-now;
+ if(wait>0){toast(name+' will have more to share in '+Math.ceil(wait/3600000)+'h.');return}
+ if(s.mega.bond[name]>=5){toast('Your bond with '+name+' is already complete.');return}
+ s.mega.bondLast[name]=now;const num=++s.mega.bond[name];const quote=VV_MEGA_BOND_LINES[name][num-1];
+ vvMegaLog('♡ '+name+': “'+quote+'”');toast('♡ '+name+' · Memory '+num+'/5');window.vvAudio?.effect('friend');
+}
+function vvMegaMoonPhase(){
+ const phases=['New Moon','Waxing Crescent','First Quarter','Waxing Gibbous','Full Moon','Waning Gibbous','Last Quarter','Waning Crescent'];
+ const day=Math.floor(Date.now()/86400000);return {name:phases[Math.floor(((day+2)%29.53)/29.53*8)%8],index:Math.floor(((day+2)%29.53)/29.53*8)%8};
+}
+function vvMegaWorld(){
+ const sites=VV_MEGA_SITES.filter(x=>s.mega.sites[x.id]),moon=vvMegaMoonPhase(),progress=sites.length;
+ const scene=s.mega.sites.moonGarden?'moon-garden':s.mega.sites.silverBridge?'silver-bridge':s.mega.sites.lanternGrove?'lantern-grove':s.restored?'ancient-tree':'sleeping-grove';
+ return `<section class="vv-living-world vv-world-${scene}" aria-label="Living Moonwood restoration overview">
+ <div class="vv-world-orbit" aria-hidden="true">☾</div>
+ <div class="vv-world-inner"><span class="vv-kicker">✧ THE FOREST REMEMBERS · ${moon.name.toUpperCase()}</span>
+ <h2>${progress===3?'The Moonpetals Bloom':progress===2?'Across Silverleaf Waters':progress===1?'Lanterns in the Mist':s.restored?'The Grove Awakens':'The Grove Still Whispers'}</h2>
+ <p>${progress?sites[sites.length-1].scene:s.restored?'The Ancient Moonwood has awakened; there is more to restore.':'Discover the forgotten tree and begin restoring your forest.'}</p>
+ <div class="vv-world-flags"><span>${s.spiritHelped?'♡ Spirit befriended':'✧ Hidden spirit awaits'}</span><span>${s.moonPath?'☾ Moonlit path found':'◇ Unexplored silver path'}</span><span>✦ ${progress}/3 restored sites</span></div>
+ <div class="vv-world-actions">${vvLink('☾ Restoration projects','Legacy','ghost')}${vvLink('🌿 Working professions','Working','ghost')}</div></div></section>`;
+}
+function vvMegaRestorationPanel(){
+ const inner=VV_MEGA_SITES.map(site=>`<div class="vv-project ${s.mega.sites[site.id]?'is-built':''}">
+ <div class="vv-project-icon">${site.icon}</div><div class="vv-project-detail"><h3>${site.name}</h3><p>${site.desc}</p><small>${vvMegaCost(site.cost)}</small></div>
+ <div>${s.mega.sites[site.id]?'<span class="vv-tag">✓ RESTORED</span>':vvButton('Restore','mega-restore-'+site.id,!s.restored||!vvMegaCanAfford(site.cost),'ghost')}</div></div>`).join('');
+ return vvPanel('☾ Living Moonwood Projects',`<p class="vv-muted">After restoring the Ancient Tree, shape the grove with resources from your professions. Projects are permanent visual and story milestones—no XP boosts.</p>${inner}`,'THE FOREST REMEMBERS');
+}
+function vvMegaWorkshop(){
+ return vvPanel('✧ Moonlit Atelier · Crafting',`<p class="vv-muted">Every recipe is a one-time discovery; you choose what to keep and equip. Only the Forest Talisman provides a small +2% Wood bonus.</p>
+ <div class="vv-mega-recipe-grid">${VV_MEGA_ITEMS.map(item=>`<div class="vv-mega-recipe"><span class="vv-mega-recipe-icon">${item.icon}</span><h3>${item.name}</h3><p>${item.desc}</p><small>${vvMegaCost(item.cost)}</small>
+ ${s.mega.crafted.includes(item.id)?(item.equip?(s.mega.equipped===item.id?vvButton('✓ Equipped','mega-equip-none',false,'ghost'):vvButton('Equip','mega-equip-'+item.id)):'<span class="vv-tag">✓ Crafted</span>'):vvButton('Craft item','mega-craft-'+item.id,!vvMegaCanAfford(item.cost))}
+ </div>`).join('')}</div>
+ ${s.mega.equipped?'<div class="vv-settings-note">Currently equipped: '+VV_MEGA_ITEMS.find(x=>x.id===s.mega.equipped)?.name+'</div>':''}
+ `,'ONE-TIME RECIPES');
+}
+function vvMegaBonds(){
+ const cards=VV_STORY.map(c=>{
+  const unlocked=level(s.xp)>=c.lv,n=s.mega.bond[c.name]||0,wait=Math.max(0,Math.ceil((s.mega.bondLast[c.name]+12*3600000-Date.now())/3600000));
+  return `<div class="vv-bond-person ${unlocked?'':'is-locked'}"><div class="vv-bond-portrait"><img src="${c.art}" alt="" loading="lazy"></div><div class="vv-bond-info"><strong>${c.name}</strong><p>${unlocked?VV_MEGA_BOND_LINES[c.name][Math.max(0,n-1)]||c.lore:'Unlock at Player Lv. '+c.lv}</p><span>♡ ${n}/5 memories</span></div><div>${unlocked?(n>=5?'<span class="vv-tag">✦ Complete</span>':vvButton(wait?'In '+wait+'h':'Share a moment','mega-bond-'+c.name,wait>0,'ghost')):'<span class="vv-tag">🔒 Locked</span>'}</div></div>`;
+ }).join('');
+ return vvPanel('♡ Character Bonds & Memories',`<p class="vv-muted">Meet your companions as people, not just stat bonuses. One story moment per character every 12 hours; no login streaks, XP or resource shortcuts.</p>${cards}`,'STORY ONLY');
+}
+function vvMegaAchievements(){
+ const list=[
+ ['🌱','First Footsteps',s.cycles>=10,'Complete 10 Working cycles.'],
+ ['✧','Starlight Collector',s.discoveryCount>=5,'Discover moonlit wonders 5 times.'],
+ ['☾','First Restoration',s.restored,'Restore the Ancient Moonwood Tree.'],
+ ['🏮','Lightkeeper',s.mega.sites.lanternGrove,'Build the Whisperlight Grove.'],
+ ['⛏','Moonstone Finder',s.mega.materials.ore>0||s.mega.professions.mining>0,'Mine your first Moonstone.'],
+ ['✦','Atelier Artisan',s.mega.crafted.length>=2,'Craft two unique items.'],
+ ['♡','Forest Friend',Object.values(s.mega.bond).some(n=>n>=3),'Reach bond memory 3 with a companion.'],
+ ['🌸','Grove Architect',VV_MEGA_SITES.every(x=>s.mega.sites[x.id]),'Restore all three living world sites.']
+ ];
+ return vvPanel('✦ Moonwood Achievements',`<p class="vv-muted">Cosmetic-only achievements. No forced daily streaks or progression rewards.</p><div class="vv-achievement-list">${list.map(([icon,name,done,desc])=>`<div class="vv-achievement ${done?'is-done':''}"><span>${icon}</span><div><strong>${name}</strong><small>${desc}</small></div><b>${done?'✓':'🔒'}</b></div>`).join('')}</div>`,'${list.filter(x=>x[2]).length}/'+list.length);
+}
+document.addEventListener('click',event=>{
+ const control=event.target.closest('[data-action^="mega-"]');if(!control)return;
+ event.preventDefault();event.stopImmediatePropagation();if(control.disabled)return;
+ const action=control.dataset.action;
+ if(action.startsWith('mega-work-'))vvMegaWork(action.slice(10));
+ else if(action.startsWith('mega-craft-'))vvMegaCraft(action.slice(11));
+ else if(action.startsWith('mega-restore-'))vvMegaRestore(action.slice(13));
+ else if(action.startsWith('mega-bond-'))vvMegaTalk(action.slice(10));
+ else if(action.startsWith('mega-equip-'))vvMegaEquip(action.slice(11));
+ save();render();
+},true);
+
 function vvGathering(){
  const profs=[['🌳','Woodcutting',1,level(s.profXp),'Active · automatic'],['⛏','Mining',5,0,'Planned profession'],['🎣','Fishing',10,0,'Planned profession'],['🌿','Herbalism',15,0,'Planned profession']];
  return vvSection(vvHead('Under the forest canopy','Working Professions','Your companions gather even while you are away. Up to eight hours of offline progress.','✧ Always working')+
