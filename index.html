@@ -937,8 +937,8 @@ const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){cons
 
 'use strict';
 /* Vioverse v1.0 — art-direction pass. Gameplay and stored save schema are unchanged. */
-const vvIcons={Settings:'⚙',Mailbox:'✉',Home:'⌂',Friends:'♡',Characters:'♙',Collection:'✦',Expeditions:'✧',Discoveries:'🦋',Gathering:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
-const vvPages=['Home','Friends','Characters','Collection','Expeditions','Discoveries','Gathering','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game','Mailbox','Settings'];
+const vvIcons={Settings:'⚙',Mailbox:'✉',Home:'⌂',Friends:'♡',Characters:'♙',Collection:'✦',Expeditions:'✧',Discoveries:'🦋',Working:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
+const vvPages=['Home','Friends','Characters','Collection','Expeditions','Discoveries','Working','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game','Mailbox','Settings'];
 function vvButton(text,action,disabled=false,extra=''){return `<button type="button" class="vv-button ${extra}" data-action="${action}" ${disabled?'disabled':''}>${text}</button>`}
 function vvLink(text,to,extra=''){return `<button type="button" class="vv-button ${extra}" data-page="${to}">${text}</button>`}
 function vvHead(kicker,title,subtitle,badge=''){return `<div class="vv-heading"><div><div class="vv-kicker">${kicker}</div><h2>${title}</h2><p>${subtitle}</p></div>${badge?`<span class="vv-area-pill">${badge}</span>`:''}</div>`}
@@ -991,7 +991,7 @@ function vvDashboard(){
  <div class="vv-dashboard-content"><div class="vv-dashboard-eyebrow"><span class="vv-status-pulse"></span> THE MOONWOOD IS CALLING <span class="vv-dashboard-star">✦</span> CHAPTER I</div>
  <h2>Welcome to <em>Moonwood</em></h2>
  <p>Under a silver moon, every whisper becomes a story. Your forest journey continues with Seraphine at your side.</p>
- <div class="vv-dashboard-actions">${vvLink('🌿 Continue Gathering','Gathering')}${vvLink('✧ Explore Moonwood','Expeditions','ghost')}</div>
+ <div class="vv-dashboard-actions">${vvLink('🌿 Continue Working','Working')}${vvLink('✧ Explore Moonwood','Expeditions','ghost')}</div>
  <div class="vv-dashboard-metrics">
  <div><span>✦ PLAYER LEVEL</span><strong>${lvl}</strong><div class="vv-dashboard-mini">${vvTrack(pct(s.xp))}</div></div>
  <div><span>♣ WOODCUTTING</span><strong>Lv. ${prof}</strong><div class="vv-dashboard-mini">${vvTrack(pct(s.profXp))}</div></div>
@@ -1006,7 +1006,7 @@ function vvHome(){
  cards+
  `<div class="vv-bottom">
  ${vvPanel('✧ Current Area',`<div class="vv-tile-row"><span>🌙 Whispering Grove</span><span class="vv-gold">Lv. 1–10</span></div><p class="vv-muted">An enchanted forest alive with forgotten spirits and silver flowers.</p>${vvLink('Explore the Grove →','Expeditions','ghost')}`)}
- ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Gathering →','Gathering','ghost')}`)}
+ ${vvPanel('🌿 Profession Overview',`<div class="vv-tile-row"><span>🌳 Woodcutting</span><b>Lv. ${level(s.profXp)}</b></div><div class="vv-tile-row"><span>⛏ Mining</span><small>Unlock Lv. 5</small></div><div class="vv-tile-row"><span>🎣 Fishing</span><small>Unlock Lv. 10</small></div>${vvLink('Open Working →','Working','ghost')}`)}
  ${vvPanel('▤ Journey Objective',`<p class="vv-muted">${nextStep()}</p><div class="vv-actions">${vvLink('View Legacy →','Legacy')}</div>`)}
  ${vvPanel('♡ Moonlit Bonds',`<p class="vv-muted">${vvSocial.friendCount}/50 accepted friends · +${(vvBondBonus()*100).toFixed(1)}% to Wood, Essence, gathering speed, and skill experience.</p>${vvLink('Open Friends & Hearts →','Friends','ghost')}`)}
  ${vvPanel('✦ Quick Actions',`<div style="display:grid;gap:9px">${vvLink('✉ Mailbox','Mailbox')}${vvLink('⚙ Settings','Settings','ghost')}${vvLink('✧ Discoveries','Discoveries','ghost')}${vvLink('♙ Characters','Characters','ghost')}${vvLink('✦ Collection','Collection','ghost')}${vvLink('✎ Moonveil Journal','Journal','ghost')}</div>`)}
@@ -1044,10 +1044,10 @@ function vvDiscoveries(){
 }
 function vvGathering(){
  const profs=[['🌳','Woodcutting',1,level(s.profXp),'Active · automatic'],['⛏','Mining',5,0,'Planned profession'],['🎣','Fishing',10,0,'Planned profession'],['🌿','Herbalism',15,0,'Planned profession']];
- return vvSection(vvHead('Under the forest canopy','Gathering Professions','Your companions gather even while you are away. Up to eight hours of offline progress.','✧ Always gathering')+
+ return vvSection(vvHead('Under the forest canopy','Working Professions','Your companions gather even while you are away. Up to eight hours of offline progress.','✧ Always working')+
  `<div class="vv-scene" style="min-height:240px"><div class="vv-scene-foreground"><h2>Seraphine · Forest Whisperer</h2><p>Moonwood yields to patient hands. Gathering never needs a start button.</p></div></div>
  <div class="vv-grid" style="margin-top:18px">${profs.map((x,i)=>`<div class="vv-panel"><span style="font-size:29px">${x[0]}</span><h3 style="margin:8px 0">${x[1]}</h3><span class="vv-tag">${i===0?'ACTIVE':'MILESTONE LV. '+x[2]}</span><p class="vv-muted">${x[4]}</p>${vvStat('Profession level',i===0?'Lv. '+x[3]:'Not yet implemented')}${vvTrack(i===0?pct(s.profXp):0,null,i===0)}</div>`).join('')}</div>
- ${vvPanel('✧ Gathering Record',`<div class="vv-grid"><div class="vv-mini-metric"><span>🪵</span><div><b>${fmt(s.wood)}</b><small>Moonwood collected</small></div></div><div class="vv-mini-metric"><span>✦</span><div><b>${fmt(s.cycles)}</b><small>Gathering cycles</small></div></div><div class="vv-mini-metric"><span>⚡</span><div><b>${speed().toFixed(1)}s</b><small>Time per cycle</small></div></div></div><p class="vv-muted">Profession levels and bonuses update automatically as Seraphine gathers.</p>`,'LIVE IDLE')}`);
+ ${vvPanel('✧ Working Record',`<div class="vv-grid"><div class="vv-mini-metric"><span>🪵</span><div><b>${fmt(s.wood)}</b><small>Moonwood collected</small></div></div><div class="vv-mini-metric"><span>✦</span><div><b>${fmt(s.cycles)}</b><small>Gathering cycles</small></div></div><div class="vv-mini-metric"><span>⚡</span><div><b>${speed().toFixed(1)}s</b><small>Time per cycle</small></div></div></div><p class="vv-muted">Profession levels and bonuses update automatically as Seraphine gathers.</p>`,'LIVE IDLE')}`);
 }
 function vvInventory(){
  const items=[['🪵','Moonwood',s.wood,'Gathered from trees and expeditions'],['✧','Moon Essence',s.essence,'Earned through magical discoveries'],['✧','Stardust',s.stardust,'Earned by exchanging Wood; spent on companion summons'],['🦋','Lunar Butterfly',s.butterfly,'Rare spirit used for Awakening I']];
@@ -1440,7 +1440,7 @@ function vvRender(){
  const nav=document.getElementById('nav'),main=document.getElementById('main');if(!nav||!main)return;
  const old=document.getElementById('vv-card-scroll');if(old)scrollPos=old.scrollLeft;
  nav.innerHTML=vvPages.map(n=>`<button type="button" data-page="${n}" class="${page===n?'active':''}" ${page===n?'aria-current="page"':''}><span class="vv-nav-icon" aria-hidden="true">${vvIcons[n]}</span><span class="vv-nav-label">${n}</span></button>`).join('');
- const screens={Home:vvHome,Friends:vvFriends,Characters:vvCharacters,Collection:vvCollection,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Gathering:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates,Mailbox:vvMailbox,Settings:vvSettings};
+ const screens={Home:vvHome,Friends:vvFriends,Characters:vvCharacters,Collection:vvCollection,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Working:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates,Mailbox:vvMailbox,Settings:vvSettings};
  main.innerHTML=(screens[page]||vvHome)();
  if(page==='Home'){const sc=document.getElementById('vv-card-scroll');if(sc)sc.scrollLeft=scrollPos}
  vvSyncMailBadge();
@@ -1842,7 +1842,7 @@ function vvSkillGlyph(kind){
 
 /* v1.4.1 mobile navigation; desktop navigation remains unchanged */
 (function(){
- const mobilePages=['Home','Gathering','Gacha','Characters'];
+ const mobilePages=['Home','Working','Gacha','Characters'];
  const allPages=['Home','Gathering','Gacha','Characters','Collection','Friends','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game','Mailbox','Settings'];
  const icons={Home:'⌂',Gathering:'🪵',Gacha:'✧',Characters:'♙'};
  const bar=document.getElementById('vv-mobile-nav'),menu=document.getElementById('vv-mobile-more');
