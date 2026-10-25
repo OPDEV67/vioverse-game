@@ -1,8 +1,8 @@
 # Vioverse
 
-**Current release: v1.3.0 — Royal Responsive Polish**
+**Current release: v1.4.0 — Spirit Gacha & Stardust**
 
-Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a save journal, and an interactive Forest Skill Tree.
+Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
 ## Run locally
 
@@ -17,15 +17,19 @@ You can also open `index.html` directly, but the local server is recommended for
 
 ## Saves
 
-Progress is stored in browser local storage under `moonveil_legacy_v02`. Use the same browser profile and same local address/port to keep using that save. Switching from `localhost:3000` to `localhost:3001` creates a separate browser storage origin. The Journal includes save export/import tools for backups.
+Progress is stored in browser local storage under `moonveil_legacy_v02`. This release adds Stardust, summon pity, owned companions, equipped companion passives, and exchange history to the existing save without changing the key. Use the same browser profile and local address/port to keep using that save. Switching from `localhost:3000` to `localhost:3001` creates a separate browser storage origin. The Journal includes save export/import tools.
 
 ## Current release highlights
 
-- Compact responsive HUD and gothic-purple visual system.
-- Interactive circular Moonwood constellation with selectable skill nodes.
+- Responsive gothic-purple HUD and interactive circular Moonwood constellation.
 - Forest Mastery upgrades and refunds.
+- Exchange 250 Wood for 1 Stardust using fixed exchange amounts; no sell-all button.
+- Single summons cost 10 Stardust; ten summons cost 90.
+- Four summonable companions with persistent ownership and working passive effects.
+- Published summon odds: Common 60%, Rare 28%, Epic 10%, Legendary 2%.
+- Pity guarantees: Rare+ within 10 pulls, Epic+ within 20, Legendary within 50; duplicates return 3 Stardust.
 - Home, Characters, Skill Tree, Expeditions, Discoveries, Gathering, Inventory, Missions, Legacy, Journal, Gacha, Shop, Patch Notes, and Update Game screens.
-- Existing five-second version/update checks and save compatibility.
+- Five-second published-version checks and save compatibility.
 
 ## Deploy to GitHub Pages
 
