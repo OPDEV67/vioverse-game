@@ -1,6 +1,6 @@
 {
-  "version": "1.5.1",
-  "build": "2026-10-25-v151-google-signin",
-  "title": "Vioverse — Continue with Google",
-  "notes": "Adds Google OAuth button for Moonlit Bonds. Requires Google provider enablement in Supabase Auth and Google Cloud OAuth client setup. Existing email/password login still works."
+  "version": "1.5.2",
+  "build": "2026-10-25-v152-collection",
+  "title": "Vioverse — Character & Spirit Collection",
+  "notes": "New Collection tab for story characters and summoned spirits, lore, special abilities, unlock goals, equippable passives and collector titles."
 }
