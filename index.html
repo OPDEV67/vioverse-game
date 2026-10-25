@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.3.0</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.4.1</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -511,11 +511,69 @@ main .panel,.vv-panel{border-radius:14px;box-shadow:inset 0 1px #d5adff12,0 12px
 @media(max-width:1100px){.vv-summon-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:840px){.vv-gacha-hero{grid-template-columns:110px minmax(0,1fr);padding:15px;gap:15px}.vv-gacha-orb{min-height:125px;font-size:44px}.vv-gacha-columns{grid-template-columns:1fr}.vv-exchange-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:620px){.vv-gacha-hero{grid-template-columns:1fr}.vv-gacha-orb{min-height:100px;border-radius:14px}.vv-gacha-pity-grid{gap:7px}.vv-pity-card{padding:10px 5px}.vv-pity-card strong{font-size:17px}.vv-pity-card small,.vv-pity-card em{font-size:9px}.vv-summon-grid,.vv-exchange-grid{grid-template-columns:1fr}.vv-result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vv-history-row{grid-template-columns:30px minmax(0,1fr)}.vv-history-row small{grid-column:2;text-align:left}.vv-gacha-actions .vv-button{width:100%;justify-content:center}}
+
+/* v1.4.1 — automatic mobile layout */
+:root{--vv-safe-bottom:env(safe-area-inset-bottom,0px)}
+html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touch-action:manipulation}
+.vv-mobile-nav,.vv-mobile-more{display:none}
+@media(max-width:767px){
+ body{background-attachment:scroll}
+ header{position:sticky!important;top:0!important;z-index:100!important;padding:7px 10px!important}
+ .vv-header-inner{display:flex!important;flex-wrap:wrap!important;gap:7px!important;width:100%;min-width:0}
+ .vv-brand{flex:1 1 130px;min-width:0;gap:7px!important}
+ .vv-avatar{width:36px!important;height:36px!important;flex-shrink:0}
+ .vv-brand-title{font-size:17px!important;letter-spacing:.09em!important}
+ .vv-brand-sub{font-size:8px!important;white-space:normal!important;line-height:1.3}
+ .vv-level-track{width:100px!important;max-width:100%}
+ .vv-resources{display:flex!important;grid-column:unset!important;grid-row:unset!important;order:3!important;flex:1 1 100%!important;gap:5px!important;flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+ .vv-resources::-webkit-scrollbar{display:none}
+ .vv-resource{flex:1 0 auto!important;min-width:0!important;padding:6px 7px!important;gap:4px!important;white-space:nowrap}
+ .vv-resource-icon{font-size:14px!important}
+ .vv-resource b{font-size:12px!important}
+ .vv-resource small{display:none!important}
+ .vv-quicknav{display:none!important}
+ .shell{display:block!important;min-height:calc(100dvh - 170px)!important}
+ #nav{display:none!important}
+ #main{width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:13px 11px calc(96px + var(--vv-safe-bottom))!important;overflow-x:clip}
+ #main>*{min-width:0;max-width:100%}
+ .foot{padding-bottom:calc(85px + var(--vv-safe-bottom));text-align:center}
+ .vv-mobile-nav{position:fixed;z-index:250;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch;gap:3px;padding:7px max(8px,env(safe-area-inset-right,0px)) calc(7px + var(--vv-safe-bottom)) max(8px,env(safe-area-inset-left,0px));border-top:1px solid #9e6bc0;background:#150c26f5;box-shadow:0 -9px 32px #090413cf;backdrop-filter:blur(18px)}
+ .vv-mobile-nav button{display:flex;min-width:0;min-height:49px;flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:5px 2px;border:1px solid transparent;border-radius:10px;background:transparent;color:#cdb5e1;font-size:10px;font-weight:700}
+ .vv-mobile-nav button span{font-size:20px;line-height:1}
+ .vv-mobile-nav button.active,.vv-mobile-nav button[aria-current=page]{border-color:#b68adb;background:#492866;color:#fff3ff;box-shadow:inset 0 1px #f2d4ff24}
+ .vv-mobile-nav button:focus-visible,.vv-mobile-more button:focus-visible{outline:2px solid #ffe7a7;outline-offset:2px}
+ .vv-mobile-more{position:fixed;z-index:249;left:8px;right:8px;bottom:calc(72px + var(--vv-safe-bottom));display:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:min(58dvh,430px);overflow-y:auto;padding:13px;border:1px solid #9f71c5;border-radius:15px;background:#1c102ff7;box-shadow:0 -12px 36px #05020be6;backdrop-filter:blur(18px)}
+ .vv-mobile-more.is-open{display:grid}
+ .vv-mobile-more button{min-height:45px;padding:9px 10px;border:1px solid #674985;border-radius:10px;background:#2b1a42;text-align:left;color:#e6d4f6;font-size:13px}
+ .vv-mobile-more button.active{border-color:#e2b6ff;background:#53306e;color:#fff}
+ .vv2-root,.vv2-layout,.vv2-side,.vv2-center,.vv2-map,.vv2-map-border{min-width:0!important;max-width:100%!important}
+ .vv2-layout{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+ .vv2-side.left,.vv2-side.right{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+ .vv2-center{grid-row:auto!important}
+ .vv2-portrait{height:260px!important;min-height:0!important}
+ .vv2-map-title strong{font-size:9px!important;letter-spacing:.04em!important}
+ .vv2-map-foot{flex-wrap:wrap}
+ .vv2-node:after{font-size:8px!important;min-width:44px!important;max-width:65px!important;white-space:normal}
+ .vv-summon-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .vv-gacha-hero{grid-template-columns:1fr!important;padding:13px!important}
+ .vv-gacha-orb{min-height:100px!important}
+ .vv-gacha-pity-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .vv-gacha-columns{grid-template-columns:minmax(0,1fr)!important}
+ .vv-exchange-grid{grid-template-columns:minmax(0,1fr)!important}
+ .vv-exchange-card .vv-button,.vv-gacha-actions .vv-button{min-height:44px}
+ .vv-result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:370px){
+ .vv-mobile-nav button{font-size:9px}
+ .vv-mobile-nav button span{font-size:18px}
+ .vv-resource{padding:5px!important}
+ .vv-summon-grid{grid-template-columns:minmax(0,1fr)!important}
+}
 </style></head><body><header><div class="vv-header-inner">
-<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><div class="vv-brand-sub">Moonwood Legacy · v1.4 Spirit Gacha</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
+<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><div class="vv-brand-sub">Moonwood Legacy · v1.4.1 Mobile</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div></div>
 <div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
-</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script>
+</div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script>
 
 'use strict';
 
@@ -615,7 +673,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.4.0', BUILD_ID='2026-10-25-v140-spirit-gacha';
+const BUILD_VERSION='1.4.1', BUILD_ID='2026-10-25-v141-mobile-experience';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -1232,6 +1290,24 @@ function vvSkillGlyph(kind){
     else if(el.dataset.vv2Action==='back-tree')selectNode('mastery');
   },true);
   render();
+})();
+
+
+/* v1.4.1 mobile navigation; desktop navigation remains unchanged */
+(function(){
+ const mobilePages=['Home','Gathering','Gacha','Characters'];
+ const allPages=['Home','Gathering','Gacha','Characters','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game'];
+ const icons={Home:'⌂',Gathering:'🪵',Gacha:'✧',Characters:'♙'};
+ const bar=document.getElementById('vv-mobile-nav'),menu=document.getElementById('vv-mobile-more');
+ if(!bar||!menu)return;
+ bar.innerHTML=mobilePages.map(p=>'<button type="button" data-page="'+p+'"><span aria-hidden="true">'+icons[p]+'</span>'+p+'</button>').join('')+'<button type="button" id="vv-mobile-more-toggle" aria-controls="vv-mobile-more" aria-expanded="false"><span aria-hidden="true">☷</span>More</button>';
+ menu.innerHTML=allPages.filter(p=>!mobilePages.includes(p)).map(p=>'<button type="button" data-page="'+p+'">'+p+'</button>').join('');
+ function closeMenu(){menu.classList.remove('is-open');const toggle=document.getElementById('vv-mobile-more-toggle');if(toggle)toggle.setAttribute('aria-expanded','false')}
+ function sync(){const active=typeof page==='string'?page:'Home';for(const b of bar.querySelectorAll('[data-page]')){const yes=b.dataset.page===active;b.classList.toggle('active',yes);if(yes)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')}for(const b of menu.querySelectorAll('[data-page]'))b.classList.toggle('active',b.dataset.page===active);const toggle=document.getElementById('vv-mobile-more-toggle');if(toggle)toggle.classList.toggle('active',!mobilePages.includes(active))}
+ document.addEventListener('click',e=>{const toggle=e.target.closest('#vv-mobile-more-toggle');if(toggle){e.preventDefault();const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));sync();return}const nav=e.target.closest('#vv-mobile-nav [data-page],#vv-mobile-more [data-page]');if(nav){closeMenu();requestAnimationFrame(sync);return}if(!e.target.closest('#vv-mobile-more'))closeMenu()},true);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+ const main=document.getElementById('main');if(main&&typeof MutationObserver!=='undefined'){new MutationObserver(sync).observe(main,{childList:true})}
+ sync();
 })();
 
 </script></body></html>
