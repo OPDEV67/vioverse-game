@@ -70,7 +70,7 @@ nav button.active{outline:1px solid #d3a6ff;box-shadow:0 0 18px #af60f866,inset 
 .moonlit-cards .face.back::-webkit-scrollbar{width:7px}
 .moonlit-cards .face.back::-webkit-scrollbar-thumb{background:#a075cb;border-radius:9px}
 .moonlit-cards .face.locked{background:linear-gradient(#160e26ed,#100a1dfa),url('assets/world.webp') center/cover}
-</style><link rel="stylesheet" href="vioverse-v1.css"></head><body><header><div class="vv-header-inner">
+</style><link rel="stylesheet" href="vioverse-v1.css"><link rel="stylesheet" href="vioverse-skill-tree.css"></head><body><header><div class="vv-header-inner">
 <div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><div class="vv-brand-sub">Moonwood Legacy · Royal Interface</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div></div>
 <div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
@@ -189,4 +189,4 @@ function refreshLiveStats(){
  }
 }
 const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){const before=s.cycles;advance(away);note('⏳ Offline gathering: '+(s.cycles-before)+' cycles completed');setTimeout(()=>toast('Welcome back! '+(s.cycles-before)+' gathering cycles completed.'),500)}save();render();let prev=Date.now();setInterval(()=>{const now=Date.now();advance((now-prev)/1000);prev=now;save();refreshLiveStats()},1000);if(location.protocol!=='file:'){setTimeout(()=>checkGameUpdate(true),1500);setInterval(()=>{if(document.visibilityState==='visible')checkGameUpdate(true)},5000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkGameUpdate(true)})}
-</script><script src="vioverse-v1.js"></script></body></html>
+</script><script src="vioverse-v1.js"></script><script src="vioverse-skill-tree.js"></script></body></html>
