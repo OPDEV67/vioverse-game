@@ -1,6 +1,6 @@
 {
-  "version": "1.0.1",
-  "build": "2026-10-25-v101-moonwood-skills",
-  "title": "Moonwood Constellation — Skill Tree Design",
-  "notes": "Brand-new crystal-and-vines Forest Skill Tree inspired by the Vioverse reference artwork; Seraphine's card back has polished connected skill nodes and an Expand Skill Tree button. The full interactive tree is in Characters, with live Forest Mastery rank and skill point upgrades. Fixed flashing by keeping card faces mounted and updating skill nodes without rebuilding. All existing saves and update checks remain."
+  "version": "1.1.0",
+  "build": "2026-10-25-v110-interactive-constellation",
+  "title": "The Living Constellation — Interactive Forest Skill Tree",
+  "notes": "New full-screen interactive circular Moonwood Skill Tree inspired by the approved gothic-purple reference artwork. Dedicated Skill Tree page with Seraphine portrait, eight selectable nodes and an updating skill-details panel. Forest Mastery upgrades and optional confirmed point refunds work with your existing save. The Home and Characters skill buttons open the full tree directly without flashing. Other talents are clearly marked as planned; auto-update checks remain every 5 seconds."
 }
