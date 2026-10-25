@@ -1,5 +1,14 @@
 # Vioverse Patch Notes
 
+## v1.6.1 — Moonveil Settings & Mailbox
+- Added separate Settings and Mailbox pages in desktop navigation and mobile More menu, with top-HUD shortcuts and unread mail indicator.
+- Settings: Audio mixer shortcut, visual accessibility, compact mode, summon confirmations, offline summary and in-game notice preferences, plus account/save links and About.
+- Added a welcome letter from Seraphine: claim 3 Stardust (less than one 10-Stardust summon), a Moonborn cosmetic title and a welcome badge. No XP, levels, skill points or stat bonuses.
+- Mail has Inbox, Rewards and Archive categories. The welcome reward is tracked in the existing local save and appears in exported backups.
+- **Limitation:** The welcome gift is only once per local save, not securely once per account; server-side claim verification will be needed before cross-device or anti-abuse rewards.
+- No existing player progress is reset.
+
+
 ## v1.6.0 — Moonlit Atelier UI
 - Replaced the old flat purple presentation with a cohesive midnight-blue, silver and moon-gold dark-fantasy interface across the game.
 - New Moonwood home dashboard featuring the existing forest illustration, original Seraphine portrait, live player / Woodcutting progress and next character unlock.
