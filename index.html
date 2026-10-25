@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.4.1</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vioverse — Moonwood Legacy v1.4.2</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{color-scheme:dark;font-family:Inter,system-ui,Arial;color:#f2e8ff;background:#0c0917}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(100deg,#0b0819f2,#140d27d9),url('assets/world.webp') center/cover fixed}button{font:inherit;cursor:pointer;color:inherit}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible{outline:2px solid #e5b6ff}header{padding:15px 25px;background:#110d20e8;border-bottom:1px solid #765291;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1,h2,h3{font-family:Georgia,serif}h1{font-size:27px;letter-spacing:2px;margin:0;color:#eed8ff}h2{font-size:31px;margin:0 0 7px}h3{margin:0 0 10px}.muted,small{color:#baa8ce}.small{font-size:13px}.curr{display:flex;gap:9px;flex-wrap:wrap}.pill{border:1px solid #6b4b8b;background:#2a1d3e;padding:8px 12px;border-radius:99px;font-size:13px}.shell{display:grid;grid-template-columns:182px minmax(0,1fr);min-height:calc(100vh - 120px)}nav{padding:15px 10px;background:#110d20dc;border-right:1px solid #50356b}nav button{display:block;width:100%;text-align:left;padding:13px;border:1px solid transparent;background:none;border-radius:10px;margin-bottom:4px;color:#c9b6de}nav button.active,nav button:hover{background:#402854;border-color:#855aa9;color:white}main{padding:25px;max-width:1500px;width:100%;margin:auto}.panel{border:1px solid #765392;background:#1c142eea;border-radius:17px;padding:19px;box-shadow:0 14px 30px #0003;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid #c093e7;background:linear-gradient(#8c5ab6,#613985);border-radius:10px;padding:11px 15px;font-weight:600}.btn:hover:not(:disabled){filter:brightness(1.18)}.btn.alt{background:#322443;border-color:#75568d}.btn.gold{background:linear-gradient(#b68c4b,#6e4c29);border-color:#e8c785}.bar{height:10px;border-radius:99px;overflow:hidden;background:#100b1b;border:1px solid #50375e;margin:8px 0}.fill{height:100%;background:linear-gradient(90deg,#7a4bb3,#d3a0ff);transition:width .3s}.fill.green{background:linear-gradient(90deg,#288b5c,#8ae8b5)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#e5c4ff}.cards{display:flex;gap:16px;overflow-x:auto;padding:10px 6px 20px;scroll-snap-type:x mandatory}.card{position:relative;flex:0 0 290px;height:620px;scroll-snap-align:start;perspective:1200px}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s}.card.flipped .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #b78eea;border-radius:18px;overflow:hidden;background:linear-gradient(#35234a,#150f24);box-shadow:0 0 0 4px #24152e,0 0 26px #a16ee44d}.face.back{transform:rotateY(180deg);padding:17px;overflow:auto}.portrait{height:59%;background:linear-gradient(0deg,#1b1227,transparent 32%),url('assets/seraphine.webp') center 28%/cover}.face.awakened{border-color:#e8c18b;box-shadow:0 0 0 4px #4e3057,0 0 35px #f2b5ff88}.cardbody{padding:12px 15px}.locked{display:grid;place-content:center;text-align:center;padding:18px;background:linear-gradient(#29203dd9,#120d20e9),url('assets/world.webp') center/cover}.locked .symbol{font-size:60px;color:#9c7fb8}.stat{font-size:12px;display:flex;justify-content:space-between}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tree{padding:13px;background:#302040;border:1px solid #8666a7;border-radius:12px;text-align:center;margin:10px 0}.path{border:1px solid #70518b;border-radius:13px;background:#291d3d;padding:14px;margin:12px 0}.path.selected{border-color:#e6c287;background:#40304a}.scene{height:260px;border-radius:14px;background:linear-gradient(0deg,#160d29f5,transparent 70%),url('assets/world.webp') center/cover;display:flex;align-items:end;padding:22px;border:1px solid #6e528d}.scene.restored{background:radial-gradient(circle at 58% 28%,#ddbcff65,transparent 45%),linear-gradient(0deg,#190e29df,transparent 70%),url('assets/world.webp') center/cover;border-color:#d8b57f;box-shadow:inset 0 0 80px #dcb0ff44}.scene h2{font-size:30px;text-shadow:0 3px 12px #000}.notice{background:#332344;border-left:3px solid #cba2e8;padding:12px;border-radius:8px;margin:12px 0}.log{max-height:200px;overflow:auto;font-size:13px}.log p{margin:7px 0;border-bottom:1px solid #3b2a4c;padding-bottom:7px}.toast{position:fixed;right:16px;bottom:16px;z-index:5;padding:15px;background:#44285c;border:1px solid #d4a6ff;border-radius:12px;max-width:350px;box-shadow:0 10px 30px #0009}.foot{text-align:center;color:#a899b8;font-size:12px;padding:14px}@media(max-width:780px){.shell{grid-template-columns:1fr}nav{display:flex;overflow-x:auto;gap:5px;padding:7px}nav button{white-space:nowrap;width:auto;margin:0;padding:9px}main{padding:14px}.twocol{grid-template-columns:1fr}.card{flex-basis:270px;height:610px}header{padding:12px}}
@@ -569,8 +569,14 @@ html,body{max-width:100%;overflow-x:hidden}button,[data-page],[data-action]{touc
  .vv-resource{padding:5px!important}
  .vv-summon-grid{grid-template-columns:minmax(0,1fr)!important}
 }
+
+/* v1.4.2 Friends & invitations */
+.vv-friends-hero{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;align-items:center;margin:15px 0;padding:23px;border:1px solid #956ab8;border-radius:18px;background:radial-gradient(ellipse at 15% 40%,#7845a65a,transparent 55%),linear-gradient(135deg,#28163a,#120b22);box-shadow:0 12px 32px #05020b88}
+.vv-friends-hero h2{margin:7px 0 10px;color:#fff0ff;font-size:clamp(23px,3vw,34px)}.vv-friends-hero p{max-width:620px;line-height:1.6;color:#cbb8df}.vv-friends-emblem{display:grid;place-items:center;position:relative;min-height:180px;border:1px solid #b988e1;border-radius:50%;background:radial-gradient(circle,#a05fda55,transparent 65%),#180e29;font-size:75px;color:#f5d7ff;text-shadow:0 0 24px #cb8fff}.vv-friends-emblem span{position:absolute;right:24%;bottom:22%;font-size:31px;color:#e7c38e}.vv-friends-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.vv-friends-actions .vv-button{min-height:44px}
+.vv-friends-url{overflow-wrap:anywhere;padding:13px;border:1px solid #6f4c8b;border-radius:10px;background:#140b24;color:#f1d9ff;font-size:13px;user-select:all}.vv-friends-upcoming{display:flex;gap:14px;align-items:flex-start;padding:13px;border:1px solid #6f4c8b;border-radius:12px;background:#1d112d}.vv-friends-upcoming>span{font-size:32px;color:#d5a1f8}.vv-friends-upcoming strong{color:#f2e2ff}.vv-friends-upcoming p{margin:8px 0 0;color:#baa7d1;line-height:1.55;font-size:13px}
+@media(max-width:767px){.vv-friends-hero{grid-template-columns:minmax(0,1fr);gap:12px;padding:15px}.vv-friends-emblem{min-height:100px;border-radius:14px;font-size:49px}.vv-friends-actions .vv-button{flex:1 1 140px;justify-content:center}}
 </style></head><body><header><div class="vv-header-inner">
-<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><div class="vv-brand-sub">Moonwood Legacy · v1.4.1 Mobile</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
+<div class="vv-brand"><div class="vv-avatar"><img src="assets/seraphine.webp" alt="Seraphine"></div><div><div class="vv-brand-title">VIOVERSE</div><div class="vv-brand-sub">Moonwood Legacy · v1.4.2 Friends</div><div class="vv-level-track"><i style="width:0"></i></div></div></div>
 <div class="vv-resources"><div class="vv-resource"><span class="vv-resource-icon">🪵</span><b id="wood">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✧</span><b id="essence">0</b><small>Essence</small></div><div class="vv-resource vv-stardust-resource"><span class="vv-resource-icon">✧</span><b id="stardust">0</b></div><div class="vv-resource"><span class="vv-resource-icon">🦋</span><b id="butterfly">0</b></div><div class="vv-resource"><span class="vv-resource-icon">✦</span><b id="vv-level-caption">Lv. 1</b><b id="level" style="display:none">1</b></div></div>
 <div class="vv-quicknav"><button type="button" data-page="Journal"><span>✉</span>Journal</button><button type="button" data-page="Missions"><span>▤</span>Missions</button><button type="button" data-page="Legacy"><span>☾</span>Quests</button><button type="button" data-page="Update Game"><span>⚙</span>Menu</button></div>
 </div></header><div class="shell"><nav id="nav"></nav><main id="main"></main></div><div id="vv-mobile-more" class="vv-mobile-more" aria-label="More game screens"></div><div id="vv-mobile-nav" class="vv-mobile-nav" aria-label="Mobile game navigation"></div><div class="foot">Progress is saved locally in this browser. Illustrative game balance · no combat, no stamina.</div><div id="toast" class="toast" hidden></div><script>
@@ -673,7 +679,7 @@ const PATCHES=[
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
 
-const BUILD_VERSION='1.4.1', BUILD_ID='2026-10-25-v141-mobile-experience';
+const BUILD_VERSION='1.4.2', BUILD_ID='2026-10-25-v142-friends-invites';
 let updateInfo={state:'idle',manifest:null,message:'Automatic checks every 5 seconds while online. The game only reloads when a newer published build is ready.'};
 function compareVersions(a,b){const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)?1:-1}return 0}
 function journal(){
@@ -713,8 +719,8 @@ const away=Math.max(0,Math.min((Date.now()-s.last)/1000,28800));if(away>10){cons
 
 'use strict';
 /* Vioverse v1.0 — art-direction pass. Gameplay and stored save schema are unchanged. */
-const vvIcons={Home:'⌂',Characters:'♙',Expeditions:'✧',Discoveries:'🦋',Gathering:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
-const vvPages=['Home','Characters','Expeditions','Discoveries','Gathering','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game'];
+const vvIcons={Home:'⌂',Friends:'♡',Characters:'♙',Expeditions:'✧',Discoveries:'🦋',Gathering:'🌿',Inventory:'♧',Missions:'▤',Legacy:'☾',Journal:'✎',Gacha:'✦',Shop:'♜','Patch Notes':'📜','Update Game':'↻'};
+const vvPages=['Home','Friends','Characters','Expeditions','Discoveries','Gathering','Inventory','Missions','Legacy','Journal','Gacha','Shop','Patch Notes','Update Game'];
 function vvButton(text,action,disabled=false,extra=''){return `<button type="button" class="vv-button ${extra}" data-action="${action}" ${disabled?'disabled':''}>${text}</button>`}
 function vvLink(text,to,extra=''){return `<button type="button" class="vv-button ${extra}" data-page="${to}">${text}</button>`}
 function vvHead(kicker,title,subtitle,badge=''){return `<div class="vv-heading"><div><div class="vv-kicker">${kicker}</div><h2>${title}</h2><p>${subtitle}</p></div>${badge?`<span class="vv-area-pill">${badge}</span>`:''}</div>`}
@@ -891,11 +897,40 @@ function vvHandleEconomyAction(action){
 }
 document.addEventListener('click',event=>{const target=event.target.closest('[data-action]');if(!target)return;const action=target.dataset.action||'';if(!/^(pull-one|pull-ten|exchange-(1|4|20)|equip-(bramble|nyra|lunelle|astra)|equip-none)$/.test(action))return;event.preventDefault();event.stopImmediatePropagation();vvHandleEconomyAction(action)},true);
 
+
+function vvFriends(){
+ const invite='https://opdev67.github.io/vioverse-game/';
+ return vvSection(vvHead('Together beneath the moon','Friends','Invite someone to discover Vioverse and begin their own Moonwood journey.','✧ Invite your circle')+
+ '<div class="vv-friends-hero"><div class="vv-friends-emblem" aria-hidden="true">☾<span>✧</span></div><div><div class="vv-kicker">THE MOONLIT CIRCLE</div><h2>Every adventure is brighter with friends</h2><p>Share Vioverse with someone you know. They can open the public game on iPhone, Android, or PC and start their own journey.</p><div class="vv-friends-actions">'+vvButton('✧ Share invitation','friends-share')+vvButton('Copy game link','friends-copy',false,'ghost')+'</div></div></div>'+
+ vvPanel('✦ Your Invitation', '<p class="vv-muted">Send this public link to your friends:</p><div class="vv-friends-url">'+invite+'</div><p class="vv-muted vv-small">Everyone currently plays independently, with their own browser save. Your personal save is never included in the invitation.</p>','PUBLIC GAME LINK')+
+ vvPanel('☾ Friends & Online Status', '<div class="vv-friends-upcoming"><span aria-hidden="true">♙</span><div><strong>Friends list is coming next</strong><p>Friend requests, profiles, online status, and shared activities require player accounts and an online service. They are not active yet, so this screen will never pretend a player is online or a request was sent.</p></div></div>','COMING IN A FUTURE UPDATE'));
+}
+function vvFriendsShare(){
+ const url='https://opdev67.github.io/vioverse-game/';
+ if(navigator.share){navigator.share({title:'Join me in Vioverse',text:'Come explore the Moonwood with me! ✧',url}).catch(()=>{});return}
+ vvFriendsCopy();
+}
+function vvFriendsCopy(){
+ const url='https://opdev67.github.io/vioverse-game/';
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(()=>toast('✧ Game link copied!')).catch(()=>vvFriendsFallbackCopy(url));return}
+ vvFriendsFallbackCopy(url);
+}
+function vvFriendsFallbackCopy(url){
+ const field=document.createElement('textarea');field.value=url;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();
+ let ok=false;try{ok=document.execCommand('copy')}catch(e){}field.remove();toast(ok?'✧ Game link copied!':'Copy this link: '+url);
+}
+document.addEventListener('click',event=>{
+ const button=event.target.closest('[data-action="friends-share"],[data-action="friends-copy"]');
+ if(!button)return;
+ event.preventDefault();event.stopImmediatePropagation();
+ if(button.dataset.action==='friends-share')vvFriendsShare();else vvFriendsCopy();
+},true);
+
 function vvRender(){
  const nav=document.getElementById('nav'),main=document.getElementById('main');if(!nav||!main)return;
  const old=document.getElementById('vv-card-scroll');if(old)scrollPos=old.scrollLeft;
  nav.innerHTML=vvPages.map(n=>`<button type="button" data-page="${n}" class="${page===n?'active':''}" ${page===n?'aria-current="page"':''}><span class="vv-nav-icon" aria-hidden="true">${vvIcons[n]}</span><span class="vv-nav-label">${n}</span></button>`).join('');
- const screens={Home:vvHome,Characters:vvCharacters,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Gathering:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates};
+ const screens={Home:vvHome,Friends:vvFriends,Characters:vvCharacters,Expeditions:vvExpeditions,Discoveries:vvDiscoveries,Gathering:vvGathering,Inventory:vvInventory,Missions:vvMissions,Legacy:vvLegacy,Journal:vvJournal,Gacha:vvGacha,Shop:vvShop,'Patch Notes':vvPatches,'Update Game':vvUpdates};
  main.innerHTML=(screens[page]||vvHome)();
  if(page==='Home'){const sc=document.getElementById('vv-card-scroll');if(sc)sc.scrollLeft=scrollPos}
  document.getElementById('wood').textContent=fmt(s.wood);document.getElementById('essence').textContent=fmt(s.essence);document.getElementById('butterfly').textContent=fmt(s.butterfly);const dust=document.getElementById('stardust');if(dust)dust.textContent=fmt(s.stardust);document.getElementById('level').textContent=level(s.xp);
@@ -1296,7 +1331,7 @@ function vvSkillGlyph(kind){
 /* v1.4.1 mobile navigation; desktop navigation remains unchanged */
 (function(){
  const mobilePages=['Home','Gathering','Gacha','Characters'];
- const allPages=['Home','Gathering','Gacha','Characters','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game'];
+ const allPages=['Home','Gathering','Gacha','Characters','Friends','Skill Tree','Expeditions','Discoveries','Inventory','Missions','Legacy','Journal','Shop','Patch Notes','Update Game'];
  const icons={Home:'⌂',Gathering:'🪵',Gacha:'✧',Characters:'♙'};
  const bar=document.getElementById('vv-mobile-nav'),menu=document.getElementById('vv-mobile-more');
  if(!bar||!menu)return;
