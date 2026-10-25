@@ -1,5 +1,14 @@
 # Vioverse Patch Notes
 
+## v1.4.0 — Spirit Gacha & Stardust
+- Added the playable Moonlit Exchange: exchange 250 Wood for 1 Stardust using fixed, optional amounts. No sell-all action and no real-money currency.
+- Added single summons (10 Stardust) and discounted ten-pulls (90 Stardust).
+- Added four summonable companions across Common, Rare, Epic, and Legendary rarities, with persistent ownership and an equipable support slot.
+- Added working passive bonuses for Wood rewards, Moon Essence rewards, and gathering cycle speed.
+- Added transparent 60% / 28% / 10% / 2% rarity odds, persistent pity counters (Rare+ within 10, Epic+ within 20, Legendary within 50), and +3 Stardust duplicate compensation.
+- Added summon results, companion collection UI, exchange history, Stardust HUD, and save-compatible migration for existing `moonveil_legacy_v02` saves.
+- Existing automatic five-second version checks and the interactive Forest Skill Tree remain intact.
+
 ## v1.3.0 — Royal Responsive Polish
 - Refined the header into a compact single row on laptop and tablet widths.
 - Rebalanced the companion profile and constellation layout to reduce wasted vertical space.
@@ -10,15 +19,15 @@
 
 ## v1.2.0 — Stable Unified Game
 - Consolidated the primary game interface into a single `index.html` entry point.
-- Preserved all 14 game screens, the interactive Forest Skill Tree, skill upgrades/refunds, expeditions, gathering, and the existing save key.
+- Preserved the 14 game screens, interactive Forest Skill Tree, skill upgrades/refunds, expeditions, gathering, and the existing save key.
 - Removed runtime dependencies on separate interface JavaScript/CSS files.
 
 ## v0.9 — Living Journal & Save Backups
-- New Moonveil Journal screen, with 4 story milestones and 8 discovery entries.
+- New Moonveil Journal screen, with story milestones and discovery entries.
 - Journal displays recent decisions and memories.
 - Export current progress as a JSON save backup.
 - Import a Vioverse save backup with confirmation and data validation.
-- Existing gathering, expeditions, Awakening I, Moonwood restoration, and 5-second update checks retained.
+- Existing gathering, expeditions, Awakening I, Moonwood restoration, and five-second update checks retained.
 
 ## v0.8 — Seamless Auto Updates
-- Automatic version checks every 5 seconds when the tab is active.
+- Automatic version checks every five seconds when the tab is active.
