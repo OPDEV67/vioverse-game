@@ -1,4 +1,4 @@
-// Standalone, dependency-free regression checks for Vioverse v1.7.0.
+// Standalone, dependency-free regression checks for Vioverse v1.8.0.
 // Run: node scripts/check-mega-patch.mjs
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -8,6 +8,13 @@ const scripts=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(x=>
 assert(scripts.length,'Inline JavaScript must exist');
 for(const code of scripts)new Function(code);
 assert(html.includes("const BUILD_VERSION='"+version.version+"'"),'Game and version.json builds must match');
+assert(version.version==='1.8.0','Expected the v1.8.0 repair release');
+const initAt=html.indexOf('s.mega=vvSanitizeMega(s.mega);s.v18=vvSanitizeV18(s.v18);');
+const levelAt=html.indexOf('const level=x=>');
+const initCode=html.slice(initAt,html.indexOf("let page='Home'",initAt));
+assert(initAt>=0&&levelAt>initAt&&!/\\blevel\\s*\\(/.test(initCode),'Startup normalization must not call the not-yet-initialized level const');
+assert(html.includes("const BUILD_ID='"+version.build+"'"),'Game and manifest build IDs must match');
+assert(html.includes("if(key==='v18'){clean.v18=vvSanitizeV18(value);continue;}"),'Imported saves must preserve and sanitize Mastery talents');
 const begin=html.indexOf('/* v1.7.0 — The Forest Remembers:');
 const end=html.indexOf("document.addEventListener('click',event=>{",begin);
 assert(begin>=0&&end>begin,'Mega patch logic not found');
@@ -18,7 +25,7 @@ let s={wood:300,essence:40,butterfly:1,restored:false,xp:0,mega:{}};
 const level=x=>1+Math.floor(Math.sqrt(x/45));
 const fmt=x=>Math.floor(x).toLocaleString();
 const VV_STORY=[{name:'Seraphine',lv:1},{name:'Elowen',lv:5},{name:'Lira',lv:10},{name:'Nyx',lv:15},{name:'Ciel',lv:30}];
-const toast=x=>alerts.push(x),note=x=>journal.push(x);
+const toast=x=>alerts.push(x),note=x=>journal.push(x),vvTalentRank=()=>0,vvTalentTotal=()=>0;
 const window={},save=()=>{},render=()=>{},vvPanel=(title,html)=>title+html,vvButton=(...v)=>v.join(''),vvLink=(...v)=>v.join(''),vvTrack=()=>'',vvStat=()=>'',page='Home';
 ${code}
 const corrupt=vvSanitizeMega({materials:{ore:-12,fish:'6',herbs:Infinity},crafted:['hook','hook','bad'],equipped:'hook',bond:{Seraphine:99}});
@@ -39,4 +46,40 @@ if(!vvMegaAchievements().includes('Lightkeeper'))throw Error('Achievements UI no
 return {checks:14,journal:journal.length};
 `);
 const result=tests();
-console.log('Vioverse mega patch checks passed:',result.checks,'checks; evaluated',scripts.length,'inline JavaScript block(s).');
+const v18Begin=html.indexOf('/* v1.8.0 — Moonlit Mastery and the Starwater Expanse */');
+const v18End=html.indexOf("document.addEventListener('click',event=>{const control=event.target.closest('[data-action^=\"v18-\"]')",v18Begin);
+assert(v18Begin>=0&&v18End>v18Begin,'Moonlit Mastery and Starwater logic must exist');
+const v18Code=html.slice(v18Begin,v18End);
+const v18Tests=new Function(`
+const alerts=[],journal=[];
+let s={wood:100,essence:0,butterfly:0,xp:0,profXp:1620,skill:6,skillSpent:0,restored:true,spiritTrust:0,moonPath:false,mega:{sites:{silverBridge:false},materials:{ore:0,fish:0,herbs:0,shards:0,glowcap:0,crystal:0},crafted:[],equipped:'',history:[],region:{ridge:false,marsh:false,pool:false,beacon:false,choices:{ridge:'',marsh:'',pool:''}}}};
+const level=x=>1+Math.floor(Math.sqrt(x/45));
+const pct=x=>{const a=Math.floor(Math.sqrt(x/45));return Math.min(100,(x-45*a*a)/(45*(2*a+1))*100)};
+const fmt=x=>Math.floor(x).toLocaleString();
+const toast=x=>alerts.push(x),note=x=>journal.push(x),window={};
+const vvSection=x=>x,vvHead=(...x)=>x.join(' '),vvPanel=(a,b)=>a+b,vvButton=(...x)=>x.join(' '),vvLink=(...x)=>x.join(' '),vvTrack=()=>'',vvStat=()=>'',vvMegaCost=cost=>Object.entries(cost).map(([k,v])=>v+' '+k).join(' ');
+const vvMegaNum=id=>id==='wood'?s.wood:id==='essence'?s.essence:s.mega.materials[id]||0;
+const vvMegaCanAfford=cost=>Object.entries(cost).every(([id,n])=>vvMegaNum(id)>=n);
+const vvMegaSpend=cost=>{if(!vvMegaCanAfford(cost))return false;for(const [id,n] of Object.entries(cost)){if(id==='wood')s.wood-=n;else if(id==='essence')s.essence-=n;else s.mega.materials[id]-=n}return true};
+const vvMegaLog=msg=>{s.mega.history.unshift(msg);note(msg)};
+${v18Code}
+s.v18=vvSanitizeV18({});
+if(vvV18TalentCanBuy(VV_V18_TALENTS.find(x=>x.id==='essence-whisper')))throw Error('A talent unlocked before its prerequisite');
+if(!vvV18Action('v18-talent-rooted-hands')||vvTalentRank('rooted-hands')!==1||s.skill!==5)throw Error('Root talent purchase or skill-point accounting failed');
+if(!vvV18Action('v18-talent-essence-whisper')||vvTalentRank('essence-whisper')!==1||s.skill!==4)throw Error('Prerequisite talent purchase failed');
+vvV18Action('v18-talent-resourceful-hands');vvV18Action('v18-talent-frugal-recipes');
+if(vvMegaEffectiveCost({wood:50,herbs:5,ore:4}).wood!==49||vvMegaEffectiveCost({wood:50,herbs:5,ore:4}).herbs!==4||vvMegaEffectiveCost({wood:50,herbs:5,ore:4}).ore!==4)throw Error('Frugal Recipes discount incorrect');
+if(!vvV18Mastery().includes('Moonlit Mastery')||!vvV18Mastery().includes('Wayfinder'))throw Error('Mastery screen did not render all branches');
+vvV18Explore('ridge','map');if(s.mega.region.ridge||s.mega.materials.shards!==0)throw Error('Starwater opened before Silverleaf Bridge');
+s.mega.sites.silverBridge=true;
+vvV18Explore('ridge','map');if(!s.mega.region.ridge||s.mega.materials.shards!==4||s.mega.materials.crystal!==1)throw Error('Ridge choice rewards incorrect');
+vvV18Explore('marsh','help');if(!s.mega.region.marsh||s.mega.materials.glowcap!==4||s.essence!==2||s.spiritTrust!==1)throw Error('Marsh spirit choice rewards incorrect');
+vvV18Explore('pool','listen');if(!s.mega.region.pool||s.mega.materials.crystal!==2||s.essence!==5||!s.moonPath)throw Error('Prism Pool choice rewards incorrect');
+if(!vvV18Action('v18-beacon')||!s.mega.region.beacon||s.mega.materials.shards!==0||s.mega.materials.glowcap!==0||s.mega.materials.crystal!==1)throw Error('Astral Beacon costs or completion flag incorrect');
+if(!vvV18WorldMap().includes('Astral Beacon Is Awake'))throw Error('Completed Starwater world map did not render');
+const safe=vvSanitizeV18({talents:{'rooted-hands':1,'bogus-talent':1},region:{beacon:true,choices:{ridge:'mine',pool:'bogus'}}});
+if(safe.talents['rooted-hands']!==1||Object.keys(safe.talents).length!==9||safe.region.choices.ridge!=='mine'||safe.region.choices.pool!=='')throw Error('Mastery save sanitization incorrect');
+return {checks:12,journal:journal.length};
+`);
+const v18Result=v18Tests();
+console.log('Vioverse v1.8.0 checks passed:',result.checks+v18Result.checks,'gameplay assertions; validated',scripts.length,'inline JavaScript block(s).');
