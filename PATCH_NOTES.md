@@ -1,5 +1,13 @@
 # Vioverse Patch Notes
 
+## v1.6.2 — Moonlit Companion Gallery
+- Redesigned the four story companion cards on Home with ornate moonlit filigree frames, character portraits, circular avatars, rarity colors, lore, and unlock indicators.
+- Characters unlock automatically at existing level milestones (5, 10, 15, 30), and unlocked characters appear in full color; locked cards are dimmed.
+- Collection displays uncollected story characters in grayscale with clear NOT OBTAINED badges and level requirements. Obtained characters appear in full color with framed portraits and avatars.
+- Uses the existing portrait assets and shared `assets/filigree-frame.svg`. The newly generated character-sheet illustration is a visual design reference, not yet shipped as separate full-resolution portrait files.
+- No save changes or altered progression.
+
+
 ## v1.6.1 — Moonveil Settings & Mailbox
 - Added separate Settings and Mailbox pages in desktop navigation and mobile More menu, with top-HUD shortcuts and unread mail indicator.
 - Settings: Audio mixer shortcut, visual accessibility, compact mode, summon confirmations, offline summary and in-game notice preferences, plus account/save links and About.
