@@ -1,5 +1,12 @@
 # Vioverse Patch Notes
 
+## v1.4.3 — Player Identity & UI Polish
+- Added an editable player name (2–20 characters) to the Friends tab, with validation and persistence in the existing browser save.
+- Added the player name to the HUD as a shortcut to Friends, and personalized the Home greeting.
+- Polished profile cards, HUD hover states, buttons, panel borders, and subtle screen entrance motion.
+- Added a restrained Gacha glow and reduced-motion accessibility rules; avoided flashing or continuous page redraws.
+- Player names are local display names, not globally unique usernames or online accounts.
+
 ## v1.4.2 — Friends & Invitations
 - Added a Friends tab to the desktop sidebar and the mobile More menu.
 - Added Share invitation, using native sharing on supported phones, and Copy game link with fallback.
