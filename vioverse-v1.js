@@ -12,7 +12,7 @@ function vvSection(content){return `<div class="vv-view">${content}</div>`}
 function vvLocked(n,i){
  const rarity=['rare','epic','mythic','legendary'][i], desc=['A new companion awaits beneath the silver moon.','Different stories and rare traits will emerge.','More companions will join your forest journey.','Legends awaken beyond the farthest grove.'][i];
  const open=level(s.xp)>=n;
- return `<article class="vv-companion ${rarity}" aria-label="Companion slot ${i+2}"><div class="vv-cardface vv-locked"><span class="vv-locked-symbol">♙</span><h3>Companion ${i+2}</h3><p>${open?'Level requirement reached':'Unlocks at Player Lv. '+n}</p><div class="vv-ornament" style="width:100%;margin:9px 0"><span>✧</span></div><p>${desc}</p><span class="vv-lock-pill">${open?'◇ Companion coming later':'🔒 Locked'}</span></div></article>`;
+ return `<article class="vv-companion ${rarity}" aria-label="Companion slot ${i+2}"><div class="vv-cardface vv-locked"><div class="vv-locked-art" aria-hidden="true"></div><span class="vv-locked-symbol">♙</span><h3>Companion ${i+2}</h3><p>${open?'Level requirement reached':'Unlocks at Player Lv. '+n}</p><div class="vv-ornament" style="width:100%;margin:9px 0"><span>✧</span></div><p>${desc}</p><span class="vv-lock-pill">${open?'◇ Companion coming later':'🔒 Locked'}</span></div></article>`;
 }
 function vvTree(){
  return `<div class="vv-cardface vv-treeface" data-vv-back ${flipped?'':'hidden'}>
