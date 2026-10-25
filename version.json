@@ -1,6 +1,6 @@
 {
-  "version": "0.9.3",
-  "build": "2026-10-25-v093-smooth-scroll",
-  "title": "Smooth Companion Scrolling",
-  "notes": "Idle gathering now updates the counters and progress bars without rebuilding the Home screen each second, avoiding blinking and scrollbar jumps. Existing saves, companion flip, Journal and automatic update checks are preserved."
+  "version": "1.0.0",
+  "build": "2026-10-25-v100-royal-interface",
+  "title": "Vioverse v1.0 — Moonlit Royal Interface",
+  "notes": "Major visual redesign across Home, Characters, Expeditions, Discoveries, Gathering, Inventory, Missions, Legacy, Journal, Gacha, Shop and Update Game. New clean illustrated moonlit-forest background, ornate rarity cards, matching typography and responsive panels. Fixed character flip flashing by toggling card faces in place while preserving game progress and five-second update checks."
 }
