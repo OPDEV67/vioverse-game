@@ -1,5 +1,14 @@
 # Vioverse Patch Notes
 
+## v1.5.0 — Moonlit Bonds
+- Created a separate Vioverse Supabase project in eu-north-1 with a server-protected friends and hearts schema.
+- Added email/password signup and sign-in, unique online usernames, username search, friend requests, acceptance/decline, removal, and friend list.
+- Added daily hearts: one heart to each accepted friend per UTC day, with received/sent indicators and totals.
+- Added a +0.5% passive boost per accepted friend (50 friends maximum = +25%) to Wood, Moon Essence, gathering speed, and character/profession XP.
+- The accepted-friend count and hearts are loaded from Supabase; client-side saves cannot add online friends or hearts.
+- Existing local browser saves remain under moonveil_legacy_v02; account login does not sync gameplay progress yet.
+- Important setup: configure Supabase Authentication URL Configuration to use https://opdev67.github.io/vioverse-game/ as the Site URL and allow this redirect before public email confirmation testing.
+
 ## v1.4.3 — Player Identity & UI Polish
 - Added an editable player name (2–20 characters) to the Friends tab, with validation and persistence in the existing browser save.
 - Added the player name to the HUD as a shortcut to Friends, and personalized the Home greeting.
