@@ -1,3 +1,13 @@
+## v1.7.0 — The Forest Remembers Mega Patch
+
+**Playable now:** Working includes Mining (Lv. 5), Fishing (Lv. 10), and Herbalism (Lv. 15) with their own materials and manual cooldowns. Inventory adds a Moonlit Atelier with four one-time recipes, one equipment slot, and a restrained +2% Wood artifact. Legacy adds three optional restoration projects that change the visible Moonwood world; Characters has five persistent conversation memories for each level-unlocked story character; Missions has eight cosmetic achievements. Home displays the living restored forest and changing cosmetic moon phase.
+
+**Sound fixed for browsers:** Open **♫ Sound → Enable game audio → ♫ Play Moonwood Theme**. An original synthesized theme, ambience and chimes play entirely in Web Audio without the missing MP3 files. The MP3 recordings are not deployed yet, but the procedural soundtrack no longer depends on them.
+
+**Save-preserving update:** The original `moonveil_legacy_v02` save is kept. Export/import now handles new crafting, achievements-derived state, character memories and previous gacha ownership/history. Test with `node scripts/check-mega-patch.mjs`; checks run in GitHub Actions on game changes.
+
+For implemented mechanics, balance notes and the substantial checklist items **still outstanding**, see [MEGA_PATCH_ROADMAP.md](MEGA_PATCH_ROADMAP.md). This is a playable milestone, not a claim that every planned feature is complete.
+
 ## v1.6.1 — Settings & Moonveil Mailbox
 
 Open **Settings** to customize visual effects, accessibility, compact layout, summon confirmations, offline summary and notifications, or open the existing audio mixer. Open **Mailbox** from the navigation or the top HUD to read Seraphine's welcome letter and claim **3 Stardust**, the cosmetic **Moonborn** title and a welcome badge. This amount is deliberately below the 10 Stardust required for one summon, and awards no XP, levels, skill points or stat bonuses. Welcome claim status is part of the browser save and is exported with backups. **Important:** local saves can be reset or manipulated, so the gift is not guaranteed once per account until server-side claims are implemented. The title is displayed in the player profile.
@@ -8,7 +18,7 @@ The interface now uses the repository's original **Seraphine** portrait (`assets
 
 ## Vioverse Audio (v1.5.3)
 
-Use **♫ Sound** to enable audio and adjust music, forest ambience and SFX volumes. Settings persist per browser. Music starts only with player consent and pauses in hidden tabs. The audio player expects six MP3 files in `assets/audio/`. The GitHub Actions workflow `.github/workflows/build-audio.yml` generates them with `scripts/generate_audio.py` and commits them to the repository. If the workflow has not yet published the MP3s, the game plays lightweight Web Audio synthesizer fallbacks instead. The source music and sound effects are original procedural compositions, not ElevenLabs output.
+Use **♫ Sound** to enable audio and adjust music, forest ambience and SFX volumes. Settings persist per browser. Music starts only with player consent and pauses in hidden tabs. The new in-browser synthesized theme and ambience play without MP3 files. Six optional MP3 recordings can be added to `assets/audio/` later. The GitHub Actions workflow `.github/workflows/build-audio.yml` generates them with `scripts/generate_audio.py` and commits them to the repository. If the workflow has not yet published the MP3s, the game plays lightweight Web Audio synthesizer fallbacks instead. The source music and sound effects are original procedural compositions, not ElevenLabs output.
 
 # Vioverse
 
