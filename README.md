@@ -1,3 +1,7 @@
+## v1.6.0 — Moonlit Atelier UI
+
+The interface now uses the repository's original **Seraphine** portrait (`assets/seraphine.webp`), **Moonwood** scenery (`assets/moonforest.svg` and `assets/world.webp`), and decorative elements to create a coherent midnight-blue / moon-gold fantasy HUD. Home has a new dashboard with live level progress and upcoming character unlocks. Navigation, resources, collection cards, gacha, panels and mobile layouts have been restyled. Elowen, Lira, Nyx and Ciel currently use low-resolution placeholder SVG portraits; replacing them with original high-resolution character art will further improve visual fidelity. Existing local saves remain compatible.
+
 ## Vioverse Audio (v1.5.3)
 
 Use **♫ Sound** to enable audio and adjust music, forest ambience and SFX volumes. Settings persist per browser. Music starts only with player consent and pauses in hidden tabs. The audio player expects six MP3 files in `assets/audio/`. The GitHub Actions workflow `.github/workflows/build-audio.yml` generates them with `scripts/generate_audio.py` and commits them to the repository. If the workflow has not yet published the MP3s, the game plays lightweight Web Audio synthesizer fallbacks instead. The source music and sound effects are original procedural compositions, not ElevenLabs output.
