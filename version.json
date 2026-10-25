@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "build": "2026-10-25-v160-moonlit-ui",
-  "title": "Vioverse — Moonlit Atelier UI",
-  "notes": "Rebuilt visual design around original Seraphine and Moonwood art: immersive dashboard, midnight-and-gold HUD, premium navigation, upgraded companion cards, character portraits, collection and consistent screen styling."
+  "version": "1.6.1",
+  "build": "2026-10-25-v161-settings-mail",
+  "title": "Vioverse — Moonveil Settings & Mailbox",
+  "notes": "Added dedicated Settings and Mailbox screens, unread mail indicator, saved accessibility/gameplay preferences, sound settings shortcut and modest 3-Stardust Moonborn welcome gift claimable once per local save."
 }
