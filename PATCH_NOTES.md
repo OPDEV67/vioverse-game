@@ -1,5 +1,11 @@
 # Vioverse Patch Notes
 
+## v1.5.1 — Continue with Google
+- Added a one-click Google account sign-in option to Moonlit Bonds alongside existing email/password login.
+- Uses Supabase OAuth with a return redirect to the current Vioverse game URL.
+- Google OAuth requires enabling Google under Supabase Authentication → Providers and configuring Google Cloud OAuth Client ID/Secret and the Supabase callback URI. This provider setup is not yet confirmed, so the button will not complete sign-in until configured.
+
+
 ## v1.5.0 — Moonlit Bonds
 - Created a separate Vioverse Supabase project in eu-north-1 with a server-protected friends and hearts schema.
 - Added email/password signup and sign-in, unique online usernames, username search, friend requests, acceptance/decline, removal, and friend list.
