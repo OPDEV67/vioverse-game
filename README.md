@@ -1,6 +1,6 @@
 # Vioverse
 
-**Current release: v1.5.1 — Google Sign-In**
+**Current release: v1.5.2 — Character & Spirit Collection**
 
 Vioverse is a gothic-purple fantasy gathering and exploration game featuring Seraphine, Moonwood Legacy progression, expeditions, discoveries, a persistent companion collection, and an interactive Forest Skill Tree.
 
@@ -22,6 +22,10 @@ Progress is stored in browser local storage under `moonveil_legacy_v02`. This re
 ## Mobile layout
 
 On iPhone and Android, Vioverse automatically shows a compact HUD and a bottom navigation bar with Home, Gathering, Gacha, Characters, and More. The More menu contains the other game screens. The layout responds to screen width; there is no separate mobile build or switch. Desktop keeps the original sidebar.
+
+## Character & Spirit Collection
+
+Use the new **Collection** tab (or mobile **More → Collection**) to browse all story characters and summonable spirits, read their lore, inspect specials and bonuses, see unlock requirements and equip discovered spirits. Elowen, Lira, Nyx and Ciel unlock automatically at Player Levels 5, 10, 15 and 30. Only Seraphine currently has active story-character bonuses; the others' traits are previews. Collection titles progress Starter → Apprentice → Adept → Expert → Master → Legendary based on collected entries, and are cosmetic only.
 
 ## Google Sign-In setup
 
