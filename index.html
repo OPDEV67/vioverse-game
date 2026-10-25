@@ -993,6 +993,15 @@ const PATCHES=[
   'Show live material requirements and missing resources.',
   'Explain Awakening I bonuses before purchase.',
   'Test upgrades, costs, and persistence.'
+ ]},
+ {name:'Mega Patch · The Forest Remembers',version:'v1.7.0',status:'Live',summary:'Professions, Moonlit Atelier crafting, companion memories and a living Moonwood that responds to restoration.',details:[
+  'Mining, Fishing and Herbalism unlock at Player Levels 5, 10 and 15 with separate materials, XP and cooldowns.',
+  'Craft four one-time keepsakes with a single optional equipment slot; the only power item adds +2% Wood.',
+  'Restore Whisperlight Grove, Silverleaf Bridge and Moonpetal Garden once the Ancient Tree is restored.',
+  'Share conversations with all five level-unlocked characters, tracking up to five cosmetic memories per companion.',
+  'Track eight cosmetic-only achievements and moon phases, and revisit your restored landmarks on Home.',
+  'Play the in-browser synthesized music and forest ambience without missing MP3 file requests.',
+  'Keep the moonveil_legacy_v02 save key and support importing crafted items and other saved collections.'
  ]}
 ];
 function patchNotes(){const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;return `<div class="row"><div><h2>📜 Patch Notes</h2><p class="muted small">Vioverse development roadmap · see what is implemented and what is planned</p></div><span class="pill">${p.version} · ${status}</span></div><section class="panel"><div class="row"><h3 style="font-size:25px">${p.name}</h3><span class="pill">${status}</span></div><p class="muted">${p.summary}</p>${p.details.map(x=>`<p>✦ ${x}</p>`).join('')}<div class="row" style="margin-top:22px">${button('← Previous Patch','prevpatch',patchIndex===0,true)}${button(patchIndex===PATCHES.length-1?'Back to Patch 01':'Next Patch →','nextpatch',false)}${patchIndex===1?button(s.patch02?'✓ Patch 02 Applied':'✦ Apply Patch 02 Now','applypatch02',s.patch02):''}</div><p class="muted small">Next Patch moves to the next patch. Apply Patch 02 Now activates the bundled expedition improvements and saves the change. Future patches require new game builds.</p></section><section class="panel"><h3>Development progress</h3><p>✓ Patch 01 — Gathering reliability</p><p class="muted">${s.patch02?'✓ Patch 02 — Expeditions applied':'○ Patch 02 — Ready to apply'} · ○ Patch 03 — Inventory · ○ Patch 04 — Awakening</p></section>`}
@@ -1363,9 +1372,9 @@ function vvSoon(name,icon,detail){return vvSection(vvHead('On the horizon',name,
 }
 function vvPatches(){
  const p=PATCHES[patchIndex];const status=patchIndex===1&&s.patch02?'Applied':p.status;
- return vvSection(vvHead('Behind the moonlit scenes','Patch Notes','A living record of the updates shaping Vioverse.','v'+BUILD_VERSION+' · Royal Interface')+
+ return vvSection(vvHead('Behind the moonlit scenes','Patch Notes','A living record of the updates shaping Vioverse.','v'+BUILD_VERSION+' · FOREST REMEMBERS')+
  `<div class="vv-columns">${vvPanel('✦ '+p.name,`<div class="vv-tag">${p.version} · ${status}</div><p class="vv-muted" style="margin:18px 0">${p.summary}</p>${p.details.map(x=>`<div class="vv-tile-row"><span>✦ ${x}</span></div>`).join('')}<div class="vv-actions" style="margin-top:20px">${vvButton('← Previous','prevpatch',patchIndex===0,'ghost')}${vvButton('Next →','nextpatch')}${patchIndex===1?vvButton(s.patch02?'✓ Expedition patch active':'Activate Expedition Patch 02','applypatch02',s.patch02):''}</div>`,'ARCHIVE')}
- ${vvPanel('☾ Current Design Release',`<div class="vv-tag">v1.4.0 · SPIRIT GACHA & STARDUST</div><h3 style="margin:18px 0 8px">Spirit Gacha & Stardust Economy</h3><p class="vv-muted">Playable Wood-to-Stardust exchange, single and ten-pulls, transparent rarity odds, persistent pity guarantees, duplicate compensation, a saved four-spirit collection, and equipable passive bonuses. Existing saves and five-second updates remain compatible.</p><p class="vv-muted">Save compatibility is maintained, and automatic update checks still run every five seconds.</p>${vvLink('Explore the redesigned home →','Home')}`)}
+ ${vvPanel('☾ Current Design Release',`<div class="vv-tag">v1.7.0 · THE FOREST REMEMBERS</div><h3 style="margin:18px 0 8px">The Moonwood Mega Patch</h3><p class="vv-muted">Three optional Working professions, four craftable keepsakes, companion bond memories, eight cosmetic achievements and three living restoration projects. Music now uses a reliable in-browser score, with no missing MP3 dependency. Existing saves remain compatible.</p><p class="vv-muted">Save compatibility is maintained, and automatic update checks still run every five seconds.</p>${vvLink('Explore the redesigned home →','Home')}`)}
  </div>`);
 }
 function vvUpdates(){
