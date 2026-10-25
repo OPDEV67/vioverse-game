@@ -1,6 +1,6 @@
 {
-  "version": "1.5.0",
-  "build": "2026-10-25-v150-moonlit-bonds",
-  "title": "Vioverse — Moonlit Bonds",
-  "notes": "Real Supabase-backed player accounts and unique usernames, friend requests, 50 accepted friends max, daily hearts (one per friend, UTC reset), and +0.5% all-skills blessing per accepted friend up to +25%. Existing browser saves preserved. Email verification redirect requires Supabase Auth URL configuration."
+  "version": "1.5.1",
+  "build": "2026-10-25-v151-google-signin",
+  "title": "Vioverse — Continue with Google",
+  "notes": "Adds Google OAuth button for Moonlit Bonds. Requires Google provider enablement in Supabase Auth and Google Cloud OAuth client setup. Existing email/password login still works."
 }
