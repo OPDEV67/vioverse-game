@@ -1,6 +1,6 @@
 {
-  "version": "1.7.0",
-  "build": "2026-10-25-v170-forest-remembers",
-  "title": "Vioverse — The Forest Remembers Mega Patch",
-  "notes": "Playable Mining, Fishing and Herbalism; four crafting recipes, three living Moonwood restoration projects, five companion memories each, eight cosmetic achievements, a working in-browser Moonwood theme, and save-import compatibility improvements."
+  "version": "1.8.0",
+  "build": "2026-10-25-v180-starwater-mastery",
+  "title": "Vioverse — Moonlit Mastery & Starwater Expanse",
+  "notes": "Fixes a startup ReferenceError in skill normalization; adds three connected Moonlit Mastery talent branches with gameplay effects, three explorable Starwater locations with meaningful resource choices, the Astral Beacon chapter finale, three new craftable keepsakes, persistent save/import support, Journal and achievement updates, and responsive UI."
 }
