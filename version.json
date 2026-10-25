@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "build": "2026-10-25-v100-royal-interface-final",
-  "title": "Vioverse v1.0 — Moonlit Royal Interface",
-  "notes": "Massive reference-inspired overhaul across all tabs: illustrated moonlit forest backdrop without ghost UI, luxury fantasy typography, ornate companion frames and unique rarity art, Characters/Gathering/Inventory/Missions/Gacha/Shop screens, expedition storytelling and discovery gallery. Fixed portrait-to-skill-tree flashing with an in-place face swap. Stable scrolling, browser save compatibility and automatic five-second update checks remain."
+  "version": "1.0.1",
+  "build": "2026-10-25-v101-moonwood-skills",
+  "title": "Moonwood Constellation — Skill Tree Design",
+  "notes": "Brand-new crystal-and-vines Forest Skill Tree inspired by the Vioverse reference artwork; Seraphine's card back has polished connected skill nodes and an Expand Skill Tree button. The full interactive tree is in Characters, with live Forest Mastery rank and skill point upgrades. Fixed flashing by keeping card faces mounted and updating skill nodes without rebuilding. All existing saves and update checks remain."
 }
