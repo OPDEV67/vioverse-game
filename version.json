@@ -1,6 +1,6 @@
 {
-  "version": "1.4.3",
-  "build": "2026-10-25-v143-player-profile-polish",
-  "title": "Vioverse — Player Identity & UI Polish",
-  "notes": "Adds editable local player names in Friends, profile badge in the HUD, personal welcome message, smoother subtle panel interactions, gentle Gacha glow, mobile refinements, reduced-motion accessibility, and existing save compatibility."
+  "version": "1.5.0",
+  "build": "2026-10-25-v150-moonlit-bonds",
+  "title": "Vioverse — Moonlit Bonds",
+  "notes": "Real Supabase-backed player accounts and unique usernames, friend requests, 50 accepted friends max, daily hearts (one per friend, UTC reset), and +0.5% all-skills blessing per accepted friend up to +25%. Existing browser saves preserved. Email verification redirect requires Supabase Auth URL configuration."
 }
