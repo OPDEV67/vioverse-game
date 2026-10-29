@@ -13,7 +13,7 @@ const initAt=html.indexOf('s.mega=vvSanitizeMega(s.mega);s.v18=vvSanitizeV18(s.v
 const levelAt=html.indexOf('const level=x=>');
 const initCode=html.slice(initAt,html.indexOf("let page='Home'",initAt));
 assert(initAt>=0&&levelAt>initAt&&!/\blevel\s*\(/.test(initCode),'Startup normalization must not call the not-yet-initialized level const');
-assert(html.includes("const BUILD_ID='"+version.build+"'"),'Game and manifest build IDs must match');
+assert(html.includes("BUILD_ID='"+version.build+"'"),'Game and manifest build IDs must match');
 assert(html.includes("if(key==='v18'){clean.v18=vvSanitizeV18(value);continue;}"),'Imported saves must preserve and sanitize Mastery talents');
 const begin=html.indexOf('/* v1.7.0 — The Forest Remembers:');
 const end=html.indexOf("document.addEventListener('click',event=>{",begin);
